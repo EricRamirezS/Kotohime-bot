@@ -1,12 +1,12 @@
 {
-  "name": "basty",
+  "name": "HouraiESP",
+  "description": "Discord bot para Danmaku ESP",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "Skylur",
+  "author": "EricRamirezS",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.2.1",
