@@ -59,7 +59,7 @@ bot2.on('disconnect', function(erMsg, code) {
 });
 
 function conectarBot() {
-    bot.login('Mzg2MDA3OTA3MTEzNzYyODE2.DQJpkQ.Yl5l6C51ctQjGfHOS3GfzjwWziQ').then(function () {
+    bot.login(process.env.BOT_TOKEN1).then(function () {
         console.log("Bot conectado");
     }).catch(function () {
         console.log("bot no conectado");
@@ -70,7 +70,7 @@ function conectarBot() {
     });
 }
 function conectarBot2() {
-    bot2.login("Mzg3MDYzMjM1ODIxNTY4MDAw.DQZAQA.O5ktC83s2QnYqiALfbfEBS8oM70").then(function () {
+    bot2.login(process.env.BOT_TOKEN2).then(function () {
         console.log("Bot2 conectado");
     }).catch(function () {
         console.log("bot2 no conectado");
