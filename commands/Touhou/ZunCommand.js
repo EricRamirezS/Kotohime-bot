@@ -18,7 +18,18 @@ const imageLinks = [
     "https://media.discordapp.net/attachments/276329252289511424/386709403941863437/zun_real_life_and_touhou__sample-64534656572c4512dc63587531eacfb4.jpg",
     "https://pbs.twimg.com/media/C7NZEiDUwAAje-C.jpg",
     "https://media.discordapp.net/attachments/276329252289511424/386709352150597632/143608-ZUNTouhou.jpg",
-    "https://media.discordapp.net/attachments/276329252289511424/378968371590332417/15326191_1359752550743216_933927379529533063_o.jpg?width=665&height=499"
+    "https://media.discordapp.net/attachments/276329252289511424/378968371590332417/15326191_1359752550743216_933927379529533063_o.jpg?width=665&height=499",
+    "http://i0.kym-cdn.com/photos/images/newsfeed/000/935/103/bb4.jpg",
+    "https://img.memecdn.com/zun-and-reimu_o_2809555.jpg",
+    "https://78.media.tumblr.com/7fb97ea21d9ae8c9943ca72ee57051e3/tumblr_oi1pwm7nSB1rku2u4o1_1280.png",
+    "https://ci.memecdn.com/2907856.gif",
+    "https://3.bp.blogspot.com/-slK9jkLy70k/WfeVlas49dI/AAAAAAAAB6o/RfwJeM5Buw0Hi7UKfhW1uLxoWU0kPvkQgCPcBGAYYCw/w1200-h630-p-k-no-nu/meme%2Brandom%2BZUN%2Bgaben%2B21430387_278386552647075_1912859834180494025_n.jpg",
+    "https://i.warosu.org/data/jp/img/0114/65/1380412886180.jpg",
+    "https://scontent-frx5-1.cdninstagram.com/t51.2885-15/e35/c70.0.420.420/23967362_191959928027205_8152496772812374016_n.jpg",
+    "https://i.redd.it/ai4cq8fk123z.jpg",
+    "https://lh5.googleusercontent.com/-zKdQAXp-y7k/T5nmpNGXvJI/AAAAAAAAAIY/nfFbiJE6-fk/w800-h800/team%2BShanghai%2BAlice.bmp",
+    "https://1.bp.blogspot.com/-voRG3CG_DPM/WfeVlR7bN7I/AAAAAAAAB6k/QGG6fAtL1i0TkvazPdEXlr63m2V0CP3WACEwYBhgL/s640/meme%2Brandom%2BZUN%2B21317564_10208048136481710_2536483401783880071_n.jpg",
+    "https://en.touhouwiki.net/images/e/eb/ZUNpresentation.jpg"
 ];
 
 class ZunCommand extends commando.Command {
