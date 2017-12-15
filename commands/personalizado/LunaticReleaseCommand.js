@@ -11,7 +11,7 @@ class LanzamientoLunatic extends commando.Command {
         }
 
     async run(message, args){
-        message.channel.send('**Vacaciones 2017**');
+        message.channel.send('**Primavera 2018**');
     }
 }
 
