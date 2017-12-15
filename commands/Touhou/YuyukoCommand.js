@@ -63,7 +63,8 @@ const imageLinks = [
     "https://static.zerochan.net/Saigyouji.Yuyuko.full.1381968.jpg",
     "https://static.zerochan.net/Saigyouji.Yuyuko.full.60012.jpg",
     "https://scontent-sjc2-1.cdninstagram.com/t51.2885-15/e35/23735622_528574070839140_877132347336556544_n.jpg",
-    "https://i.warosu.org/data/jp/img/0136/60/1434672357180.jpg"
+    "https://i.warosu.org/data/jp/img/0136/60/1434672357180.jpg",
+    "https://i.warosu.org/data/jp/img/0173/40/1500380382327.jpg"
 
 ];
 
