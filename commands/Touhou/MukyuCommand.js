@@ -24,7 +24,10 @@ const imageLinks = [
     "https://78.media.tumblr.com/af4e9d06d9d11b6e7412fbfd2def7999/tumblr_nz5hp1NHtH1tlcrpso1_250.jpg",
     "https://img00.deviantart.net/acb8/i/2016/346/e/b/if_patchouli_was_a_pokemon_by_asteris_kitsy-darftjk.png",
     "https://i.warosu.org/data/jp/img/0145/93/1452391330569.png",
-    "https://skycoloreddays.files.wordpress.com/2010/07/3qbf.jpg"
+    "https://skycoloreddays.files.wordpress.com/2010/07/3qbf.jpg",
+    "https://media.discordapp.net/attachments/276329252289511424/391357921243430922/662786-patchouli_knowledge_332.jpg",
+    "https://media.discordapp.net/attachments/276329252289511424/391837308556673026/koakuma_and_patchouli_knowledge_touhou_drawn_by_kan_aaaaari35__sample-dbdc252836b7e50536bca3e9c64713.jpg",
+    "https://media.discordapp.net/attachments/276329252289511424/391837455428354068/148884405cc43659a9580069938fee07.png"
 ];
 
 class MukyuCommand extends commando.Command {
