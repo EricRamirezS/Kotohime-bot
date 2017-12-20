@@ -16,7 +16,7 @@ bot.on('message',function (message) {
         console.log(message.author.username + ": " + message.toString());
     }
     let Hourai = bot2.users.get('208460737180467200');
-    console.log(Hourai);
+    message.reply(Hourai.toString());
 });
 
 bot2.on("guildMemberAdd",function(member){
