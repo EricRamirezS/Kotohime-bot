@@ -16,6 +16,10 @@ bot.on('message',function (message) {
         console.log(message.author.username + ": " + message.toString());
     }
 });
+bot2.on('message', function (message) {
+    let Hourai = bot2.users.get('208460737180467200');
+    console.log(Hourai);
+});
 
 bot2.on("guildMemberAdd",function(member){
     let chan = member.guild.channels.find("id","386366248306343937");
