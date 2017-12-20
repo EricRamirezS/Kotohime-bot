@@ -15,8 +15,6 @@ bot.on('message',function (message) {
     if (message.author.username.toString()!=='HouraiESP') {
         console.log(message.author.username + ": " + message.toString());
     }
-});
-bot2.on('message', function (message) {
     let Hourai = bot2.users.get('208460737180467200');
     console.log(Hourai);
 });
@@ -50,7 +48,7 @@ bot2.on("voiceStateUpdate", function (oldMember, newMember) {
         chan.send(nombre+" se unió a "+newChannelName);
     }
 
-})
+});
 
 bot.on('disconnect', function(erMsg, code) {
     console.log('----- Bot disconnected from Discord with code', code, 'for reason:', erMsg, '-----');
@@ -89,4 +87,4 @@ function conectarBots() {
     conectarBot2()
 }
 
-conectarBots()
+conectarBots();
