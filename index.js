@@ -16,7 +16,6 @@ bot.on('message',function (message) {
         console.log(message.author.username + ": " + message.toString());
     }
     let Hourai = bot2.users.get('id', '208460737180467200');
-    console.log(bot2.server.users.get('id', '208460737180467200'));
     console.log(Hourai);
 });
 
