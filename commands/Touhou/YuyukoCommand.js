@@ -32,7 +32,6 @@ const imageLinks = [
     "http://i48.tinypic.com/20ifmnt.jpg",
     "http://s1.tsuki-board.net/image/Shaolan-kun1393881684.jpeg",
     "https://d2qdztz5tk5zxi.cloudfront.net/original/2X/2/212b983f0433f381ef7efeec819400f94ae27c82.png",
-    "http://s.quickmeme.com/img/e4/e463493c0c88309bd69b2e28c95d7bd19a20972a9f7d2926ee98248ec9d60276.jpg",
     "https://kazasou.files.wordpress.com/2012/01/konachan-com-87212-dress-hat-konpaku_youmu-okitakung-petals-saigyouji_yuyuko-sword-touhou-weapon1.jpg",
     "http://i3.ytimg.com/vi/RbZSK8amarc/mqdefault.jpg",
     "https://static.fjcdn.com/pictures/Eating+something+fattening+someone+says+httpj5daigadadeviantartcomartghoestafter333078272+for+original+comic+which_bb9e5b_5104805.jpg",

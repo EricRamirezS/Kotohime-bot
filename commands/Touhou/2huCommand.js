@@ -32,7 +32,8 @@ const imageLinks = [
     "https://i.pinimg.com/736x/18/6b/09/186b09127b859fb1d5ac71ecde3d2c84--dinner-for-one-dinners.jpg",
     "https://memegenerator.net/img/instances/250x250/80304401/you-must-stop-with-all-these-touhou-memes.jpg",
     "https://pa1.narvii.com/6310/5c049119460d0c11390b6537bba26fb6863ef947_hq.gif",
-    "https://t00.deviantart.net/DETpUh6vaovPbL0lJ064p-T9rXw=/fit-in/700x350/filters:fixed_height(100,100):origin()/pre00/deb1/th/pre/f/2017/202/b/4/hina_the_spinner_by_chusonic-dbh4427.jpg"
+    "https://t00.deviantart.net/DETpUh6vaovPbL0lJ064p-T9rXw=/fit-in/700x350/filters:fixed_height(100,100):origin()/pre00/deb1/th/pre/f/2017/202/b/4/hina_the_spinner_by_chusonic-dbh4427.jpg",
+    "http://s.quickmeme.com/img/e4/e463493c0c88309bd69b2e28c95d7bd19a20972a9f7d2926ee98248ec9d60276.jpg"
 ];
 
 class _2huCommand extends commando.Command {
