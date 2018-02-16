@@ -59,19 +59,15 @@ class SorteoCommand extends commando.Command {
 
 }
 
-function getData(srcPath) {
+function writeData(savPath, srcPath, newData) {
     fs.readFile(srcPath, 'utf8', function (err, data) {
-            if (err) throw err;
-            return data;
-        }
-    );
-}
-
-function writeData(savPath, srcPath, data) {
-    fs.writeFile(savPath, (getData(srcPath)) + '\n' + data, function (err) {
+        if (err) throw err;
+        //Do your processing, MD5, send a satellite to the moon, etc.
+        fs.writeFile(savPath, data + '\n' + newData, function (err) {
             if (err) throw err;
             console.log('complete');
-        }
-    );
+        });
+    });
 }
+
 module.exports = SorteoCommand;
