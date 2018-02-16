@@ -1,7 +1,7 @@
 const commando = require('discord.js-commando');
 const fs = require('fs');
 
-var participantes = [];
+
 
 class SorteoCommand extends commando.Command {
     constructor(client) {
@@ -25,8 +25,10 @@ class SorteoCommand extends commando.Command {
                     type: 'string',
                     default: ''
                 }
-            ]
-        });
+            ],
+                participantes: []
+            }
+        );
     }
 
     async run(message, args) {
