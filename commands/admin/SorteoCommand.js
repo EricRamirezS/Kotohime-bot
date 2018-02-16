@@ -27,8 +27,8 @@ class SorteoCommand extends commando.Command {
     }
 
     async run(message, args) {
-        if (msg.member.hasPermission('ADMINISTRATOR') || !args.accion.equals("")) {
-            if (args.accion.equals("registrar") && !args.usuario.equals("")) {
+        if (msg.member.hasPermission('ADMINISTRATOR') || !args.accion) {
+            if (args.accion.equals("registrar") && !args.usuario) {
                 console.log(args.accion);
                 console.log(args.usuario);
                 /*let file = new File([""], "/Files/Sorteo.txt");
