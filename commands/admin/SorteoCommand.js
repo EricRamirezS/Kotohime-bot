@@ -1,6 +1,7 @@
 const commando = require('discord.js-commando');
 const fs = require('fs');
 
+var participantes = {};
 
 class SorteoCommand extends commando.Command {
     constructor(client) {
@@ -29,13 +30,14 @@ class SorteoCommand extends commando.Command {
     }
 
     async run(message, args) {
-        console.log('1');
         if (message.member.hasPermission('ADMINISTRATOR') && args.accion) {
-            console.log('2');
             if (args.accion === 'registrar' && args.usuario) {
-                console.log(args.accion);
-                console.log(args.usuario);
-                writeData('/Files/Sorteo.txt', '/Files/Sorteo.txt', args.usuario);
+                participantes.push(usuario);
+            }
+            if (args.accion === 'sortear') {
+                let i = Math.floor(Math.random() * participantes.length);
+                message.channel.send(participantes[i]);
+                participantes.splice(i, 1);
             }
         } else {
             let mensaje = "**¿Te interesa obtener Tabletop Simulator?** ¡Pues tienes la oportunidad de obtenerlo ***gratis***!\n" +
