@@ -1,4 +1,6 @@
 const commando = require('discord.js-commando');
+const fs = require('fs');
+
 
 class SorteoCommand extends commando.Command {
     constructor(client) {
@@ -33,10 +35,7 @@ class SorteoCommand extends commando.Command {
             if (args.accion === 'registrar' && args.usuario) {
                 console.log(args.accion);
                 console.log(args.usuario);
-                let file = new File([""], "/Files/Sorteo.txt");
-                file.open("w");
-                file.writeln(args.usuario);
-                file.close();
+                writeData('/Files/Sorteo.txt', '/Files/Sorteo.txt', args.usuario);
             }
         } else {
             let mensaje = "**¿Te interesa obtener Tabletop Simulator?** ¡Pues tienes la oportunidad de obtenerlo ***gratis***!\n" +
@@ -57,6 +56,22 @@ class SorteoCommand extends commando.Command {
         }
     }
 
+
 }
 
+function getData(srcPath) {
+    fs.readFile(srcPath, 'utf8', function (err, data) {
+            if (err) throw err;
+            return data;
+        }
+    );
+}
+
+function writeData(savPath, srcPath, data) {
+    fs.writeFile(savPath, (getData(srcPath)) + '\n' + data, function (err) {
+            if (err) throw err;
+            console.log('complete');
+        }
+    );
+}
 module.exports = SorteoCommand;
