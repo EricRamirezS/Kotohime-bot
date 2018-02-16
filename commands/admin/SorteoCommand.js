@@ -27,11 +27,14 @@ class SorteoCommand extends commando.Command {
     }
 
     async run(message, args) {
-        if (msg.member.hasPermission('ADMINISTRATOR') && !args.accion.equals("")) {
-            if (args.accion.equals("registrar")) {
+        if (msg.member.hasPermission('ADMINISTRATOR') || !args.accion.equals("")) {
+            if (args.accion.equals("registrar") && !args.usuario.equals("")) {
+                console.log(args.accion);
+                console.log(args.usuario);
                 let file = new File([""], "/Files/Sorteo.txt");
                 file.open("w");
                 file.writeln(args.usuario);
+                file.close();
             }
         } else {
             let mensaje = "**¿Te interesa obtener Tabletop Simulator?** ¡Pues tienes la oportunidad de obtenerlo ***gratis***!\n" +
