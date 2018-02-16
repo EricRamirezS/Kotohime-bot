@@ -13,24 +13,24 @@ class SorteoCommand extends commando.Command {
                     key: 'accion',
                     prompt: '¿Qué desea hacer?',
                     type: 'string',
-                    default: ""
+                    default: ''
                 }
                 ,
                 {
                     key: 'usuario',
                     prompt: '¿Qué desea hacer?',
                     type: 'string',
-                    default: ""
+                    default: ''
                 }
             ]
         });
     }
 
     async run(message, args) {
-        console.log("1")
-        if (message.member.hasPermission('ADMINISTRATOR') && !args.accion) {
-            console.log("2")
-            if (args.accion.equals("registrar") && !args.usuario) {
+        console.log('');
+        if (message.member.hasPermission('ADMINISTRATOR') && args.accion) {
+            console.log('');
+            if (args.accion.equals("registrar") && args.usuario) {
                 console.log(args.accion);
                 console.log(args.usuario);
                 /*let file = new File([""], "/Files/Sorteo.txt");
