@@ -6,8 +6,8 @@ class SorteoCommand extends commando.Command {
             name: 'sorteo',
             group: 'admin',
             memberName: 'sorteo*',
-            description: 'Sorteo de 3 unidades de TTS',
-            examples: ['rol listar', 'rol obtener [rol]', 'rol abandonar [rol]'],
+            description: 'Sorteo de 3 unidades de TTS\n\nSolo un Admin puede iniciar el sorteo entre participantes',
+            examples: ['sorteo'],
             args: [
                 {
                     key: 'usuario',

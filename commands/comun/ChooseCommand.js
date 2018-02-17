@@ -6,7 +6,7 @@ class ChooseCommand extends commando.Command {
             name: 'escoger',
             group: 'comun',
             memberName: 'escoger',
-            description: 'Elige entre varias opciones proporcionadas. Separado por espacios. Colocar entre comillas opciones con espacios en ellas.',
+            description: 'Elige entre varias opciones proporcionadas.',
             args: [
                 {
                     key: 'opciones',
