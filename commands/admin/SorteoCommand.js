@@ -1,7 +1,4 @@
 const commando = require('discord.js-commando');
-const fs = require('fs');
-
-
 
 class SorteoCommand extends commando.Command {
     constructor(client) {
@@ -70,52 +67,18 @@ class SorteoCommand extends commando.Command {
                 choose = Math.floor(Math.random() * arrayOpciones.length);
                 let ganador3 = arrayOpciones[choose];
                 arrayOpciones.splice(choose, 1);
+
                 message.channel.send("¡El primer afortunado en ganar TTS es " + ganador + "!");
-                let msg = await message.channel.send("El siguiente ganador se informará en ***1*** minuto.");
-                for (let i = 59; i > 1; i--) {
-                    await sleep(1000);
-                    await msg.edit("El siguiente ganador se informará en ***" + i + "*** segundos.");
-                }
-                await sleep(1000);
-                await msg.edit("El siguiente ganador se informará en ***1*** segundo.");
-                await sleep(1000);
-                await msg.edit("El siguiente ganador se informará en ***0*** segundos.");
+                let msg = await message.channel.send("El siguiente ganador se informará en ***5*** minutos.");
+                await cuentaRegresiva(msg);
+
                 await message.channel.send("¡El segundo afortunado en ganar TTS es " + ganador2 + "!");
-                msg = await message.channel.send("El siguiente ganador se informará en ***1*** minuto.");
-                for (let i = 59; i > 1; i--) {
-                    await sleep(1000);
-                    await msg.edit("El siguiente ganador se informará en ***" + i + "*** segundos.");
-                }
-                await sleep(1000);
-                await msg.edit("El siguiente ganador se informará en ***1*** segundo.");
-                await sleep(1000);
-                await msg.edit("El siguiente ganador se informará en ***0*** segundos.");
-                await message.channel.send("¡El primer afortunado en ganar TTS es " + ganador3 + "!");
+                msg = await message.channel.send("El siguiente ganador se informará en ***5*** minuto.");
+                await cuentaRegresiva(msg);
+
+                await message.channel.send("¡El tercer y ultimo afortunado en ganar TTS es " + ganador3 + "!");
                 await sleep(5000);
                 message.channel.send("¡Felicidades a los ganadores!");
-                /*.then((msg) => {
-                    for (let i = 59; i > 1; i--) {
-                        sleep(1000);
-                        msg.edit("El siguiente ganador se informará en ***" + i + "*** segundos.");
-                    }
-                    sleep(1000);
-                    msg.edit("El siguiente ganador se informará en ***1*** segundo.");
-                    sleep(1000);
-                    msg.edit("El siguiente ganador se informará en ***0*** segundos.");
-                });
-                message.channel.send("¡El segundo afortunado en ganar TTS es " + ganador2 + "!");
-                await message.channel.send("El siguiente ganador se informará en ***1*** minuto.").then((msg) => {
-                    for (let i = 59; i > 1; i--) {
-                        sleep(1000);
-                        msg.edit("El siguiente ganador se informará en ***" + i + "*** segundos.");
-                    }
-                    sleep(1000);
-                    msg.edit("El siguiente ganador se informará en ***1*** segundo.");
-                    sleep(1000);
-                    msg.edit("El siguiente ganador se informará en ***0*** segundos.");
-                });
-                message.channel.send("¡El primer afortunado en ganar TTS es " + ganador3 + "!");
-                message.channel.send("¡Felicidades a los ganadores!");*/
             }
         } else {
             let mensaje = "**¿Te interesa obtener Tabletop Simulator?** ¡Pues tienes la oportunidad de obtenerlo ***gratis***!\n" +
@@ -143,4 +106,48 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+async function cuentaRegresiva(msg) {
+    for (let i = 59; i > 1; i--) {
+        await sleep(1000);
+        await msg.edit("El siguiente ganador se informará en 4 minutos y ***" + i + "*** segundos.");
+    }
+    await sleep(1000);
+    await msg.edit("El siguiente ganador se informará en 4 minutos y ***1*** segundo.");
+    await sleep(1000);
+    await msg.edit("El siguiente ganador se informará en 4 minutos.");
+    for (let i = 59; i > 1; i--) {
+        await sleep(1000);
+        await msg.edit("El siguiente ganador se informará en 3 minutos y ***" + i + "*** segundos.");
+    }
+    await sleep(1000);
+    await msg.edit("El siguiente ganador se informará en 3 minutos y ***1*** segundo.");
+    await sleep(1000);
+    await msg.edit("El siguiente ganador se informará en 3 minutos.");
+    for (let i = 59; i > 1; i--) {
+        await sleep(1000);
+        await msg.edit("El siguiente ganador se informará en 2 minutos y ***" + i + "*** segundos.");
+    }
+    await sleep(1000);
+    await msg.edit("El siguiente ganador se informará en 2 minutos y ***1*** segundo.");
+    await sleep(1000);
+    await msg.edit("El siguiente ganador se informará en 2 minutos.");
+    for (let i = 59; i > 1; i--) {
+        await sleep(1000);
+        await msg.edit("El siguiente ganador se informará en 1 minuto y ***" + i + "*** segundos.");
+    }
+    await sleep(1000);
+    await msg.edit("El siguiente ganador se informará en 1 minuto y ***1*** segundo.");
+    await sleep(1000);
+    await msg.edit("El siguiente ganador se informará en 1 minuto.");
+    for (let i = 59; i > 1; i--) {
+        await sleep(1000);
+        await msg.edit("El siguiente ganador se informará en ***" + i + "*** segundos.");
+    }
+    await sleep(1000);
+    await msg.edit("El siguiente ganador se informará en ***1*** segundo.");
+    await sleep(1000);
+    await msg.edit("El siguiente ganador se informará en ***0*** segundos.");
+    return new Promise(resolve => {
+    });
+}
 module.exports = SorteoCommand;
