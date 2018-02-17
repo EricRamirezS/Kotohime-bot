@@ -16,7 +16,6 @@ class SorteoCommand extends commando.Command {
                     key: 'usuario',
                     prompt: '',
                     type: 'string',
-                    default: ''
                 }
             ]
             }
@@ -24,8 +23,8 @@ class SorteoCommand extends commando.Command {
     }
 
     async run(message, args) {
-        if (message.member.hasPermission('ADMINISTRATOR')) {
-            if (args.usuario) {
+        if (message.member.hasPermission('ADMINISTRATOR' && agrs.usuario)) {
+            if (agrs.usuario) {
                 let texto = args.usuario;
                 let finalizado = false;
                 let arrayOpciones = [];
