@@ -33,7 +33,7 @@ class SorteoCommand extends commando.Command {
     async run(message, args) {
         if (message.member.hasPermission('ADMINISTRATOR') && args.accion) {
             if (args.accion === 'sortear' && args.usuario) {
-                let texto = args.opciones;
+                let texto = args.usuario;
                 let finalizado = false;
                 let arrayOpciones = [];
                 let ini = -1;
