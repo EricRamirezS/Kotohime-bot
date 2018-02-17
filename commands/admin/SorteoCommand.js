@@ -13,13 +13,6 @@ class SorteoCommand extends commando.Command {
             examples: ['rol listar', 'rol obtener [rol]', 'rol abandonar [rol]'],
             args: [
                 {
-                    key: 'accion',
-                    prompt: '',
-                    type: 'string',
-                    default: ''
-                }
-                ,
-                {
                     key: 'usuario',
                     prompt: '',
                     type: 'string',
@@ -31,8 +24,8 @@ class SorteoCommand extends commando.Command {
     }
 
     async run(message, args) {
-        if (message.member.hasPermission('ADMINISTRATOR') && args.accion) {
-            if (args.accion === 'sortear' && args.usuario) {
+        if (message.member.hasPermission('ADMINISTRATOR')) {
+            if (args.usuario) {
                 let texto = args.usuario;
                 let finalizado = false;
                 let arrayOpciones = [];
