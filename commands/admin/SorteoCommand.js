@@ -70,8 +70,30 @@ class SorteoCommand extends commando.Command {
                 choose = Math.floor(Math.random() * arrayOpciones.length);
                 let ganador3 = arrayOpciones[choose];
                 arrayOpciones.splice(choose, 1);
-                message.channel.send("¡El primer afortunado/a en ganar TTS es " + ganador + "!");
-                message.channel.send("El siguiente ganador se informará en ***1*** minuto.").then((msg) => {
+                message.channel.send("¡El primer afortunado en ganar TTS es " + ganador + "!");
+                let msg = await message.channel.send("El siguiente ganador se informará en ***1*** minuto.");
+                for (let i = 59; i > 1; i--) {
+                    await sleep(1000);
+                    await msg.edit("El siguiente ganador se informará en ***" + i + "*** segundos.");
+                }
+                await sleep(1000);
+                await msg.edit("El siguiente ganador se informará en ***1*** segundo.");
+                await sleep(1000);
+                await msg.edit("El siguiente ganador se informará en ***0*** segundos.");
+                await message.channel.send("¡El segundo afortunado en ganar TTS es " + ganador2 + "!");
+                msg = await message.channel.send("El siguiente ganador se informará en ***1*** minuto.");
+                for (let i = 59; i > 1; i--) {
+                    await sleep(1000);
+                    await msg.edit("El siguiente ganador se informará en ***" + i + "*** segundos.");
+                }
+                await sleep(1000);
+                await msg.edit("El siguiente ganador se informará en ***1*** segundo.");
+                await sleep(1000);
+                await msg.edit("El siguiente ganador se informará en ***0*** segundos.");
+                await message.channel.send("¡El primer afortunado en ganar TTS es " + ganador3 + "!");
+                await sleep(5000);
+                message.channel.send("¡Felicidades a los ganadores!");
+                /*.then((msg) => {
                     for (let i = 59; i > 1; i--) {
                         sleep(1000);
                         msg.edit("El siguiente ganador se informará en ***" + i + "*** segundos.");
@@ -80,22 +102,20 @@ class SorteoCommand extends commando.Command {
                     msg.edit("El siguiente ganador se informará en ***1*** segundo.");
                     sleep(1000);
                     msg.edit("El siguiente ganador se informará en ***0*** segundos.");
-                    message.channel.send("¡El segundo afortunado/a en ganar TTS es " + ganador2 + "!");
-                    message.channel.send("El siguiente ganador se informará en ***1*** minuto.").then((msg) => {
-                        for (let i = 59; i > 1; i--) {
-                            sleep(1000);
-                            msg.edit("El siguiente ganador se informará en ***" + i + "*** segundos.");
-                        }
-                        sleep(1000);
-                        msg.edit("El siguiente ganador se informará en ***1*** segundo.");
-                        sleep(1000);
-                        msg.edit("El siguiente ganador se informará en ***0*** segundos.");
-                        message.channel.send("¡El primer afortunado/a en ganar TTS es " + ganador3 + "!");
-                        message.channel.send("¡Felicidades a los ganadores!");
-                    });
-
                 });
-
+                message.channel.send("¡El segundo afortunado en ganar TTS es " + ganador2 + "!");
+                await message.channel.send("El siguiente ganador se informará en ***1*** minuto.").then((msg) => {
+                    for (let i = 59; i > 1; i--) {
+                        sleep(1000);
+                        msg.edit("El siguiente ganador se informará en ***" + i + "*** segundos.");
+                    }
+                    sleep(1000);
+                    msg.edit("El siguiente ganador se informará en ***1*** segundo.");
+                    sleep(1000);
+                    msg.edit("El siguiente ganador se informará en ***0*** segundos.");
+                });
+                message.channel.send("¡El primer afortunado en ganar TTS es " + ganador3 + "!");
+                message.channel.send("¡Felicidades a los ganadores!");*/
             }
         } else {
             let mensaje = "**¿Te interesa obtener Tabletop Simulator?** ¡Pues tienes la oportunidad de obtenerlo ***gratis***!\n" +
