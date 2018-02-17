@@ -24,8 +24,8 @@ class SorteoCommand extends commando.Command {
     }
 
     async run(message, args) {
-        if (message.member.hasPermission('ADMINISTRATOR') && agrs.usuario) {
-            if (agrs.usuario) {
+        if (message.member.hasPermission('ADMINISTRATOR') && args.usuario) {
+            if (args.usuario) {
                 console.log('1');
                 let texto = args.usuario;
                 let finalizado = false;
