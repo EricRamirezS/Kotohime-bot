@@ -26,14 +26,11 @@ class SorteoCommand extends commando.Command {
     async run(message, args) {
         if (message.member.hasPermission('ADMINISTRATOR') && args.usuario) {
             if (args.usuario) {
-                console.log('1');
                 let texto = args.usuario;
                 let finalizado = false;
                 let arrayOpciones = [];
-                console.log('2');
                 let ini = -1;
                 let fin = -1;
-                console.log('3');
                 while (!finalizado) {
                     ini = -1;
                     fin = -1;
@@ -47,7 +44,6 @@ class SorteoCommand extends commando.Command {
                             }
                         }
                     }
-                    console.log('4');
                     if (ini === -1 && fin === -1) {
                         finalizado = true;
                     } else {
@@ -57,7 +53,6 @@ class SorteoCommand extends commando.Command {
                         arrayOpciones.push(subStr);
                     }
                 }
-                console.log('5');
                 let arrayOpciones2 = texto.split(" ");
                 for (let i = 0; i < arrayOpciones2.length; i++) {
                     arrayOpciones.push(arrayOpciones2[i])
@@ -66,43 +61,38 @@ class SorteoCommand extends commando.Command {
                     if (arrayOpciones[i] === '')
                         arrayOpciones.splice(i, 1);
                 }
-                console.log('6');
                 let choose = Math.floor(Math.random() * arrayOpciones.length);
                 let ganador = arrayOpciones[choose];
                 arrayOpciones.splice(choose, 1);
-                console.log('7');
                 choose = Math.floor(Math.random() * arrayOpciones.length);
                 let ganador2 = arrayOpciones[choose];
                 arrayOpciones.splice(choose, 1);
                 choose = Math.floor(Math.random() * arrayOpciones.length);
                 let ganador3 = arrayOpciones[choose];
-                console.log('8');
                 arrayOpciones.splice(choose, 1);
-                message.channel.send("¡El primer afortunado en ganar TTS es" + ganador + "!");
-                message.channel.send("El siguiente ganador se informará en 1 minuto.").then((msg) => {
-                    for (let i = 59; i > 1; i--) {
-                        console.log('9');
-                        sleep(1000);
-                        console.log('10');
-                        msg.edit("El siguiente ganador se informará en " + i + " segundos.");
-                    }
-                    sleep(1000);
-                    msg.edit("El siguiente ganador se informará en 1 segundo.");
-                    sleep(1000);
-                    msg.edit("El siguiente ganador se informará en 0 segundo.");
-                });
-                message.channel.send("¡El primer afortunado en ganar TTS es" + ganador2 + "!");
-                message.channel.send("El siguiente ganador se informará en 1 minuto.").then((msg) => {
+                message.channel.send("¡El primer afortunado en ganar TTS es " + ganador + "!");
+                await message.channel.send("El siguiente ganador se informará en ***1*** minuto.").then((msg) => {
                     for (let i = 59; i > 1; i--) {
                         sleep(1000);
-                        msg.edit("El siguiente ganador se informará en " + i + " segundos.");
+                        msg.edit("El siguiente ganador se informará en ***" + i + "*** segundos.");
                     }
                     sleep(1000);
-                    msg.edit("El siguiente ganador se informará en 1 segundo.");
+                    msg.edit("El siguiente ganador se informará en ***1*** segundo.");
                     sleep(1000);
-                    msg.edit("El siguiente ganador se informará en 0 segundo.");
+                    msg.edit("El siguiente ganador se informará en ***0*** segundos.");
                 });
-                message.channel.send("¡El primer afortunado en ganar TTS es" + ganador3 + "!");
+                message.channel.send("¡El primer afortunado en ganar TTS es " + ganador2 + "!");
+                await message.channel.send("El siguiente ganador se informará en ***1*** minuto.").then((msg) => {
+                    for (let i = 59; i > 1; i--) {
+                        sleep(1000);
+                        msg.edit("El siguiente ganador se informará en ***" + i + "*** segundos.");
+                    }
+                    sleep(1000);
+                    msg.edit("El siguiente ganador se informará en ***1*** segundo.");
+                    sleep(1000);
+                    msg.edit("El siguiente ganador se informará en ***0*** segundos.");
+                });
+                message.channel.send("¡El primer afortunado en ganar TTS es " + ganador3 + "!");
                 message.channel.send("¡Felicidades a los ganadores!");
             }
         } else {
