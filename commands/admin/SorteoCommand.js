@@ -14,32 +14,93 @@ class SorteoCommand extends commando.Command {
             args: [
                 {
                     key: 'accion',
-                    prompt: '¿Qué desea hacer?',
+                    prompt: '',
                     type: 'string',
                     default: ''
                 }
                 ,
                 {
                     key: 'usuario',
-                    prompt: '¿Qué desea hacer?',
+                    prompt: '',
                     type: 'string',
                     default: ''
                 }
-            ],
-                participantes: []
+            ]
             }
         );
     }
 
     async run(message, args) {
         if (message.member.hasPermission('ADMINISTRATOR') && args.accion) {
-            if (args.accion === 'registrar' && args.usuario) {
-                participantes.push(usuario);
-            }
-            if (args.accion === 'sortear') {
-                let i = Math.floor(Math.random() * participantes.length);
-                message.channel.send(participantes[i]);
-                participantes.splice(i, 1);
+            if (args.accion === 'sortear' && args.usuario) {
+                let texto = args.opciones;
+                let finalizado = false;
+                let arrayOpciones = [];
+                let ini = -1;
+                let fin = -1;
+                while (!finalizado) {
+                    ini = -1;
+                    fin = -1;
+                    for (let i = 0; i < texto.length; i++) {
+                        if (texto.charAt(i) === '"') {
+                            if (ini === -1) {
+                                ini = i;
+                            } else {
+                                fin = i;
+                                break;
+                            }
+                        }
+                    }
+                    if (ini === -1 && fin === -1) {
+                        finalizado = true;
+                    } else {
+                        let subStr = texto.substr(ini, fin + 1);
+                        texto = texto.replace(subStr, '');
+                        subStr = subStr.replace("\" ", "\"");
+                        arrayOpciones.push(subStr);
+                    }
+                }
+                let arrayOpciones2 = texto.split(" ");
+                for (let i = 0; i < arrayOpciones2.length; i++) {
+                    arrayOpciones.push(arrayOpciones2[i])
+                }
+                for (let i = 0; i < arrayOpciones.length; i++) {
+                    if (arrayOpciones[i] === '')
+                        arrayOpciones.splice(i, 1);
+                }
+                choose = Math.floor(Math.random() * arrayOpciones.length);
+                let ganador = arrayOpciones[choose];
+                arrayOpciones.splice(choose, 1);
+                choose = Math.floor(Math.random() * arrayOpciones.length);
+                let ganador2 = arrayOpciones[choose];
+                arrayOpciones.splice(choose, 1);
+                choose = Math.floor(Math.random() * arrayOpciones.length);
+                let ganador3 = arrayOpciones[choose];
+                arrayOpciones.splice(choose, 1);
+                message.channel.send("¡El primer afortunado en ganar TTS es" + ganador + "!");
+                message.channel.send("El siguiente ganador se informará en 1 minuto.").then((msg) => {
+                    for (let i = 59; i > 1; i--) {
+                        sleep(1000);
+                        msg.edit("El siguiente ganador se informará en " + i + " segundos.");
+                    }
+                    sleep(1000);
+                    msg.edit("El siguiente ganador se informará en 1 segundo.");
+                    sleep(1000);
+                    msg.edit("El siguiente ganador se informará en 0 segundo.");
+                });
+                message.channel.send("¡El primer afortunado en ganar TTS es" + ganador2 + "!");
+                message.channel.send("El siguiente ganador se informará en 1 minuto.").then((msg) => {
+                    for (let i = 59; i > 1; i--) {
+                        sleep(1000);
+                        msg.edit("El siguiente ganador se informará en " + i + " segundos.");
+                    }
+                    sleep(1000);
+                    msg.edit("El siguiente ganador se informará en 1 segundo.");
+                    sleep(1000);
+                    msg.edit("El siguiente ganador se informará en 0 segundo.");
+                });
+                message.channel.send("¡El primer afortunado en ganar TTS es" + ganador3 + "!");
+                message.channel.send("¡Felicidades a los ganadores!");
             }
         } else {
             let mensaje = "**¿Te interesa obtener Tabletop Simulator?** ¡Pues tienes la oportunidad de obtenerlo ***gratis***!\n" +
@@ -63,15 +124,8 @@ class SorteoCommand extends commando.Command {
 
 }
 
-function writeData(savPath, srcPath, newData) {
-    fs.readFile(srcPath, 'utf8', function (err, data) {
-        if (err) throw err;
-        //Do your processing, MD5, send a satellite to the moon, etc.
-        fs.writeFile(savPath, data + '\n' + newData, function (err) {
-            if (err) throw err;
-            console.log('complete');
-        });
-    });
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 module.exports = SorteoCommand;
