@@ -65,6 +65,7 @@ bot2.on('disconnect', function(erMsg, code) {
 function conectarBot() {
     bot.login(process.env.BOT_TOKEN1).then(function () {
         console.log("Bot conectado");
+        bot.user.setUsername("HouraiESP");
     }).catch(function () {
         console.log("bot no conectado");
         setTimeout(function () {
@@ -76,6 +77,7 @@ function conectarBot() {
 function conectarBot2() {
     bot2.login(process.env.BOT_TOKEN2).then(function () {
         console.log("Bot2 conectado");
+        bot2.user.setUsername("HouraiESP");
     }).catch(function () {
         console.log("bot2 no conectado");
         setTimeout(function () {
