@@ -95,7 +95,7 @@ conectarBots();
 
 
 async function sorteo(message) {
-    let channel = message.guild.channels.find("id", "386367860231897088");
+    let channel = message.guild.channels.find("id", "414736061890166794");
     let participantes = [' <@223614327440146433> ', ' <@387063235821568000> ', ' @HouraiESP#7349 ', ' @bastykjhq#4536 '];
     channel.startTyping();
     await sleep(10000);
