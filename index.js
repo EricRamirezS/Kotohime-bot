@@ -94,11 +94,11 @@ conectarBots();
 
 async function sorteo(message) {
     let channel = message.guild.channels.find("id", "386367860231897088");
-    let participantes = [' @Skylur#5684 ', ' @HouraiESP#6498 ', ' @HouraiESP#7349 ', ' @bastykjhq#4536 '];
+    let participantes = [' <@223614327440146433> ', ' <@387063235821568000> ', ' @HouraiESP#7349 ', ' @bastykjhq#4536 '];
     channel.startTyping();
     await sleep(10000);
     channel.stopTyping(true);
-    channel.send('Muy bien @Skylur#5684 , comenzaré con los preparativos del sorteo.');
+    channel.send('Muy bien '+message.author.toString()+', comenzaré con los preparativos del sorteo.');
     channel.startTyping();
     await sleep(15000);
     channel.stopTyping(true);
@@ -154,16 +154,12 @@ async function sorteo(message) {
 
     await message.channel.send("¡El segundo afortunado en ganar TTS es " + ganador2 + "!");
     sleep(1000).then(async function (value) {
-        let avatarURL = channel.members.find('name', ganador2).avatarURL;
+
         channel.send(' :nani: ');
         channel.startTyping();
         await sleep(2000);
         channel.stopTyping(true);
-        channel.send('¡Nunca imaginé que tu serías el siguiente ganador, ' + ganador2 + '!.', {
-            files: [
-                avatarURL
-            ]
-        });
+        channel.send('¡Nunca imaginé que tu serías el siguiente ganador, ' + ganador2 + '!.');
         channel.startTyping();
         await sleep(12000);
         channel.stopTyping(true);
@@ -197,13 +193,9 @@ async function sorteo(message) {
     channel.startTyping();
     await sleep(10000);
     channel.stopTyping(true);
-    let avatarURL = channel.members.find('name', ganador3).avatarURL;
+
     channel.send('El momento de mayor tensión se lo lleva el ultimo ganador, el ultimo premio, todo o nada\n' +
-        '¿Cómo se sintió esa presión ' + ganador3 + ' ?', {
-        files: [
-            avatarURL
-        ]
-    });
+        '¿Cómo se sintió esa presión ' + ganador3 + ' ?');
 
 }
 
