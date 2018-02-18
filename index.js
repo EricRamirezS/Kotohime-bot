@@ -15,7 +15,7 @@ bot.on('message',function (message) {
     if (message.author.username.toString()!=='HouraiESP') {
         console.log(message.author.username + ": " + message.toString());
     }
-    if (message.toString() === 'Muy bien, es hora de comenzar el sorteo, <@387063235821568000>  , ¿Me harías los honores?' &&
+    if (message.toString() === 'Muy bien, es hora de comenzar el sorteo, <@387063235821568000> , ¿Me harías los honores?' &&
         message.author.username.toString() === 'Skylur') {
         sorteo(message);
     }
