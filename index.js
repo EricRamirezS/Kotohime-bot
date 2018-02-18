@@ -100,25 +100,25 @@ async function sorteo(message) {
     channel.startTyping();
     await sleep(10000);
     channel.stopTyping(true);
-    channel.send('Muy bien '+message.author.toString()+', comenzaré con los preparativos del sorteo.');
+    channel.send("Muy bien " + message.author.toString() + ", comenzaré con los preparativos del sorteo.");
     channel.startTyping();
     await sleep(15000);
     channel.stopTyping(true);
-    channel.send('Hey @everyone, (Usando ingles porque discord no tiene un @ todos)\n' +
-        'Daremos comienzo al sorteo por 3 TTS, ¿Quiénes podrán ser los afortunados en ganar? :concern: \n' +
-        'Aún no tengo ni la menor idea de quién se los llevará :notlikethis: ');
+    channel.send("Hey @everyone, (Usando ingles porque discord no tiene un @ todos)\n" +
+        "Daremos comienzo al sorteo por 3 TTS, ¿Quiénes podrán ser los afortunados en ganar? :concern: \n" +
+        "Aún no tengo ni la menor idea de quién se los llevará :notlikethis: ");
     channel.startTyping();
     await sleep(15000);
     channel.stopTyping(true);
-    let nombreParticipantes = '';
+    let nombreParticipantes = "";
     for (let i = 0; i < participantes.length; i++) {
         nombreParticipantes = nombreParticipantes + ' ' + participantes[i];
     }
-    channel.send('A nuestros participantes\n' +
-        nombreParticipantes + '' +
-        'Esten atentos, que cualquiera de ustedes puede ser el ganador :heal: ');
+    channel.send("A nuestros participantes\n" +
+        nombreParticipantes + "\n" +
+        "Esten atentos, que cualquiera de ustedes puede ser el ganador :heal: ");
     shuffle(participantes);
-    let largoOriginal = participantes;
+    let largoOriginal = participantes.length;
     let eleccion = Math.floor(Math.random() * participantes.length);
     let ganador = participantes[eleccion];
     participantes.splice(eleccion, 1);
@@ -131,25 +131,25 @@ async function sorteo(message) {
     channel.send("¡El primer afortunado en ganar TTS es " + ganador + "!");
     sleep(1000).then(async function (value) {
 
-        channel.send(':shock: ');
+        channel.send(":shock:");
         channel.startTyping();
         await sleep(3000);
         channel.stopTyping(true);
-        channel.send('¿Alguno de ustedes esperaba que ' + ganador + ' fuese el primer afortunado?')
+        channel.send("¿Alguno de ustedes esperaba que " + ganador + " fuese el primer afortunado?");
 
         channel.startTyping();
         await sleep(18000);
         channel.stopTyping(true);
-        channel.send('Digo, la probabilidad de que eso ocurriera era de ' + (100 / largoOriginal) + '%');
+        channel.send("Digo, la probabilidad de que eso ocurriera era de " + (100 / largoOriginal) + "%");
         channel.startTyping();
         await sleep(4000);
         channel.stopTyping(true);
-        channel.send('Aunque la probabilidad de que algún participante ganara era de 100% :eyeyousure: ');
+        channel.send("Aunque la probabilidad de que algún participante ganara era de 100% :eyeyousure: ");
         channel.startTyping();
         await sleep(20000);
         channel.stopTyping(true);
-        channel.send('Ya no sé ni lo que digo, así que mejor me cayo hasta que llegue el momento de anunciar al siguiente ganador :spoopy: \n\n' +
-            ganador + ' , en cuanto termine el sorteo, ponte en contacto con @Skylur#5684 para proceder a la recepción del premio.');
+        channel.send("Ya no sé ni lo que digo, así que mejor me cayo hasta que llegue el momento de anunciar al siguiente ganador :spoopy: \n\n" +
+            ganador + " , en cuanto termine el sorteo, ponte en contacto con @Skylur#5684 para proceder a la recepción del premio.");
     });
     let msg = await channel.send("El siguiente ganador se informará en ***5*** minutos.");
     await cuentaRegresiva(msg);
@@ -157,31 +157,31 @@ async function sorteo(message) {
     await message.channel.send("¡El segundo afortunado en ganar TTS es " + ganador2 + "!");
     sleep(1000).then(async function (value) {
 
-        channel.send(' :nani: ');
+        channel.send(":nani:");
         channel.startTyping();
         await sleep(2000);
         channel.stopTyping(true);
-        channel.send('¡Nunca imaginé que tu serías el siguiente ganador, ' + ganador2 + '!.');
+        channel.send("¡Nunca imaginé que tu serías el siguiente ganador, " + ganador2 + "!.");
         channel.startTyping();
         await sleep(12000);
         channel.stopTyping(true);
-        channel.send('Bueno, solo soy un `bot` ¿Siquiera puedo imaginar algo?\n' +
-            'Realmente no lo sé :notlikethis: ');
+        channel.send("Bueno, solo soy un `bot` ¿Siquiera puedo imaginar algo?\n" +
+            "Realmente no lo sé :notlikethis: ");
         channel.startTyping();
         await sleep(11000);
         channel.stopTyping(true);
-        channel.send(':itsjoke:');
+        channel.send(":itsjoke:");
         channel.startTyping();
         await sleep(9000);
         channel.stopTyping(true);
-        channel.send(':spooky: Bueno, realmente no sé si es una broma.');
-        channel.send(':disappointed_relieved:');
+        channel.send(":spooky: Bueno, realmente no sé si es una broma.");
+        channel.send(":disappointed_relieved:");
         channel.startTyping();
         await sleep(30000);
         channel.stopTyping(true);
-        channel.send('Creo que... mejor me iré a descansar un momento hasta que tenga que informar sobre el tercer ganador' +
-            '... Creo que ya me deprimí... lo siento... :cold_sweat: \n\n' +
-            ganador2 + ' , En cuanto termine el sorteo, ponte en contacto con @Skylur#5684 para proceder a la recepción del premio.\'');
+        channel.send("Creo que... mejor me iré a descansar un momento hasta que tenga que informar sobre el tercer ganador" +
+            "... Creo que ya me deprimí... lo siento... :cold_sweat: \n\n" +
+            ganador2 + " , En cuanto termine el sorteo, ponte en contacto con @Skylur#5684 para proceder a la recepción del premio.");
 
     });
     msg = await message.channel.send("El siguiente ganador se informará en ***5*** minuto.");
@@ -196,8 +196,8 @@ async function sorteo(message) {
     await sleep(10000);
     channel.stopTyping(true);
 
-    channel.send('El momento de mayor tensión se lo lleva el ultimo ganador, el ultimo premio, todo o nada\n' +
-        '¿Cómo se sintió esa presión ' + ganador3 + ' ?');
+    channel.send("El momento de mayor tensión se lo lleva el ultimo ganador, el ultimo premio, todo o nada\n" +
+        "¿Cómo se sintió esa presión " + ganador3 + " ?");
 
 }
 
