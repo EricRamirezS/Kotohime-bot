@@ -128,7 +128,7 @@ async function sorteo(message) {
     participantes.splice(eleccion, 1);
     channel.send("¡El primer afortunado en ganar TTS es " + ganador + "!");
     sleep(1000).then(async function (value) {
-        let avatarURL = message.server.users.find('name', ganador).avatarURL;
+        let avatarURL = channel.members.find('name', ganador).avatarURL;
         channel.send(':shock: ');
         channel.startTyping();
         await sleep(3000);
@@ -157,7 +157,7 @@ async function sorteo(message) {
 
     await message.channel.send("¡El segundo afortunado en ganar TTS es " + ganador2 + "!");
     sleep(1000).then(async function (value) {
-        let avatarURL = message.server.users.find('name', ganador2).avatarURL;
+        let avatarURL = channel.members.find('name', ganador2).avatarURL;
         channel.send(' :nani: ');
         channel.startTyping();
         await sleep(2000);
@@ -200,7 +200,7 @@ async function sorteo(message) {
     channel.startTyping();
     await sleep(10000);
     channel.stopTyping(true);
-    let avatarURL = message.server.users.find('name', ganador3).avatarURL;
+    let avatarURL = channel.members.find('name', ganador3).avatarURL;
     channel.send('El momento de mayor tensión se lo lleva el ultimo ganador, el ultimo premio, todo o nada\n' +
         '¿Cómo se sintió esa presión ' + ganador3 + ' ?', {
         files: [
