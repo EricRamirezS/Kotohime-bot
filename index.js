@@ -22,12 +22,12 @@ bot.on('message',function (message) {
 });
 
 bot2.on("guildMemberAdd",function(member){
-    let chan = member.guild.channels.find("id","386366248306343937");
+    let chan = member.guild.channels.find("name","voz");
     chan.send(member+" se ha unido al servidor.");
 });
 
 bot2.on("guildMemberRemove",function(member){
-    var chan = member.guild.channels.find("id","386366248306343937");
+    var chan = member.guild.channels.find("name","voz");
     chan.send(member+" ha dejado el servidor.");
 });
 
