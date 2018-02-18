@@ -94,7 +94,7 @@ conectarBots();
 
 async function sorteo(message) {
     let channel = message.guild.channels.find("id", "386367860231897088");
-    let participantes = ['@Skylur#5684', 'HouraiESP#6498', '@HouraiESP#7349', '@bastykjhq#4536'];
+    let participantes = [' @Skylur#5684 ', ' @HouraiESP#6498 ', ' @HouraiESP#7349 ', ' @bastykjhq#4536 '];
     channel.startTyping();
     await sleep(10000);
     channel.stopTyping(true);
@@ -128,16 +128,13 @@ async function sorteo(message) {
     participantes.splice(eleccion, 1);
     channel.send("¡El primer afortunado en ganar TTS es " + ganador + "!");
     sleep(1000).then(async function (value) {
-        let avatarURL = channel.members.find('name', ganador).avatarURL;
+
         channel.send(':shock: ');
         channel.startTyping();
         await sleep(3000);
         channel.stopTyping(true);
-        channel.send('¿Alguno de ustedes esperaba que ' + ganador + ' fuese el primer afortunado?', {
-            files: [
-                avatarURL
-            ]
-        });
+        channel.send('¿Alguno de ustedes esperaba que ' + ganador + ' fuese el primer afortunado?')
+
         channel.startTyping();
         await sleep(18000);
         channel.stopTyping(true);
