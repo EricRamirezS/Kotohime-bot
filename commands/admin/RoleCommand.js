@@ -61,6 +61,7 @@ class RoleCommand extends commando.Command {
                                         "-"
                                         +
                                         nombreRol.split("-")[1].toUpperCase();
+                                    console.log(mensajeFinal);
                                     role = message.guild.roles.find("name", mensajeFinal);
                                     guildMember = message.guild.members.get(message.author.id + '');
                                     guildMember.addRole(role).then(function (value) {
