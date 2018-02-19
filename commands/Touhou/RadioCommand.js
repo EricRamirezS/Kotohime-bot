@@ -42,7 +42,7 @@ class RadioCommand extends commando.Command {
                     .addField('Artista', artistaCancion)
                     .addField('Album', albumCancion+albumID)
                     .addField('Circulo', circleCancion+circleURL)
-                    .setURL('http://gensokyoradio.net');
+                    .setURL('https://gensokyoradio.net/music/playing/');
                 message.channel.send(embed);
             });
     }
