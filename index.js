@@ -98,7 +98,7 @@ async function sorteo(message) {
     let channel = message.guild.channels.find("id", "414736061890166794");
     if (true) {
         let Skylur = '<@223614327440146433>';
-        console.log(channel.users.find("id", Skylur.replace("<@", "").replace(">", "")).presence.status === "online");
+        console.log(message.guild.members.find("id", Skylur.replace("<@", "").replace(">", "")).presence.status === "online");
     }
     let participantes = [
         '<@391260932006871041>',
