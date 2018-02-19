@@ -27,6 +27,8 @@ class RoleCommand extends commando.Command {
     }
 
     async run(message, args) {
+        if (args.accion) console.log(args.accion);
+        if (args.Nombre_Rol) console.log(args.Nombre_Rol);
         if (args.accion) {
             try {
                 let accion = args.accion.toLowerCase();
@@ -51,7 +53,7 @@ class RoleCommand extends commando.Command {
                                 case "danmaku-na":
                                 case "danmaku-sea":
                                     let mensajeFinal =
-                                        nombreRol.split("-")[0].charAt(0).toLowerCase()
+                                        nombreRol.split("-")[0].toLowerCase()
                                         +
                                         "-"
                                         +
@@ -64,9 +66,9 @@ class RoleCommand extends commando.Command {
                                     break;
                                 case "danmaku-preguntar":
                                 case "danmaku-ahora":
-                                    let role = message.guild.roles.find("name", args.Nombre_Rol.toLowerCase());
-                                    let guildMember = message.guild.members.get(message.author.id + '');
-                                    guildMember.addRole().then(function (value) {
+                                    role = message.guild.roles.find("name", args.Nombre_Rol.toLowerCase());
+                                    guildMember = message.guild.members.get(message.author.id + '');
+                                    guildMember.addRole(role).then(function (value) {
                                         message.channel.send(":thumbsup:")
                                     });
                                     break;
@@ -88,7 +90,7 @@ class RoleCommand extends commando.Command {
                                 case "danmaku-na":
                                 case "danmaku-sea":
                                     let mensajeFinal =
-                                        nombreRol.split("-")[0].charAt(0).toLowerCase()
+                                        nombreRol.split("-")[0].toLowerCase()
                                         +
                                         "-"
                                         +
@@ -101,9 +103,9 @@ class RoleCommand extends commando.Command {
                                     break;
                                 case "danmaku-preguntar":
                                 case "danmaku-ahora":
-                                    let role = message.guild.roles.find("name", args.Nombre_Rol.toLowerCase());
-                                    let guildMember = message.guild.members.get(message.author.id + '');
-                                    guildMember.removeRole().then(function (value) {
+                                    role = message.guild.roles.find("name", args.Nombre_Rol.toLowerCase());
+                                    guildMember = message.guild.members.get(message.author.id + '');
+                                    guildMember.removeRole(role).then(function (value) {
                                         message.channel.send(":thumbsup:")
                                     });
                                 default:
