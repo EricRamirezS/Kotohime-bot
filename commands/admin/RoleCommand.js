@@ -45,26 +45,29 @@ class RoleCommand extends commando.Command {
                     try{
                         var nombreRol = args.Nombre_Rol.toLowerCase();
                         switch (nombreRol) {
-                            case "danmaku-ahora":
-                            case "danmaku-sudamerica":
-                            case "danmaku-europa":
-                            case "danmaku-norteamerica":
-                            case "danmaku-preguntar":
-                                var mensajeFinal =
-                                    nombreRol.split("-")[0].charAt(0).toUpperCase()
-                                    +
-                                    nombreRol.split("-")[0].slice(1)
+                            case "danmaku-las":
+                            case "danmaku-eu":
+                            case "danmaku-na":
+                            case "danmaku-sea":
+                                let mensajeFinal =
+                                    nombreRol.split("-")[0].charAt(0).toLowerCase()
                                     +
                                     "-"
                                     +
-                                    nombreRol.split("-")[1].charAt(0).toUpperCase()
-                                    +
-                                    nombreRol.split("-")[1].slice(1);
-                                var role = message.guild.roles.find("name",mensajeFinal);
-                                var guildMember = message.guild.members.get(message.author.id+'');
-                                guildMember.addRole(role);
-                                message.channel.send(":thumbsup:");
+                                    nombreRol.split("-")[1].toUpperCase()
+                                let role = message.guild.roles.find("name", mensajeFinal);
+                                let guildMember = message.guild.members.get(message.author.id + '');
+                                guildMember.addRole(role).then(function (value) {
+                                    message.channel.send(":thumbsup:")
+                                });
                                 break;
+                            case "danmaku-preguntar":
+                            case "danmaku-ahora":
+                                let role = message.guild.roles.find("name", args.Nombre_Rol.toLowerCase());
+                                let guildMember = message.guild.members.get(message.author.id + '');
+                                guildMember.addRole().then(function (value) {
+                                    message.channel.send(":thumbsup:")
+                                });
                             default: throw new Error();
                         }
                     }
@@ -77,9 +80,10 @@ class RoleCommand extends commando.Command {
                     var nombreRol = args.Nombre_Rol.toLowerCase();
                     switch (nombreRol) {
                         case "danmaku-ahora":
-                        case "danmaku-sudamerica":
-                        case "danmaku-europa":
-                        case "danmaku-norteamerica":
+                        case "danmaku-las":
+                        case "danmaku-eu":
+                        case "danmaku-na":
+                        case "danmaku-sea":
                         case "danmaku-preguntar":
                             var mensajeFinal =
                                 nombreRol.split("-")[0].charAt(0).toUpperCase()
