@@ -96,7 +96,7 @@ conectarBots();
 
 async function sorteo(message) {
     let channel = message.guild.channels.find("id", "414736061890166794");
-    let participantes = [' <@223614327440146433> ', ' <@387063235821568000> ', ' @HouraiESP#7349 ', ' @bastykjhq#4536 '];
+    let participantes = [' <@223614327440146433> ', ' <@387063235821568000> ', ' <@386007907113762816> ', ' <@381880349988487168> '];
     channel.startTyping();
     await sleep(10000);
     channel.stopTyping(true);
@@ -106,7 +106,7 @@ async function sorteo(message) {
     channel.stopTyping(true);
     channel.send("Hey @everyone, (Usando ingles porque discord no tiene un @ todos)\n" +
         "Daremos comienzo al sorteo por 3 TTS, ¿Quiénes podrán ser los afortunados en ganar? :concern: \n" +
-        "Aún no tengo ni la menor idea de quién se los llevará :notlikethis: ");
+        "Aún no tengo ni la menor idea de quién se los llevará <:notlikethis:414937361542283265> ");
     channel.startTyping();
     await sleep(15000);
     channel.stopTyping(true);
@@ -122,9 +122,11 @@ async function sorteo(message) {
     let eleccion = Math.floor(Math.random() * participantes.length);
     let ganador = participantes[eleccion];
     participantes.splice(eleccion, 1);
+    shuffle(participantes);
     eleccion = Math.floor(Math.random() * participantes.length);
     let ganador2 = participantes[eleccion];
     participantes.splice(eleccion, 1);
+    shuffle(participantes);
     eleccion = Math.floor(Math.random() * participantes.length);
     let ganador3 = participantes[eleccion];
     participantes.splice(eleccion, 1);
@@ -154,7 +156,9 @@ async function sorteo(message) {
     let msg = await channel.send("El siguiente ganador se informará en ***5*** minutos.");
     await cuentaRegresiva(msg);
 
-    await message.channel.send("¡El segundo afortunado en ganar TTS es " + ganador2 + "!");
+    console.log("informando segundo ganador");
+
+    await channel.send("¡El segundo afortunado en ganar TTS es " + ganador2 + "!");
     sleep(1000).then(async function (value) {
 
         channel.send(":nani:");
@@ -187,11 +191,11 @@ async function sorteo(message) {
     msg = await message.channel.send("El siguiente ganador se informará en ***5*** minuto.");
     await cuentaRegresiva(msg);
 
-    await message.channel.send("¡El tercer y ultimo afortunado en ganar TTS es " + ganador3 + "!");
+    await channel.send("¡El tercer y ultimo afortunado en ganar TTS es " + ganador3 + "!");
     channel.startTyping();
     await sleep(5000);
     channel.stopTyping(true);
-    message.channel.send(":lifestar: :lifestar: :lifestar: :lifestar: :lifestar: ");
+    channel.send(":lifestar: :lifestar: :lifestar: :lifestar: :lifestar: ");
     channel.startTyping();
     await sleep(10000);
     channel.stopTyping(true);
