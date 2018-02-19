@@ -96,6 +96,10 @@ conectarBots();
 
 async function sorteo(message) {
     let channel = message.guild.channels.find("id", "414736061890166794");
+    if (true) {
+        let Skylur = '<@223614327440146433>';
+        console.log(channel.users.find("id", Skylur.replace("<@", "").replace(">", "")).presence.status === "online");
+    }
     let participantes = [
         '<@391260932006871041>',
         '<@206523987969310722>',
@@ -177,18 +181,11 @@ async function sorteo(message) {
         await sleep(16000);
         channel.stopTyping(true);
 
-        channel.send("Por cierto, sobre lo ocurrido la otra noche.");
+        channel.send("Por cierto, sobre lo ocurrido la otra noche...");
         await sleep(700);
         channel.send("<:gayingensokyo:414776794760216587>");
         channel.startTyping();
-        await sleep(13500);
-        channel.stopTyping(true);
-        channel.send("Por cierto, sobre lo ocurrido la otra noche...");
-        await sleep(1000);
-        channel.send("<:eeeeeeehhh:414776794537787397>");
-        channel.startTyping();
-        await sleep(12400);
-        channel.stopTyping(true);
+        await sleep(25000);
         channel.send("FUE CULPA DE MARISA :japanese_goblin:");
         channel.startTyping();
         await sleep(14000);
@@ -254,9 +251,10 @@ async function sorteo(message) {
     await sleep(10000);
     channel.stopTyping(true);
 
-    channel.send("El momento de mayor tensión se lo lleva el ultimo ganador, el ultimo premio, todo o nada\n" +
-        "¿Cómo se sintió esa tensión " + ganador3 + " ?");
-
+    channel.send("El momento de mayor tensión se lo lleva el ultimo ganador, el ultimo premio, todo o nada");
+    if (channel.users.find("id", ganador3.replace("<@", "").replace(">", "")).presence.status === "online") {
+        channel.send("¿Cómo se sintió esa tensión " + ganador3 + " ?")
+    }
     channel.startTyping();
     await sleep(50000);
     channel.stopTyping(true);
