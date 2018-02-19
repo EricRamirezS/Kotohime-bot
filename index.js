@@ -27,7 +27,7 @@ bot2.on("guildMemberAdd",function(member){
 });
 
 bot2.on("guildMemberRemove",function(member){
-    var chan = member.guild.channels.find("id","386366248306343937");
+    let chan = member.guild.channels.find("id", "386366248306343937");
     chan.send(member+" ha dejado el servidor.");
 });
 
@@ -96,10 +96,6 @@ conectarBots();
 
 async function sorteo(message) {
     let channel = message.guild.channels.find("id", "414736061890166794");
-    if (true) {
-        let Skylur = '<@248800096253247489>';
-        console.log(message.guild.members.find("id", Skylur.replace("<@", "").replace(">", "")).presence.status === "online");
-    }
     let participantes = [
         '<@391260932006871041>',
         '<@206523987969310722>',
@@ -132,24 +128,17 @@ async function sorteo(message) {
         "Esten atentos, que cualquiera de ustedes puede uno de los ganadores <:heal:414776769711702027> ");
     shuffle(participantes);
     let largoOriginal = participantes.length;
-    let eleccion = Math.floor(Math.random() * participantes.length);
+    let eleccion = Math.floor(getRandomNumber() * participantes.length);
     let ganador = participantes[eleccion];
     participantes.splice(eleccion, 1);
-    shuffle(participantes);
-    eleccion = Math.floor(Math.random() * participantes.length);
-    let ganador2 = participantes[eleccion];
-    participantes.splice(eleccion, 1);
-    shuffle(participantes);
-    eleccion = Math.floor(Math.random() * participantes.length);
-    let ganador3 = participantes[eleccion];
-    participantes.splice(eleccion, 1);
+
     await sleep(60000);
     channel.startTyping();
     await sleep(7500);
     channel.stopTyping(true);
     channel.send("¡El primer afortunado en ganar TTS es " + ganador + "!");
 
-    sleep(10000).then(async function (value) {
+    sleep(10000).then(async function () {
 
         channel.send("<:shock:414941160793178112>");
 
@@ -164,10 +153,6 @@ async function sorteo(message) {
         channel.stopTyping(true);
 
         channel.send("Digo, la probabilidad de que eso ocurriera era de " + (100 / largoOriginal) + "%");
-
-        channel.startTyping();
-        await sleep(10000);
-        channel.stopTyping(true);
 
         channel.send("Aunque la probabilidad de que algún participante ganara era de 100% <:eyeyousure:414776794651033620> ");
 
@@ -209,8 +194,12 @@ async function sorteo(message) {
 
     console.log("informando segundo ganador");
 
+    shuffle(participantes);
+    eleccion = Math.floor(getRandomNumber() * participantes.length);
+    let ganador2 = participantes[eleccion];
+    participantes.splice(eleccion, 1);
     await channel.send("¡El segundo afortunado en ganar TTS es " + ganador2 + "!");
-    sleep(1000).then(async function (value) {
+    sleep(1000).then(async function () {
 
         channel.send("<:nani:414776793950715915>");
         channel.startTyping();
@@ -229,19 +218,20 @@ async function sorteo(message) {
         channel.startTyping();
         await sleep(9000);
         channel.stopTyping(true);
-        channel.send("<:spooky:414776796333211668> Bueno, realmente no sé si es una broma.");
+        channel.send("<:spooky:414776796333211668> Bueno, realmente no sé si es una broma...");
         channel.send(":disappointed_relieved:");
         channel.startTyping();
         await sleep(30000);
         channel.stopTyping(true);
-        channel.send("Creo que... mejor me iré a descansar un momento hasta que tenga que informar sobre el tercer ganador" +
-            "... Creo que ya me deprimí... lo siento... :cold_sweat: \n\n" +
-            ganador2 + " , En cuanto termine el sorteo, ponte en contacto con <@223614327440146433> para proceder a la recepción del premio.");
+        channel.send("En fin... cambiando de tema.");
 
     });
     msg = await message.channel.send("_\nEl siguiente ganador se informará en ***5*** minuto.\n_");
     await cuentaRegresiva(msg);
 
+    shuffle(participantes);
+    eleccion = Math.floor(getRandomNumber() * participantes.length);
+    let ganador3 = participantes[eleccion];
     await channel.send("¡El tercer y ultimo afortunado en ganar TTS es " + ganador3 + "!");
     channel.startTyping();
     await sleep(5000);
@@ -252,9 +242,6 @@ async function sorteo(message) {
     channel.stopTyping(true);
 
     channel.send("El momento de mayor tensión se lo lleva el ultimo ganador, el ultimo premio, todo o nada");
-    if (channel.users.find("id", ganador3.replace("<@", "").replace(">", "")).presence.status === "online") {
-        channel.send("¿Cómo se sintió esa tensión " + ganador3 + " ?")
-    }
     channel.startTyping();
     await sleep(50000);
     channel.stopTyping(true);
@@ -318,4 +305,13 @@ function shuffle(a) {
         [a[i], a[j]] = [a[j], a[i]];
     }
     return a;
+}
+
+function getRandomNumber() {
+    let hrTime = process.hrtime();
+    let number = hrTime[0] * 1000000000 + hrTime[1];
+    while (number > 1) {
+        number /= 10;
+    }
+    return number
 }
