@@ -27,8 +27,6 @@ class RoleCommand extends commando.Command {
     }
 
     async run(message, args) {
-        if (args.accion) console.log(args.accion);
-        if (args.Nombre_Rol) console.log(args.Nombre_Rol);
         let role;
         let guildMember;
         if (args.accion) {
@@ -52,6 +50,7 @@ class RoleCommand extends commando.Command {
                             let nombreRol = args.Nombre_Rol.toLowerCase();
                             switch (nombreRol) {
                                 case "danmaku-las":
+                                case "danmaku-lan":
                                 case "danmaku-eu":
                                 case "danmaku-na":
                                 case "danmaku-sea":
@@ -61,7 +60,6 @@ class RoleCommand extends commando.Command {
                                         "-"
                                         +
                                         nombreRol.split("-")[1].toUpperCase();
-                                    console.log(mensajeFinal);
                                     role = message.guild.roles.find("name", mensajeFinal);
                                     guildMember = message.guild.members.get(message.author.id + '');
                                     guildMember.addRole(role).then(function (value) {
@@ -90,6 +88,7 @@ class RoleCommand extends commando.Command {
                             let nombreRol = args.Nombre_Rol.toLowerCase();
                             switch (nombreRol) {
                                 case "danmaku-las":
+                                case "danmaku-lan":
                                 case "danmaku-eu":
                                 case "danmaku-na":
                                 case "danmaku-sea":
