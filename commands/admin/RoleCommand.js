@@ -29,6 +29,8 @@ class RoleCommand extends commando.Command {
     async run(message, args) {
         if (args.accion) console.log(args.accion);
         if (args.Nombre_Rol) console.log(args.Nombre_Rol);
+        let role;
+        let guildMember;
         if (args.accion) {
             try {
                 let accion = args.accion.toLowerCase();
@@ -36,9 +38,10 @@ class RoleCommand extends commando.Command {
                     case "listar":
                         let mensaje = "__Puedes escoger uno o más de los siguientes roles:__\n\n" +
                             "**Danmaku-Ahora**: Para aquellos usuarios que quieren jugar una partida de Danmaku en Tabletop Simulator en este preciso momento.\n" +
-                            "**Danmaku-Sudamerica**: Para usuarios que viven en sudamérica\n" +
-                            "**Danmaku-Europa**:Para usuarios que viven en Europa.\n" +
-                            "**Danmaku-Norteamerica**:Para usuarios que viven en Nortemaérica.\n" +
+                            "**Danmaku-LAS**: Para usuarios que viven en sudamérica\n" +
+                            "**Danmaku-EU**:Para usuarios que viven en Europa.\n" +
+                            "**Danmaku-NA**:Para usuarios que viven en Nortemaérica.\n" +
+                            "**Danmaku-SEA**:Para usuarios que viven en Asia/Oceania.\n" +
                             "**Danmaku-Preguntar**: Para usuarios que desean jugar una partida en Tabletop Simulator, pero no están seguros si pueden en este precismo momento.\n\n" +
                             "Para adquirir uno de estos roles, utiliza '~rol obtener nombre'\n" +
                             "Para abandonar uno de estos roles, utiliza '~rol abandonar nombre'\n";
@@ -58,8 +61,8 @@ class RoleCommand extends commando.Command {
                                         "-"
                                         +
                                         nombreRol.split("-")[1].toUpperCase()
-                                    let role = message.guild.roles.find("name", mensajeFinal);
-                                    let guildMember = message.guild.members.get(message.author.id + '');
+                                    role = message.guild.roles.find("name", mensajeFinal);
+                                    guildMember = message.guild.members.get(message.author.id + '');
                                     guildMember.addRole(role).then(function (value) {
                                         message.channel.send(":thumbsup:")
                                     });
@@ -95,8 +98,8 @@ class RoleCommand extends commando.Command {
                                         "-"
                                         +
                                         nombreRol.split("-")[1].toUpperCase()
-                                    let role = message.guild.roles.find("name", mensajeFinal);
-                                    let guildMember = message.guild.members.get(message.author.id + '');
+                                    role = message.guild.roles.find("name", mensajeFinal);
+                                    guildMember = message.guild.members.get(message.author.id + '');
                                     guildMember.removeRole(role).then(function (value) {
                                         message.channel.send(":thumbsup:")
                                     });
@@ -108,6 +111,7 @@ class RoleCommand extends commando.Command {
                                     guildMember.removeRole(role).then(function (value) {
                                         message.channel.send(":thumbsup:")
                                     });
+                                    break;
                                 default:
                                     throw new Error();
                             }
