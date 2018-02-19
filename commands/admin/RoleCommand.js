@@ -38,7 +38,7 @@ class RoleCommand extends commando.Command {
                             "**Danmaku-Ahora**: Para aquellos usuarios que quieren jugar una partida de Danmaku en Tabletop Simulator en este preciso momento.\n" +
                             "**Danmaku-LAS**: Para usuarios que viven en sudamérica\n" +
                             "**Danmaku-EU**:Para usuarios que viven en Europa.\n" +
-                            "**Danmaku-NA**:Para usuarios que viven en Nortemaérica.\n" +
+                            "**Danmaku-LAN**:Para usuarios que viven en Nortemaérica.\n" +
                             "**Danmaku-SEA**:Para usuarios que viven en Asia/Oceania.\n" +
                             "**Danmaku-Preguntar**: Para usuarios que desean jugar una partida en Tabletop Simulator, pero no están seguros si pueden en este precismo momento.\n\n" +
                             "Para adquirir uno de estos roles, utiliza '~rol obtener nombre'\n" +
