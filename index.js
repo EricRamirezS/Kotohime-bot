@@ -116,7 +116,7 @@ async function sorteo(message) {
     }
     channel.send("A nuestros participantes\n" +
         nombreParticipantes + "\n" +
-        "Esten atentos, que cualquiera de ustedes puede ser el ganador <:heal:414776769711702027> ");
+        "Esten atentos, que cualquiera de ustedes puede uno de los ganadores <:heal:414776769711702027> ");
     shuffle(participantes);
     let largoOriginal = participantes.length;
     let eleccion = Math.floor(Math.random() * participantes.length);
@@ -130,30 +130,75 @@ async function sorteo(message) {
     eleccion = Math.floor(Math.random() * participantes.length);
     let ganador3 = participantes[eleccion];
     participantes.splice(eleccion, 1);
+    await sleep(60000);
+    channel.startTyping();
+    await sleep(7500);
+    channel.stopTyping(true);
     channel.send("¡El primer afortunado en ganar TTS es " + ganador + "!");
+
     sleep(10000).then(async function (value) {
 
         channel.send("<:shock:414941160793178112>");
+
         channel.startTyping();
-        await sleep(3000);
+        await sleep(7000);
         channel.stopTyping(true);
+
         channel.send("¿Alguno de ustedes esperaba que " + ganador + " fuese el primer afortunado?");
 
         channel.startTyping();
         await sleep(18000);
         channel.stopTyping(true);
+
         channel.send("Digo, la probabilidad de que eso ocurriera era de " + (100 / largoOriginal) + "%");
+
         channel.startTyping();
-        await sleep(4000);
+        await sleep(10000);
         channel.stopTyping(true);
-        channel.send("Aunque la probabilidad de que algún participante ganara era de 100% :eyeyousure: ");
+
+        channel.send("Aunque la probabilidad de que algún participante ganara era de 100% <:eyeyousure:414776794651033620> ");
+
         channel.startTyping();
         await sleep(20000);
         channel.stopTyping(true);
-        channel.send("Ya no sé ni lo que digo, así que mejor me cayo hasta que llegue el momento de anunciar al siguiente ganador <:spoopy:414776794651033600> \n\n" +
-            ganador + " , en cuanto termine el sorteo, ponte en contacto con <@223614327440146433> para proceder a la recepción del premio.");
+
+        channel.send("Ya no sé ni lo que digo <:spoopy:414776794651033600>");
+
+        channel.startTyping();
+        await sleep(16000);
+        channel.stopTyping(true);
+
+        channel.send("Por cierto, sobre lo ocurrido la otra noche.");
+        await sleep(700);
+        channel.send("<:gayingensokyo:414776794760216587>");
+        channel.startTyping();
+        await sleep(13500);
+        channel.stopTyping(true);
+        channel.send("Por cierto, sobre lo ocurrido la otra noche...");
+        await sleep(1000);
+        channel.send("<:eeeeeeehhh:414776794537787397>");
+        channel.startTyping();
+        await sleep(12400);
+        channel.stopTyping(true);
+        channel.send("FUE CULPA DE MARISA :japanese_goblin:");
+        channel.startTyping();
+        await sleep(14000);
+        channel.stopTyping(true);
+        channel.send("Llegó con unos hongos :mushroom: raros, y convenció a Alice de concinarlos.");
+        channel.startTyping();
+        await sleep(1100);
+        channel.stopTyping(true);
+        channel.send("Creo que el aroma que desprendía debió afectarme.");
+        channel.send("<:himecry:414783518258888706>");
+        await sleep(60000);
+        channel.startTyping();
+        await sleep(2300);
+        channel.stopTyping(true);
+        channel.send("<:eeeeeeehhh:414776794537787397>");
+        channel.send("<:dodge:414776794579861524>");
+
     });
-    let msg = await channel.send("El siguiente ganador se informará en ***5*** minutos.");
+    let msg = await channel.send("_\nEl siguiente ganador se informará en ***5*** minutos.\n_");
     await cuentaRegresiva(msg);
 
     console.log("informando segundo ganador");
@@ -188,7 +233,7 @@ async function sorteo(message) {
             ganador2 + " , En cuanto termine el sorteo, ponte en contacto con <@223614327440146433> para proceder a la recepción del premio.");
 
     });
-    msg = await message.channel.send("El siguiente ganador se informará en ***5*** minuto.");
+    msg = await message.channel.send("_\nEl siguiente ganador se informará en ***5*** minuto.\n_");
     await cuentaRegresiva(msg);
 
     await channel.send("¡El tercer y ultimo afortunado en ganar TTS es " + ganador3 + "!");
@@ -201,9 +246,16 @@ async function sorteo(message) {
     channel.stopTyping(true);
 
     channel.send("El momento de mayor tensión se lo lleva el ultimo ganador, el ultimo premio, todo o nada\n" +
-        "¿Cómo se sintió esa presión " + ganador3 + " ?");
+        "¿Cómo se sintió esa tensión " + ganador3 + " ?");
 
+    channel.startTyping();
+    await sleep(50000);
+    channel.stopTyping(true);
+    channel.send(ganador + " " + ganador2 + " " + ganador3 + " ponganse en contacto con <@223614327440146433> para proceder a la recepción del premio.");
 }
+
+
+
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -212,44 +264,44 @@ function sleep(ms) {
 async function cuentaRegresiva(msg) {
     for (let i = 59; i > 1; i--) {
         await sleep(1000);
-        await msg.edit("El siguiente ganador se informará en 4 minutos y ***" + i + "*** segundos.");
+        await msg.edit("_\nEl siguiente ganador se informará en 4 minutos y ***" + i + "*** segundos.\n_");
     }
     await sleep(1000);
-    await msg.edit("El siguiente ganador se informará en 4 minutos y ***1*** segundo.");
+    await msg.edit("_\nEl siguiente ganador se informará en 4 minutos y ***1*** segundo.\n_");
     await sleep(1000);
-    await msg.edit("El siguiente ganador se informará en 4 minutos.");
+    await msg.edit("_\nEl siguiente ganador se informará en 4 minutos.\n_");
     for (let i = 59; i > 1; i--) {
         await sleep(1000);
-        await msg.edit("El siguiente ganador se informará en 3 minutos y ***" + i + "*** segundos.");
+        await msg.edit("_\nEl siguiente ganador se informará en 3 minutos y ***" + i + "*** segundos.\n_");
     }
     await sleep(1000);
-    await msg.edit("El siguiente ganador se informará en 3 minutos y ***1*** segundo.");
+    await msg.edit("_\nEl siguiente ganador se informará en 3 minutos y ***1*** segundo.\n_");
     await sleep(1000);
-    await msg.edit("El siguiente ganador se informará en 3 minutos.");
+    await msg.edit("_\nEl siguiente ganador se informará en 3 minutos.\n_");
     for (let i = 59; i > 1; i--) {
         await sleep(1000);
-        await msg.edit("El siguiente ganador se informará en 2 minutos y ***" + i + "*** segundos.");
+        await msg.edit("_\nEl siguiente ganador se informará en 2 minutos y ***" + i + "*** segundos.\n_");
     }
     await sleep(1000);
-    await msg.edit("El siguiente ganador se informará en 2 minutos y ***1*** segundo.");
+    await msg.edit("_\nEl siguiente ganador se informará en 2 minutos y ***1*** segundo.\n_");
     await sleep(1000);
-    await msg.edit("El siguiente ganador se informará en 2 minutos.");
+    await msg.edit("_\nEl siguiente ganador se informará en 2 minutos.\n_");
     for (let i = 59; i > 1; i--) {
         await sleep(1000);
-        await msg.edit("El siguiente ganador se informará en 1 minuto y ***" + i + "*** segundos.");
+        await msg.edit("_\nEl siguiente ganador se informará en 1 minuto y ***" + i + "*** segundos.\n_");
     }
     await sleep(1000);
-    await msg.edit("El siguiente ganador se informará en 1 minuto y ***1*** segundo.");
+    await msg.edit("_\nEl siguiente ganador se informará en 1 minuto y ***1*** segundo.\n_");
     await sleep(1000);
-    await msg.edit("El siguiente ganador se informará en 1 minuto.");
+    await msg.edit("_\nEl siguiente ganador se informará en 1 minuto.\n_");
     for (let i = 59; i > 1; i--) {
         await sleep(1000);
-        await msg.edit("El siguiente ganador se informará en ***" + i + "*** segundos.");
+        await msg.edit("_\nEl siguiente ganador se informará en ***" + i + "*** segundos.\n_");
     }
     await sleep(1000);
-    await msg.edit("El siguiente ganador se informará en ***1*** segundo.");
+    await msg.edit("_\nEl siguiente ganador se informará en ***1*** segundo.\n_");
     await sleep(1000);
-    await msg.edit("El siguiente ganador se informará en ***0*** segundos.");
+    await msg.edit("_\nEl siguiente ganador se informará en ***0*** segundos.\n_");
     return sleep(0);
 }
 

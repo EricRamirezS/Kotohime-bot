@@ -6,81 +6,14 @@ class SorteoCommand extends commando.Command {
             name: 'sorteo',
             group: 'admin',
             memberName: 'sorteo*',
-            description: 'Sorteo de 3 unidades de TTS\n\nSolo un Admin puede iniciar el sorteo entre participantes',
-            examples: ['sorteo'],
-            args: [
-                {
-                    key: 'usuario',
-                    prompt: '',
-                    type: 'string',
-                    default: ''
-                }
-            ]
+            description: 'Sorteo de 3 unidades de TTS',
+            examples: ['~sorteo'],
+            args: []
             }
         );
     }
 
     async run(message, args) {
-        if (message.member.hasPermission('ADMINISTRATOR') && args.usuario) {
-            if (args.usuario) {
-                let texto = args.usuario;
-                let finalizado = false;
-                let arrayOpciones = [];
-                let ini = -1;
-                let fin = -1;
-                while (!finalizado) {
-                    ini = -1;
-                    fin = -1;
-                    for (let i = 0; i < texto.length; i++) {
-                        if (texto.charAt(i) === '"') {
-                            if (ini === -1) {
-                                ini = i;
-                            } else {
-                                fin = i;
-                                break;
-                            }
-                        }
-                    }
-                    if (ini === -1 && fin === -1) {
-                        finalizado = true;
-                    } else {
-                        let subStr = texto.substr(ini, fin + 1);
-                        texto = texto.replace(subStr, '');
-                        subStr = subStr.replace("\" ", "\"");
-                        arrayOpciones.push(subStr);
-                    }
-                }
-                let arrayOpciones2 = texto.split(" ");
-                for (let i = 0; i < arrayOpciones2.length; i++) {
-                    arrayOpciones.push(arrayOpciones2[i])
-                }
-                for (let i = 0; i < arrayOpciones.length; i++) {
-                    if (arrayOpciones[i] === '')
-                        arrayOpciones.splice(i, 1);
-                }
-                let choose = Math.floor(Math.random() * arrayOpciones.length);
-                let ganador = arrayOpciones[choose];
-                arrayOpciones.splice(choose, 1);
-                choose = Math.floor(Math.random() * arrayOpciones.length);
-                let ganador2 = arrayOpciones[choose];
-                arrayOpciones.splice(choose, 1);
-                choose = Math.floor(Math.random() * arrayOpciones.length);
-                let ganador3 = arrayOpciones[choose];
-                arrayOpciones.splice(choose, 1);
-
-                message.channel.send("¡El primer afortunado en ganar TTS es " + ganador + "!");
-                let msg = await message.channel.send("El siguiente ganador se informará en ***5*** minutos.");
-                await cuentaRegresiva(msg);
-
-                await message.channel.send("¡El segundo afortunado en ganar TTS es " + ganador2 + "!");
-                msg = await message.channel.send("El siguiente ganador se informará en ***5*** minuto.");
-                await cuentaRegresiva(msg);
-
-                await message.channel.send("¡El tercer y ultimo afortunado en ganar TTS es " + ganador3 + "!");
-                await sleep(5000);
-                message.channel.send("¡Felicidades a los ganadores!");
-            }
-        } else {
             let mensaje = "**¿Te interesa obtener Tabletop Simulator?** ¡Pues tienes la oportunidad de obtenerlo ***gratis***!\n" +
                 "Sortearemos 3 Tabletop Simulator para Steam\n" +
                 "El sorteo se realizará el ***20 de febrero*** a las **17:00** horas ARG/CHI." +
@@ -97,7 +30,6 @@ class SorteoCommand extends commando.Command {
                 "\n" +
                 "Las personas que ya tengan TTS serán excluidas del sorteo.";
             message.channel.send(mensaje);
-        }
     }
 
 
