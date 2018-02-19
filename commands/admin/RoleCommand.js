@@ -60,7 +60,7 @@ class RoleCommand extends commando.Command {
                                         +
                                         "-"
                                         +
-                                        nombreRol.split("-")[1].toUpperCase()
+                                        nombreRol.split("-")[1].toUpperCase();
                                     role = message.guild.roles.find("name", mensajeFinal);
                                     guildMember = message.guild.members.get(message.author.id + '');
                                     guildMember.addRole(role).then(function (value) {
@@ -97,7 +97,7 @@ class RoleCommand extends commando.Command {
                                         +
                                         "-"
                                         +
-                                        nombreRol.split("-")[1].toUpperCase()
+                                        nombreRol.split("-")[1].toUpperCase();
                                     role = message.guild.roles.find("name", mensajeFinal);
                                     guildMember = message.guild.members.get(message.author.id + '');
                                     guildMember.removeRole(role).then(function (value) {
