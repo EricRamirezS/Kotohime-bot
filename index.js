@@ -126,12 +126,12 @@ async function cuentaRegresivaSorteo(msg) {
     if (!running) {
         msg.channel.send("Pronto iniciará el sorteo~");
         running = true;
-        let seg = 3600 * 3 - 60 * 37;
+        let seg = 3600 * 3 - 60 * 11;
         let mensaje = await msg.channel.send("03:00:00");
         for (seg; seg > 0; seg--) {
             let formmatedString = (seg + "").toHHMMSS();
-            mensaje.edit(formmatedString);
             await sleep(1000);
+            await mensaje.edit(formmatedString);
         }
     }
 }
