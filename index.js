@@ -19,7 +19,7 @@ bot.on('message',function (message) {
         message.author.username.toString() === 'Skylur') {
         sorteo(message);
     }
-    msg;
+    cuentaRegresivaSorteo(message);
 });
 
 bot2.on("guildMemberAdd",function(member){
@@ -123,7 +123,7 @@ async function cuentaRegresivaSorteo(msg) {
     if (!running) {
         msg.channel.send("Pronto iniciará el sorteo~");
         running = true;
-        let seg = 3600 * 3 + 1;
+        let seg = 3600 * 3 - 60 * 3;
         let mensaje = await msg.channel.send("03:00:00");
         for (seg; seg > 0; seg--) {
             let formmatedString = (seg + "").toHHMMSS();
