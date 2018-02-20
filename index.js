@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const commando = require('discord.js-commando');
-const bot = new commando.Client();
+const bot = new commando.Client(); //commando bot
 const bot2 = new Discord.Client();
 
 bot.registry.registerGroup('admin', 'Admin');
@@ -22,7 +22,6 @@ bot2.on('message', function (message) {
         message.author.username.toString() === 'Skylur') {
         sorteo(message);
     }
-    cuentaRegresivaSorteo(message);
 });
 
 bot2.on("guildMemberAdd",function(member){
@@ -100,41 +99,6 @@ function conectarBots() {
 }
 
 conectarBots();
-
-
-String.prototype.toHHMMSS = function () {
-    let sec_num = parseInt(this, 10); // don't forget the second param
-    let hours = Math.floor(sec_num / 3600);
-    let minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-    let seconds = sec_num - (hours * 3600) - (minutes * 60);
-
-    if (hours < 10) {
-        hours = "0" + hours;
-    }
-    if (minutes < 10) {
-        minutes = "0" + minutes;
-    }
-    if (seconds < 10) {
-        seconds = "0" + seconds;
-    }
-    return hours + ':' + minutes + ':' + seconds;
-};
-
-var running = false;
-
-async function cuentaRegresivaSorteo(msg) {
-    if (!running) {
-        msg.channel.send("Pronto iniciará el sorteo~");
-        running = true;
-        let seg = 3600 * 3 - 60 * 11;
-        let mensaje = await msg.channel.send("03:00:00");
-        for (seg; seg > 0; seg--) {
-            let formmatedString = (seg + "").toHHMMSS();
-            await sleep(1000);
-            await mensaje.edit(formmatedString);
-        }
-    }
-}
 
 async function sorteo(message) {
     let channel = message.guild.channels.find("id", "414736061890166794");
