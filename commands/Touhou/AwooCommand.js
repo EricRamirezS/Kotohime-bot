@@ -53,4 +53,4 @@ class AwooCommand extends commando.Command {
     }
 }
 
-module.exports = AwooCommand        ;
+module.exports = AwooCommand;

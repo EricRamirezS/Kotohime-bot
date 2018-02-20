@@ -3,9 +3,6 @@ const request = require('snekfetch');
 const Discord = require('discord.js');
 const xmldoc = require('xmldoc');
 
-const jsdom = require("jsdom");
-const {JSDOM} = jsdom;
-
 class RadioCommand extends commando.Command {
     constructor(client) {
         super(client, {
