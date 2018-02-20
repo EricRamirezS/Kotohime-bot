@@ -15,6 +15,9 @@ bot.on('message',function (message) {
     if (message.author.username.toString()!=='HouraiESP') {
         console.log(message.author.username + ": " + message.toString());
     }
+});
+
+bot2.on('message', function (message) {
     if (message.toString() === 'Muy bien, es hora de comenzar el sorteo, <@387063235821568000> , ¿Me harías los honores?' &&
         message.author.username.toString() === 'Skylur') {
         sorteo(message);
@@ -123,7 +126,7 @@ async function cuentaRegresivaSorteo(msg) {
     if (!running) {
         msg.channel.send("Pronto iniciará el sorteo~");
         running = true;
-        let seg = 3600 * 3 - 60 * 3;
+        let seg = 3600 * 3 - 60 * 37;
         let mensaje = await msg.channel.send("03:00:00");
         for (seg; seg > 0; seg--) {
             let formmatedString = (seg + "").toHHMMSS();
