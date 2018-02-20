@@ -101,7 +101,7 @@ function conectarBots() {
 conectarBots();
 
 async function sorteo(message) {
-    let channel = message.guild.channels.find("id", "414736061890166794");
+    let channel = message.guild.channels.find("id", "386366248306343937");
     let participantes = [
         '<@391260932006871041>',
         '<@206523987969310722>',
