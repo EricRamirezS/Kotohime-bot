@@ -22,6 +22,13 @@ class RoleCommand extends commando.Command {
                     type: 'string',
                     default: ""
                 }
+                ,
+                {
+                    key: 'color',
+                    prompt: '¿Color Rol?',
+                    type: 'string',
+                    default: ""
+                }
             ]
         });
     }
@@ -135,11 +142,25 @@ class RoleCommand extends commando.Command {
                         }
                         catch (e) {
                             console.log(e.toString());
-                            message.channel.send("No has ingresado el nombre del rol o el nombre es incorrecto");
+                            message.channel.send("No has ingresado el nombre del rol o el nombre es incorrecto.");
+                        }
+                        break;
+                    case "color":
+                        let adminRole = message.guild.roles.find('id', '385995520251789313');
+                        if (message.member.roles.has(adminRole.id)) {
+                            try {
+                                let role = message.guild.roles.find('id', args.Nombre_Rol);
+                                role.setColor(args.color)
+                            } catch (err) {
+                                message.channel.send("Ha ocurrido un error.")
+                            }
+                        }
+                        else {
+                            message.channel.send("No tienes permisos para administrar los colores de rol.");
                         }
                         break;
                     default:
-                        message.channel.send("La acción ingresada no es valida");
+                        message.channel.send("La acción ingresada no es valida.");
                 }
             }
             catch (err) {
