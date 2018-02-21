@@ -50,25 +50,42 @@ class RoleCommand extends commando.Command {
                             let nombreRol = args.Nombre_Rol.toLowerCase();
                             switch (nombreRol) {
                                 case "danmaku-las":
+                                    role = message.guild.roles.find("id", '415077877470724106');
+                                    guildMember = message.guild.members.get(message.author.id + '');
+                                    guildMember.addRole(role).then(function (value) {
+                                        message.channel.send(":thumbsup:")
+                                    });
+                                    break;
                                 case "danmaku-lan":
+                                    role = message.guild.roles.find("id", '415077773556580353');
+                                    guildMember = message.guild.members.get(message.author.id + '');
+                                    guildMember.addRole(role).then(function (value) {
+                                        message.channel.send(":thumbsup:")
+                                    });
+                                    break;
                                 case "danmaku-eu":
-                                case "danmaku-na":
+                                    role = message.guild.roles.find("id", '415077923918446592');
+                                    guildMember = message.guild.members.get(message.author.id + '');
+                                    guildMember.addRole(role).then(function (value) {
+                                        message.channel.send(":thumbsup:")
+                                    });
+                                    break;
                                 case "danmaku-sea":
-                                    let mensajeFinal =
-                                        nombreRol.split("-")[0].toLowerCase()
-                                        +
-                                        "-"
-                                        +
-                                        nombreRol.split("-")[1].toUpperCase();
-                                    role = message.guild.roles.find("name", mensajeFinal);
+                                    role = message.guild.roles.find("id", '415078241087389696');
                                     guildMember = message.guild.members.get(message.author.id + '');
                                     guildMember.addRole(role).then(function (value) {
                                         message.channel.send(":thumbsup:")
                                     });
                                     break;
                                 case "danmaku-preguntar":
+                                    role = message.guild.roles.find("id", '415078072593678336');
+                                    guildMember = message.guild.members.get(message.author.id + '');
+                                    guildMember.addRole(role).then(function (value) {
+                                        message.channel.send(":thumbsup:")
+                                    });
+                                    break;
                                 case "danmaku-ahora":
-                                    role = message.guild.roles.find("name", args.Nombre_Rol.toLowerCase());
+                                    role = message.guild.roles.find("id", '415078005053063169');
                                     guildMember = message.guild.members.get(message.author.id + '');
                                     guildMember.addRole(role).then(function (value) {
                                         message.channel.send(":thumbsup:")
