@@ -28,7 +28,7 @@ bot2.on('message', function (message) {
 });
 
 async function sorteo(message) {
-    let chan = message.guild.channels.find("id", "414736061890166794");
+    let chan = message.guild.channels.find("id", "386366248306343937");
     chan.send("Oops, casi olvido realizar el sorteo del TTS restante que no fue reclamado.");
     chan.startTyping();
     await sleep(17000);
