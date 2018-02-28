@@ -19,6 +19,7 @@ bot.on('message',function (message) {
 });
 
 var running = false;
+
 bot2.on('message', function (message) {
     if (!running) {
         running = true;
@@ -80,7 +81,6 @@ bot2.on("voiceStateUpdate", function (oldMember, newMember) {
 
 });
 
-bot2.on('connected');
 bot.on('disconnect', function(erMsg, code) {
     console.log('----- Bot disconnected from Discord with code', code, 'for reason:', erMsg, '-----');
     bot.connect();
