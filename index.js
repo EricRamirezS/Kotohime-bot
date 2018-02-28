@@ -11,13 +11,14 @@ bot.registry.registerGroup('personalizado', 'Personalizado');
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + "/commands");
 
-var running = false;
+
 bot.on('message',function (message) {
     if (message.author.username.toString()!=='HouraiESP') {
         console.log(message.author.username + ": " + message.toString());
     }
 });
 
+var running = false;
 bot2.on('message', function (message) {
     if (!running) {
         running = true;
@@ -26,7 +27,7 @@ bot2.on('message', function (message) {
 });
 
 async function sorteo(message) {
-    let chan = message.channel;
+    let chan = message.guild.channels.find("id", "414736061890166794");
     chan.send("Oops, casi olvido realizar el sorteo del TTS restante que no fue reclamado.");
     chan.startTyping();
     await sleep(17000);
@@ -47,6 +48,7 @@ async function sorteo(message) {
         "felicidades\n" +
         "<:lifestar:414776822270525445><:lifestar:414776822270525445><:lifestar:414776822270525445><:lifestar:414776822270525445><:lifestar:414776822270525445>");
 }
+
 bot2.on("guildMemberAdd",function(member){
     let chan = member.guild.channels.find("id","386366248306343937");
     chan.send(member+" se ha unido al servidor.");
