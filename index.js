@@ -36,7 +36,9 @@ bot2.on("voiceStateUpdate", function (oldMember, newMember) {
         if(newChannel){
             let oldChannelName = "**"+newMember.guild.channels.find("id",oldChannel+"").name+"**";
             let newChannelName = "**"+newMember.guild.channels.find("id",newChannel+"").name+"**";
-            chan.send(nombre+" se ha movido de "+oldChannelName+" a "+newChannelName);
+            if (oldChannelName !== newChannelName){
+                chan.send(nombre+" se ha movido de "+oldChannelName+" a "+newChannelName);
+            }
         }else {
             let oldChannelName = "**"+newMember.guild.channels.find("id",oldChannel+"").name+"**";
             chan.send(nombre+" se retiró de "+oldChannelName);
