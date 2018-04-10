@@ -5,7 +5,7 @@ class SorteoCommand extends commando.Command {
         super(client, {
             name: 'sorteo',
             group: 'personalizado',
-            memberName: 'sorteo*',
+            memberName: 'sorteo',
             description: 'Información sobre sorteos',
             examples: ['~sorteo'],
             args: []
