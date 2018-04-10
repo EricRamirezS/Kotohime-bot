@@ -7,18 +7,13 @@ class SorteoCommand extends commando.Command {
             group: 'personalizado',
             memberName: 'sorteo',
             description: 'Información sobre sorteos',
-            examples: ['~sorteo'],
-            args: []
-            }
-        );
+            examples: ['~sorteo']
+            });
     }
 
-    async run(message, args) {
-        let mensaje = "Actualmente no hay ningun sorteo vigente.";
-            message.channel.send(mensaje);
+    async run(message, args){
+        message.channel.send('Actualmente no hay ningun sorteo vigente');
     }
-
-
 }
 
 module.exports = SorteoCommand;
