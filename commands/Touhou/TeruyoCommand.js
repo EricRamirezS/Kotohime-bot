@@ -1,19 +1,19 @@
 const commando = require('discord.js-commando');
 const safebooru = require('../../safebooruImage2Channel');
 
-class AwooCommand extends commando.Command {
+class TeruyoCommand extends commando.Command {
     constructor(client){
         super(client, {
-            name: 'awoo',
+            name: 'teruyo',
             group: 'touhou',
-            memberName: 'awoo',
+            memberName: 'teruyo',
             description: ''
         });
     }
 
     async run(message, args) {
-        safebooru(message, "inubashiri_momiji");
+        safebooru(message, "houraisan_kaguya");
     }
 }
 
-module.exports = AwooCommand;
+module.exports = TeruyoCommand;
