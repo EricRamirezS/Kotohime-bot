@@ -1,21 +1,26 @@
 const request = require('snekfetch');
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const xmldoc = require('xmldoc');
 
+const BANNED_TAGS = "+-ass+-ecchi+-underwear+-underwear_only+-ecchi+-bikini+-breast_hold+-breast_press+-breasts+-leotard" +
+    "+-sexually_suggestive+-sexual_harassment+-gym_uniform+-gym_shirt+-gym_shorts+-black_bikini_top" +
+    "+-black_bikini_bottom+-arms_under_breasts+-comic+-medium_breasts+-shirtless";
+const INTENTOS = 5;
+
+const MB_8 = 8388608;
 /**
  *
  * @param message Discord message object
  * @param tag search tag
  * @param NSWFFilter prevent NSFW imagen (WARNING: It still may send some NSWF images)
  */
-let safebooruImageToChannel = function(message, tag, NSWFFilter=true){
-    let banned = "+-ass+-ecchi+-underwear+-underwear_only+-ecchi+-bikini+-breast_hold+-breast_press+-breasts+-leotard" +
-        "+-sexually_suggestive+-sexual_harassment+-gym_uniform+-gym_shirt+-gym_shorts+-black_bikini_top" +
-        "+-black_bikini_bottom+-arms_under_breasts+-comic+-medium_breasts+-shirtless";
+let safebooruImageToChannel = function (message, tag, NSWFFilter = true) {
+
     let BASE_REQUEST = "";
-    if (NSWFFilter){
-        BASE_REQUEST = 'https://safebooru.org/index.php?page=dapi&s=post&q=index&tags='+tag+banned;
+    if (NSWFFilter) {
+        BASE_REQUEST = 'https://safebooru.org/index.php?page=dapi&s=post&q=index&tags=' + tag + BANNED_TAGS;
     } else {
-        BASE_REQUEST = 'https://safebooru.org/index.php?page=dapi&s=post&q=index&tags='+tag;
+        BASE_REQUEST = 'https://safebooru.org/index.php?page=dapi&s=post&q=index&tags=' + tag;
     }
     request.post(BASE_REQUEST)
         .send({usingGoodRequestLibrary: true})
@@ -33,17 +38,39 @@ let safebooruImageToChannel = function(message, tag, NSWFFilter=true){
             request.post(BASE_REQUEST + pid)
                 .send({usingGoodRequestLibrary: true})
                 .then(r => {
+
+                    let fileSize = MB_8 + 1;
                     let s = r.body.toString();
                     let document = new xmldoc.XmlDocument(s);
                     let posts = document.childrenNamed("post");
-                    let postN = Math.floor(Math.random() * posts.length);
-                    let post = posts[postN];
+                    let imageURL = "";
+
+                    // No se pueden enviar imagenes a Discord cuyo peso supere los 8 Mb
+                    let i = 0;
+                    while (fileSize > MB_8) {
+                        let postN = Math.floor(Math.random() * posts.length);
+                        let post = posts[postN];
+                        imageURL = post.attr.file_url;
+                        let http = new XMLHttpRequest();
+                        http.open('HEAD', imageURL, false);
+                        http.send(null);
+                        if (http.status === 200) {
+                            fileSize = http.getResponseHeader('content-length');
+                        }
+                        i++;
+                        if (i > INTENTOS) {
+                            throw "imagenes muy grande";
+                        }
+                    }
 
                     //Enviando imagen al canal de discord desde donde fue solicitada
-                    let imageURL = post.attr.file_url;
                     message.channel.send('', {
                         files: [imageURL]
                     });
+                })
+                .catch(err => {
+                    message.channel.send("*Lo siento, no pude encontrar una imagen que pueda enviar aquí.* <:notlikethis:414778768759062528>\n");
+                    console.log(err);
                 });
         });
 };
