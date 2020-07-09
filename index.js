@@ -22,12 +22,12 @@ bot.on('message',function (message) {
 
 bot.on("guildMemberAdd",function(member){
     let chan = member.guild.channels.find("id","386366248306343937");
-    chan.send(member+" se ha unido al servidor.");
+    chan.send(member.user.username +" se ha unido al servidor.");
 });
 
 bot.on("guildMemberRemove",function(member){
     let chan = member.guild.channels.find("id", "386366248306343937");
-    chan.send(member+" ha dejado el servidor.");
+    chan.send(member.user.username +" ha dejado el servidor.");
 });
 
 bot.on("voiceStateUpdate", function (oldMember, newMember) {
@@ -56,11 +56,6 @@ bot.on("voiceStateUpdate", function (oldMember, newMember) {
 bot.on('disconnect', function(erMsg, code) {
     console.log('----- Bot disconnected from Discord with code', code, 'for reason:', erMsg, '-----');
     bot.connect();
-});
-
-bot.on('disconnect', function(erMsg, code) {
-    console.log('----- Bot disconnected from Discord with code', code, 'for reason:', erMsg, '-----');
-    conectarBot2()
 });
 
 function conectarBot() {
