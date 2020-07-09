@@ -19,7 +19,7 @@ class RadioCommand extends commando.Command {
             .then(r => {
                 let s = r.body.toString();
                 let document = new xmldoc.XmlDocument(s);
-                let albumID = document.childNamed("MISC").childNamed("ALBUMID").val;
+                let albumID = document.childNamed("SONGDATA").childNamed("ALBUMID").val;
                 let circleURL = document.childNamed("MISC").childNamed("CIRCLELINK").val;
                 let tituloCancion = document.childNamed("SONGINFO").childNamed("TITLE").val;
                 let artistaCancion = document.childNamed("SONGINFO").childNamed("ARTIST").val;
