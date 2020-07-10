@@ -50,14 +50,19 @@ let safebooruImageToChannel = function (message, tag, NSWFFilter = true) {
                     while (fileSize > MB_8) {
                         let postN = Math.floor(Math.random() * posts.length);
                         let post = posts[postN];
-                        imageURL = post.attr.file_url;
-                        let http = new XMLHttpRequest();
-                        http.open('HEAD', imageURL, false);
-                        http.send(null);
-                        if (http.status === 200) {
-                            fileSize = http.getResponseHeader('content-length');
+                        try {
+                            imageURL = post.attr.file_url;
+                            let http = new XMLHttpRequest();
+                            http.open('HEAD', imageURL, false);
+                            http.send(null);
+                            if (http.status === 200) {
+                                fileSize = http.getResponseHeader('content-length');
+                            }
+                        } catch (e) {
+                            console.log(e);
+                        } finally {
+                            i++;
                         }
-                        i++;
                         if (i > INTENTOS) {
                             throw "imagenes muy grande";
                         }
