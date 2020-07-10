@@ -31,7 +31,12 @@ let safebooruImageToChannel = function (message, tag, NSWFFilter = true) {
             let document = new xmldoc.XmlDocument(s);
             let postCount = document.attr.count;
 
-            //Por defecto hay 100 imagenes, por xml, pid representa las paginas
+            // Finalizar función si no hay imagenes indicados con los tags solicitados
+            if (!postCount) {
+                message.channel.send("No he encontrado ninguna imagen con los tags mencionados");
+                return;
+            }
+            //Por defecto hay un limite de 100 imagenes, por xml, pid representa las paginas
             let pid = Math.floor(Math.random() * Math.floor(postCount / 100 - 1));
 
             // Obteniendo una imagen aleatoria
