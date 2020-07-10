@@ -55,7 +55,7 @@ bot.on("voiceStateUpdate", function (oldMember, newMember) {
 
 bot.on('disconnect', function(erMsg, code) {
     console.log('----- Bot disconnected from Discord with code', code, 'for reason:', erMsg, '-----');
-    bot.connect();
+    conectarBot();
 });
 
 function conectarBot() {
