@@ -4,9 +4,9 @@ const safebooru = require('../../safebooruImage2Channel');
 class LawCommand extends commando.Command {
     constructor(client){
         super(client, {
-            name: 'Law',
+            name: 'law',
             group: 'touhou',
-            memberName: 'Law',
+            memberName: 'law',
             description: ''
         });
     }

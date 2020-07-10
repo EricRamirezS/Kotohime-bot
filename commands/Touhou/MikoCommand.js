@@ -4,9 +4,9 @@ const safebooru = require('../../safebooruImage2Channel');
 class MikoCommand extends commando.Command {
     constructor(client){
         super(client, {
-            name: 'Miko',
+            name: 'liko',
             group: 'touhou',
-            memberName: 'Miko',
+            memberName: 'liko',
             description: ''
         });
     }

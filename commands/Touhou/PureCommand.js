@@ -4,9 +4,9 @@ const safebooru = require('../../safebooruImage2Channel');
 class PureCommand extends commando.Command {
     constructor(client){
         super(client, {
-            name: 'Pure',
+            name: 'pure',
             group: 'touhou',
-            memberName: 'Pure',
+            memberName: 'pure',
             description: ''
         });
     }
