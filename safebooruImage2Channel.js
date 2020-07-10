@@ -4,7 +4,8 @@ const xmldoc = require('xmldoc');
 
 const BANNED_TAGS = "+-ass+-ecchi+-underwear+-underwear_only+-ecchi+-bikini+-breast_hold+-breast_press+-breasts+-leotard" +
     "+-sexually_suggestive+-sexual_harassment+-gym_uniform+-gym_shirt+-gym_shorts+-black_bikini_top" +
-    "+-black_bikini_bottom+-arms_under_breasts+-comic+-medium_breasts+-shirtless";
+    "+-black_bikini_bottom+-arms_under_breasts+-comic+-medium_breasts+-shirtless+-no_pants+-grabbing_own_breast" +
+    "+-naked_tabard+-yuri+-yaoi+-groping+-breast_grab";
 const INTENTOS = 5;
 
 const MB_8 = 8388608;
