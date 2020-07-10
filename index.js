@@ -62,8 +62,9 @@ function conectarBot() {
     bot.login(process.env.BOT_TOKEN1).then(function () {
         console.log("Bot conectado");
         bot.user.setUsername("HouraiESP");
-    }).catch(function () {
+    }).catch(e => {
         console.log("bot no conectado");
+        console.log(e);
         setTimeout(function () {
             console.log("reintentado conectar Bot");
             conectarBot();
