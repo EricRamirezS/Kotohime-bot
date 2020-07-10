@@ -1,7 +1,6 @@
 const commando = require('discord.js-commando');
 const safebooru = require('../../safebooruImage2Channel');
 
-
 class AyayaCommand extends commando.Command {
     constructor(client) {
         super(client, {
