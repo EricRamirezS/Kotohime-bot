@@ -32,10 +32,10 @@ let safebooruImageToChannel = function (message, tag, NSWFFilter = true) {
             let postCount = document.attr.count;
 
             //Por defecto hay 100 imagenes, por xml, pid representa las paginas
-            let pid = Math.floor(Math.random() * Math.floor(postCount / 100));
+            let pid = Math.floor(Math.random() * Math.floor(postCount / 100 - 1));
 
             // Obteniendo una imagen aleatoria
-            request.post(BASE_REQUEST + pid)
+            request.post(BASE_REQUEST + "&pid=" + pid)
                 .send({usingGoodRequestLibrary: true})
                 .then(r => {
 
