@@ -21,7 +21,7 @@ class SafebooruCommand extends commando.Command {
 
     async run(message, args) {
         if (args) {
-            let tags = args.replace(" ", "+");
+            let tags = args.tags.replace(" ", "+");
             safebooru(message, tags);
         } else {
             message.channel.send("El texto de entrada tiene muy pocos parametros.");
