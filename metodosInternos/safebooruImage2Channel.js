@@ -2,12 +2,13 @@ const request = require('snekfetch');
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const xmldoc = require('xmldoc');
 
-const BANNED_TAGS = [ "",
+const BANNED_TAGS = ["",
     "ass",
     "ecchi",
     "underwear",
     "underwear_only",
-    "ecchi+-bikini",
+    "ecchi",
+    "bikini",
     "breast_hold",
     "breast_press",
     "breasts",
@@ -53,7 +54,10 @@ const BANNED_TAGS = [ "",
     "skirt_lift",
     "microskirt",
     "anal_beads",
-    "lifted_by_self"
+    "lifted_by_self",
+    "skirt_lift",
+    "pantyshot_(jumping)",
+    "groin"
 
 ];
 
@@ -67,12 +71,11 @@ const MB_8 = 8388608;
  *
  * @param message Discord message object
  * @param tag search tag
- * @param NSWFFilter prevent NSFW imagen (WARNING: It still may send some NSWF images)
  */
-let safebooruImageToChannel = function (message, tag, NSWFFilter = true) {
+let safebooruImageToChannel = function (message, tag) {
 
     let BASE_REQUEST;
-    if (NSWFFilter) {
+    if (!message.channel.nsfw) {
         BASE_REQUEST = 'https://safebooru.org/index.php?page=dapi&s=post&q=index&tags=' + tag + BANNED_TAGS.join("+-");
     } else {
         BASE_REQUEST = 'https://safebooru.org/index.php?page=dapi&s=post&q=index&tags=' + tag;
@@ -151,4 +154,7 @@ function enviarImagenAleatoria(r, message) {
     }
 }
 
-module.exports = safebooruImageToChannel;
+module.exports = {
+    safebooruImageToChannel,
+    BANNED_TAGS
+};
