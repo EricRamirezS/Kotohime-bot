@@ -2,4 +2,3 @@
 .idea/
 .idea/runConfigurations
 .idea/runConfigurations/bin_wwww.xml
-git rm -r --cached path_to_your_folder/
