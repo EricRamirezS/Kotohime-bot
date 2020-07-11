@@ -1,5 +1,5 @@
 const commando = require('discord.js-commando');
-const safebooru = require('../../safebooruImage2Channel');
+const safebooru = require('../../metodosInternos/safebooruImage2Channel');
 
 class SafebooruCommand extends commando.Command {
     constructor(client) {
@@ -8,6 +8,11 @@ class SafebooruCommand extends commando.Command {
             group: 'misc',
             memberName: 'safebooru',
             description: 'Dejame googlear eso por ti.',
+            examples: [
+                "~safebooru touhou",
+                "~safebooru touhou alice_margatroid",
+                "~safebooru banned_tags"
+            ],
             args: [
                 {
                     key: 'tags',
@@ -21,8 +26,14 @@ class SafebooruCommand extends commando.Command {
 
     async run(message, args) {
         if (args) {
+            if (args.tags.toLowerCase() === "banned_tags"){
+                message.channel.send("Estos son los tags que me han prohibido buscar" +
+                    "```" +
+                    safebooru.BANNED_TAGS.join("\n") +
+                    "```")
+            }
             let tags = args.tags.replace(" ", "+");
-            safebooru(message, tags);
+            safebooru.safebooruImageToChannel(message, tags);
         } else {
             message.channel.send("El texto de entrada tiene muy pocos parametros.");
         }
