@@ -1,5 +1,5 @@
 const commando = require('discord.js-commando');
-const safebooru = require('../../safebooruImage2Channel');
+const safebooru = require('../../metodosInternos/safebooruImage2Channel').safebooruImageToChannel;
 
 class LawCommand extends commando.Command {
     constructor(client){

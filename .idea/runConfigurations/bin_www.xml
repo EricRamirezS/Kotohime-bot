@@ -1,11 +1,12 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="bin\www" type="NodeJSConfigurationType" factoryName="Node.js" path-to-js-file="index.js" working-dir="$PROJECT_DIR$">
+  <configuration default="false" name="bin\www" type="NodeJSConfigurationType" path-to-js-file="index.js" working-dir="$PROJECT_DIR$">
     <envs>
       <env name="DEBUG" value="untitled1:*" />
+      <env name="BOT_TOKEN1" value="Mzg2MDA3OTA3MTEzNzYyODE2.DWrowQ.yN1_yixXC1N_ntzcDYTSlaB-lc4" />
     </envs>
     <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSStartBrowserRunConfigurationExtension">
       <browser url="http://localhost:3000/" />
     </EXTENSION>
-    <method />
+    <method v="2" />
   </configuration>
 </component>

@@ -1,5 +1,5 @@
 const commando = require('discord.js-commando');
-const safebooru = require('../../safebooruImage2Channel');
+const safebooru = require('../../metodosInternos/safebooruImage2Channel').safebooruImageToChannel;
 
 class PC98Command extends commando.Command {
     constructor(client){
