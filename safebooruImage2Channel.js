@@ -1,34 +1,61 @@
 const request = require('snekfetch');
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const xmldoc = require('xmldoc');
 
-const BANNED_TAGS = " -ass" +
-    " -ecchi" +
-    " -underwear" +
-    " -underwear_only" +
-    " -ecchi+-bikini" +
-    " -breast_hold" +
-    " -breast_press" +
-    " -breasts" +
-    " -leotard" +
-    " -sexually_suggestive" +
-    " -sexual_harassment" +
-    " -gym_uniform" +
-    " -gym_shirt" +
-    " -gym_shorts" +
-    " -black_bikini_top" +
-    " -black_bikini_bottom" +
-    " -arms_under_breasts" +
-    " -comic" +
-    " -medium_breasts" +
-    " -shirtless" +
-    " -no_pants" +
-    " -grabbing_own_breast" +
-    " -naked_tabard" +
-    " -yuri" +
-    " -yaoi" +
-    " -groping" +
-    " -breast_grab";
+const BANNED_TAGS = [ "",
+    "ass",
+    "ecchi",
+    "underwear",
+    "underwear_only",
+    "ecchi+-bikini",
+    "breast_hold",
+    "breast_press",
+    "breasts",
+    "leotard",
+    "sexually_suggestive",
+    "sexual_harassment",
+    "gym_uniform",
+    "gym_shirt",
+    "gym_shorts",
+    "black_bikini_top",
+    "black_bikini_bottom",
+    "arms_under_breasts",
+    "medium_breasts",
+    "shirtless",
+    "no_pants",
+    "grabbing_own_breast",
+    "naked_tabard",
+    "yuri",
+    "yaoi",
+    "groping",
+    "breast_grab",
+    "cat_lingerie",
+    "upskirt",
+    "strap_gap",
+    "naked_shirt",
+    "cameltoe",
+    "white_panties",
+    "wet_clothes",
+    "no_panties",
+    "panties",
+    "pantyshot",
+    "black_panties",
+    "lingerie",
+    "lingeries",
+    "on_bed",
+    "multico",
+    "one-piece_swimsuit",
+    "revealing_clothes",
+    "self_fondle",
+    "breast_grab",
+    "mktr_(princess_mktr)",
+    "naked_towel",
+    "skirt_lift",
+    "microskirt",
+    "anal_beads",
+    "lifted_by_self"
+
+];
 
 
 const INTENTOS = 5;
@@ -46,7 +73,7 @@ let safebooruImageToChannel = function (message, tag, NSWFFilter = true) {
 
     let BASE_REQUEST;
     if (NSWFFilter) {
-        BASE_REQUEST = 'https://safebooru.org/index.php?page=dapi&s=post&q=index&tags=' + tag + BANNED_TAGS;
+        BASE_REQUEST = 'https://safebooru.org/index.php?page=dapi&s=post&q=index&tags=' + tag + BANNED_TAGS.join("+-");
     } else {
         BASE_REQUEST = 'https://safebooru.org/index.php?page=dapi&s=post&q=index&tags=' + tag;
     }
@@ -63,7 +90,7 @@ let safebooruImageToChannel = function (message, tag, NSWFFilter = true) {
 
             // Obteniendo 5 imagenes aleatoria
             let pid = Math.floor(Math.random() * Math.floor((postCount - 1) / 5));
-            let req =  BASE_REQUEST + "&limit=5&pid=" + pid;
+            let req = BASE_REQUEST + "&limit=5&pid=" + pid;
 
             request.post(req)
                 .send({usingGoodRequestLibrary: true})
