@@ -1,7 +1,7 @@
 /**
  * Se emite cada vez que se crea un mensaje.
  *
- * Esto incluye los mensajes creados por el Cliente
+ * Esto incluye los mensajes creados por el client
  *
  * @param message El mensaje creado
  * @see https://discord.js.org/#/docs/main/stable/class/Message

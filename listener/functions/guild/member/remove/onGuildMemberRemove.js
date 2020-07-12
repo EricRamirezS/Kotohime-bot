@@ -5,7 +5,7 @@
  */
 module.exports = (member) => {
 
-    sendLog(member);
+    sendMemberRemoveLog(member);
 
 };
 
@@ -14,7 +14,8 @@ module.exports = (member) => {
  * Envia un mensaje de notificación al canal #general del servidor
  * @param member El miembro que se ha retirado al servidor.
  */
-sendLog = (member) => {
+sendMemberRemoveLog = (member) => {
+    console.log("leaves");
     let chan = member.guild.channels.find("id", "386366248306343937");
     chan.send(member.user.username +" ha dejado el servidor.");
 };

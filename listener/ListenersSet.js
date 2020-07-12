@@ -2,7 +2,7 @@ const lf = require('./listenersFunction');
 
 /**
  * Registra las funciones por evento al bot
- * @param bot Cliente
+ * @param bot client
  */
 module.exports = (bot) => {
 
