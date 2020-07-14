@@ -1,0 +1,212 @@
+[
+  {
+    "id": "1",
+    "expansion": "BASE",
+    "type": "HEROINE",
+    "original_name": "HEROINE",
+    "name": "HEROINE",
+    "season": "SUMMER",
+    "players": "4",
+    "description": "Start with this role revealed.\n\nGoal: Defeat all Stage Bosses and Extra Bosses.\n\nPlot Armor: You have +1 max life and +1 max hand size."
+  },
+  {
+    "id": "2",
+    "expansion": "BASE",
+    "type": "HEROINE",
+    "original_name": "RIVAL",
+    "name": "RIVAL",
+    "season": "SUMMER",
+    "players": "8",
+    "description": "Goal: Defeat the Heroine, then defeat all Stage Bosses and Extra Bosses.\n\nSpecial: The game does not end the first time the Heroine is defeated. When the Heroine is defeated, reveal this role, take Heroine role card, and gain 1 life."
+  },
+  {
+    "id": "3",
+    "expansion": "BASE",
+    "type": "PARTNER",
+    "original_name": "PARTNER",
+    "name": "PARTNER",
+    "season": "SPRING",
+    "players": "5",
+    "description": "Goal: Defeat all Stage Bosses and the Extra Boss. Protect the Heroine.\n\nShared Fate: When you are defeated, the Heroine must discard all Item cards in play, then choose up to two cards in her hand and discard the rest."
+  },
+  {
+    "id": "4",
+    "expansion": "BASE",
+    "type": "PARTNER",
+    "original_name": "PARTNER",
+    "name": "PARTNER",
+    "season": "SPRING",
+    "players": "5",
+    "description": "Goal: Defeat all Stage Bosses and the Extra Boss. Protect the Heroine.\n\nShared Fate: When you are defeated, the Heroine must discard all Item cards in play, then choose up to two cards in her hand and discard the rest."
+  },
+  {
+    "id": "5",
+    "expansion": "BASE",
+    "type": "PARTNER",
+    "title": "PARTNER / EXTRA BOSS",
+    "original_name": "EX MIDBOSS",
+    "name": "EX MIDBOSS",
+    "season": "SPRING",
+    "players": "5",
+    "description": "Goal: Defeat all Stage Bosses, then defeat the Heroine.\n\nSpecial: If the Extra Boss is defeated, reveal this card. You count as both an Extra Boss and a Partner for other players’ goals."
+  },
+  {
+    "id": "6",
+    "expansion": "BASE",
+    "type": "PARTNER",
+    "title": "PARTNER",
+    "original_name": "ONE TRUE PARTNER",
+    "name": "ONE TRUE PARTNER",
+    "season": "SPRING",
+    "players": "7",
+    "description": "Goal: Defeat all other Partners, Stage Bosses and the Extra Boss. Protect the Heroine.\n\nShared Fate: When you are defeated, the Heroine must discard all Item cards in play, then choose up to two cards in her hand and discard the rest."
+  },
+  {
+    "id": "7",
+    "expansion": "BASE",
+    "type": "STAGE_BOOS",
+    "original_name": "STAGE BOSS",
+    "name": "STAGE BOSS",
+    "season": "AUTUMN",
+    "players": "4",
+    "description": "Goal: Defeat the Heroine."
+  },
+  {
+    "id": "8",
+    "expansion": "BASE",
+    "type": "STAGE_BOOS",
+    "original_name": "STAGE BOSS",
+    "name": "STAGE BOSS",
+    "season": "AUTUMN",
+    "players": "4",
+    "description": "Goal: Defeat the Heroine."
+  },
+  {
+    "id": "9",
+    "expansion": "BASE",
+    "type": "STAGE_BOOS",
+    "original_name": "STAGE BOSS",
+    "name": "STAGE BOSS",
+    "season": "AUTUMN",
+    "players": "4",
+    "description": "Goal: Defeat the Heroine."
+  },
+  {
+    "id": "10",
+    "expansion": "BASE",
+    "type": "STAGE_BOOS",
+    "title": "STAGE BOSS",
+    "original_name": "FINAL BOSS",
+    "name": "FINAL BOSS",
+    "season": "AUTUMN",
+    "players": "5",
+    "description": "Goal: Defeat the Heroine after at least one Partner has been defeated."
+  },
+  {
+    "id": "11",
+    "expansion": "BASE",
+    "type": "STAGE_BOOS",
+    "title": "STAGE BOSS",
+    "original_name": "CHALLENGER",
+    "name": "CHALLENGER",
+    "season": "AUTUMN",
+    "players": "5",
+    "description": "Goal: Defeat the Heroine after the Extra Boss has been defeated."
+  },
+  {
+    "id": "12",
+    "expansion": "BASE",
+    "type": "STAGE_BOOS",
+    "title": "STAGE BOSS",
+    "original_name": "FINAL BOSS",
+    "name": "ANTI-HEROINE",
+    "season": "AUTUMN",
+    "players": "5",
+    "description": "Goal: Defeat the Heroine after at least one other Stage Boss has been defeated."
+  },
+  {
+    "id": "13",
+    "expansion": "BASE",
+    "type": "EXTRA_BOSS",
+    "title": "EXTRA BOSS",
+    "original_name": "EX BOSS",
+    "name": "EX BOSS",
+    "season": "WINTER",
+    "players": "4",
+    "description": "Goal: Defeat all Stage Bosses, then defeat the Heroine.\n\nTrue Form: At any time, if at least one other player has been defeated, you may reveal this role. If you do, replace it with the EX Boss Revealed role card and gain 1 life."
+  },
+  {
+    "id": "14",
+    "expansion": "BASE",
+    "type": "EXTRA_BOSS",
+    "title": "EXTRA BOSS",
+    "original_name": "EX BOSS REVEALED",
+    "name": "EX BOSS REVEALED",
+    "season": "WINTER",
+    "description": "Goal: Defeat all Stage Bosses, then defeat the Heroine.\n\nFinal Form: You have +1 max life and +1 max hand size. Draw an extra card during your draw step.\n\nTrue Form: At any time, if at least one other player has been defeated, you may reveal this role. If you do, replace it with the EX Boss Revealed role card and gain 1 life."
+  },
+  {
+    "id": "15",
+    "expansion": "BASE",
+    "type": "EXTRA_BOSS",
+    "title": "EXTRA BOSS",
+    "original_name": "PHANTASM BOSS",
+    "name": "PHANTASM BOSS",
+    "season": "WINTER",
+    "players": "4",
+    "description": "Goal: Defeat all Stage Bosses, then defeat the Heroine.\n\nSinister Plan: At any time, if at least one other player has been defeated, you may reveal this role. If you do, replace it with the True Phantasm Boss role card and gain 1 life."
+  },
+  {
+    "id": "16",
+    "expansion": "BASE",
+    "type": "EXTRA_BOSS",
+    "title": "EXTRA BOSS",
+    "original_name": "TRUE PHANTASM BOSS",
+    "name": "TRUE PHANTASM BOSS",
+    "season": "WINTER",
+    "description": "Goal: Defeat all Stage Bosses, then defeat the Heroine.\n\nMastermind: You have +1 max life.\nAt the start of your turn you may resolve the current incident. If you do, look at the top three cards of the Incident deck and put them on the top or bottom in any order. Then,\nskip your Incident step this turn."
+  },
+  {
+    "id": "17",
+    "expansion": "LUNATIC",
+    "type": "EXTRA_BOSS",
+    "title": "EXTRA BOSS",
+    "original_name": "SECRET BOSS",
+    "name": "SECRET BOSS",
+    "season": "WINTER",
+    "players": "4",
+    "description": "Goal: Defeat all Stage Bosses, then defeat the Heroine.\n\nSecret Plan: At any time, if at least one other player has been defeated, you may reveal this role. If you do, replace it with the Secret Boss Discovered role card and gain 1 life."
+  },
+  {
+    "id": "18",
+    "expansion": "LUNATIC",
+    "type": "EXTRA_BOSS",
+    "title": "EXTRA BOSS",
+    "original_name": "SECRET BOSS DISCOVERED",
+    "name": "SECRET BOSS DISCOVERED",
+    "season": "WINTER",
+    "description": "Goal: Defeat all Stage Bosses, then defeat the Heroine.\n\nHidden Power: You have +1 max life.\nDuring your draw step, you may draw one card from the Lunatic deck instead of the Main deck."
+  },
+  {
+    "id": "19",
+    "expansion": "LUNATIC",
+    "type": "EXTRA_BOSS",
+    "title": "EXTRA BOSS",
+    "original_name": "LONE WOLF",
+    "name": "LONE WOLF",
+    "season": "WINTER",
+    "players": "4",
+    "description": "Goal: Defeat all Stage Bosses, then defeat the Heroine.\n\nTag In: At any time, if at least one other player has been defeated, you may reveal this role. If you do, replace it with the Tag Team role card and gain 1 life."
+  },
+  {
+    "id": "20",
+    "expansion": "LUNATIC",
+    "type": "EXTRA_BOSS",
+    "title": "EXTRA BOSS",
+    "original_name": "TAG TEAM",
+    "name": "TAG TEAM",
+    "season": "WINTER",
+    "description": "Goal: Defeat all Stage Bosses, then defeat the Heroine.\n\nDouble Threat: You have +1 max life.\nWhen you gain this role, recruit an Extra Character. If you lose this role, dismiss that Extra Character."
+  }
+]
+

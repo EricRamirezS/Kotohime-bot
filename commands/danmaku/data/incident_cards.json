@@ -1,0 +1,173 @@
+[
+  {
+    "id": "1",
+    "expansion": "BASE",
+    "original_name": "CRISIS OF FAITH",
+    "name": "CRISIS OF FAITH",
+    "season": "AUTUMN",
+    "description": "When this incident enters play, each player except the Heroine flips the top card of the deck until someone flips an Autumn.\n\nThat player permanently swaps Role cards with the Heroine and gains 1 life.\n\nThen, resolve this incident."
+  },
+  {
+    "id": "2",
+    "expansion": "BASE",
+    "original_name": "CROSSING TO HIGAN",
+    "name": "CROSSING TO HIGAN",
+    "season": "AUTUMN",
+    "description": "All players are considered in range, regardless of distance.\n\nResolution: A player is defeated."
+  },
+  {
+    "id": "3",
+    "expansion": "BASE",
+    "original_name": "ENDLESS PARTY",
+    "name": "ENDLESS PARTY",
+    "season": "SPRING",
+    "description": "During your incident step, each player draws one card.\n\nYou still take your draw step.\n\nResolution: The deck is reshuffled."
+  },
+  {
+    "id": "4",
+    "expansion": "BASE",
+    "original_name": "ETERNAL NIGHT",
+    "name": "ETERNAL NIGHT",
+    "season": "AUTUMN",
+    "description": "Players may play any number of Danmaku cards each turn.\n\nCollect the top card of the deck during your incident step.\n\nCollect any Danmaku cards.\n\nResolution: Collect 12 cards."
+  },
+  {
+    "id": "5",
+    "expansion": "BASE",
+    "original_name": "FIVE IMPOSSIBLE REQUEST",
+    "name": "FIVE IMPOSSIBLE REQUEST",
+    "season": "AUTUMN",
+    "description": "During your incident step, discard your hand and draw that many cards.\n\nYou still take your draw step.\n\nResolution: Collect 1 Artifact card."
+  },
+  {
+    "id": "6",
+    "expansion": "BASE",
+    "title": "Cycle of Sixty Years",
+    "original_name": "GREAT BARRIER WEAKENING",
+    "name": "GREAT BARRIER WEAKENING",
+    "season": "WINTER",
+    "description": "Draw your first card each turn from the discard pile. If the discard pile is empty, draw from the deck instead.\n\nCards must be placed on the discard pile in the order they are played.\n\nResolution: Collect 3 Invocation cards."
+  },
+  {
+    "id": "7",
+    "expansion": "BASE",
+    "original_name": "GREAT FAIRY WARS",
+    "name": "GREAT FAIRY WARS",
+    "season": "SUMMER",
+    "description": "When this incident enters play, all other players must discard a Danmaku card or lose 1 life.\n\nDuring your incident step, discard a Danmaku card or lose 1 life.\n\nResolution: Collect 9 Danmaku cards."
+  },
+  {
+    "id": "8",
+    "expansion": "BASE",
+    "title": "Fairy Herald of Spring",
+    "original_name": "LILY WHITE",
+    "name": "LILY WHITE",
+    "season": "SPRING",
+    "description": "During your incident step, flip the top card of the deck.\n\nIf it is a Summer, resolve this incident.\n\nIf it is a Spring, you lose 3 life.\n\nThis is not an attack."
+  },
+  {
+    "id": "9",
+    "expansion": "BASE",
+    "original_name": "OVERDRIVE",
+    "name": "OVERDRIVE",
+    "season": "SUMMER",
+    "description": "You may pay 1 life to activate your Spell Card.\n\nYou can only activate one Spell Card per round.\n\nResolution: Collect 6 Dodge cards."
+  },
+  {
+    "id": "10",
+    "expansion": "BASE",
+    "original_name": "REKINDLE BLAZING HELL",
+    "name": "REKINDLE BLAZING HELL",
+    "season": "SUMMER",
+    "description": "When this incident enters play, all players draw up to their max hand size.\n\nDuring your incident step, draw up to your max hand size.\n\nYou still take your draw step.\n\nResolution: Collect 6 Summer cards."
+  },
+  {
+    "id": "11",
+    "expansion": "BASE",
+    "original_name": "SAIGYOU AYAKASHI BLOOMING",
+    "name": "SAIGYOU AYAKASHI BLOOMING",
+    "season": "SPRING",
+    "description": "Lose 1 life during your incident step.\n\nThis is not an attack.\n\nResolution: Collect 6 Winter cards."
+  },
+  {
+    "id": "12",
+    "expansion": "BASE",
+    "original_name": "SCARLET WEATHER RHAPSODY",
+    "name": "SCARLET WEATHER RHAPSODY",
+    "season": "SUMMER",
+    "description": "During your incident step, flip the top card of the deck and perform an action according to its season.\n\nSpring: Swap hands with the player on your right.\n\nSummer: Draw one card.\n\nAutumn: Swap hands with the player on your left.\n\nWinter: Discard 1 card at random from your hand.\n\nResolution: Collect 2 cards of each season."
+  },
+  {
+    "id": "13",
+    "expansion": "BASE",
+    "original_name": "SPRING SNOW",
+    "name": "SPRING SNOW",
+    "season": "WINTER",
+    "description": "Players cannot activate Spell Cards.\n\nResolution: Collect 6 Spring cards."
+  },
+  {
+    "id": "14",
+    "expansion": "BASE",
+    "original_name": "UNDEFINED FANTASTIC OBJECT",
+    "name": "UNDEFINED FANTASTIC OBJECT",
+    "season": "WINTER",
+    "description": "During your incident step, reveal the top 3 cards of the deck. You may choose a Powerup, Invocation, or Healing card from among these and add it to your hand.\n\nCollect all other cards revealed this way.\n\nResolution: Collect 12 cards."
+  },
+  {
+    "id": "15",
+    "expansion": "BASE",
+    "original_name": "VOYAGE TO MAKAI",
+    "name": "VOYAGE TO MAKAI",
+    "season": "SPRING",
+    "description": "Players cannot gain life. Players cannot be returned to life.\n\nResolution: Collect 6 Autumn cards."
+  },
+  {
+    "id": "16",
+    "expansion": "BASE",
+    "original_name": "WORLDY DESIRES",
+    "name": "WORLDY DESIRES",
+    "season": "WINTER",
+    "description": "When this incident enters play, all players discard all Item cards in play.\n\nIf a player would put an Item card into play, they discard it instead.\n\nResolution: Collect 4 Item cards."
+  },
+  {
+    "id": "17",
+    "expansion": "LUNATIC",
+    "original_name": "DREAM WORLD",
+    "name": "DREAM WORLD",
+    "season": "WINTER",
+    "description": "While this incident is in play, characters’ BAbilities have no effect. This includes Extra Characters.\n\nResolution: Collect 5 cards with a point value of 4 or higher.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20065.jpg",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/dream-world/"
+  },
+  {
+    "id": "18",
+    "expansion": "LUNATIC",
+    "original_name": "LUNAR WARS",
+    "name": "LUNAR WARS",
+    "season": "SPRING",
+    "description": "When this incident enters play, each player draws one card from the Lunatic deck.\n\nDuring your draw step, you may draw one card from the Lunatic deck instead of the Main deck.\n\nResolution: Collect 8 Lunatic cards.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20066.jpg",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/lunar-wars/"
+  },
+  {
+    "id": "19",
+    "expansion": "LUNATIC",
+    "original_name": "SHINING NEEDLE CASTLE",
+    "name": "SHINING NEEDLE CASTLE",
+    "season": "SUMMER",
+    "description": "When this incident enters play, each player discards all Lunatic cards in their hand and draws that many cards from the Main deck.\n\nPlayers cannot draw cards from the Lunatic deck.\n\nDuring your Incident step, collect the top card of the Main deck.\n\nResolution: Collect cards equal to the number of active players plus one.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20067.jpg",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/shining-needle-castle/"
+  },
+  {
+    "id": "20",
+    "expansion": "LUNATIC",
+    "title": "SCOOP! INCIDENTS REPORTED ACROSS GENSOKYO!",
+    "original_name": "URBAN LEGEND OUTBREAK",
+    "name": "URBAN LEGEND OUTBREAK",
+    "season": "AUTUMN",
+    "description": "When this incident enters play, shuffle the Incident deck, then put two additional Incident cards into play.\n\nBefore each player’s incident step, put an additional Incident card into play.\n\nWhen this incident is resolved, resolve all other Incident cards.\n\nResolution: Collect 2 Incident cards.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20068.jpg",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/urban-legend-outbreak/"
+  }
+]
