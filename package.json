@@ -15,6 +15,7 @@
     "jsdom": "^11.5.1",
     "snekfetch": "^3.6.1",
     "xmldoc": "^1.1.0",
-    "xmlhttprequest": "^1.8.0"
+    "xmlhttprequest": "^1.8.0",
+    "common-tags": "latest"
   }
 }
