@@ -156,7 +156,7 @@
     "season": "SPRING",
     "point_value": "5",
     "cardTypes_a": ["ITEM", "ARTIFACT"],
-    "description_a": "When you gain control of this card, recruit an Extra Character.\nWhen you lose control of this card, dismiss that Extra Character.\n\nYou gain the Ability and can activate the Spell Card of that Extra Character.",
+    "description_a": "You cannot attack players whose distance from you is more than 1. You cannot play more than one Danmaku card per round.\n\nYour attacks cannot be avoided and deal 1 additional damage.\n\nDuring your turn, you may discard a card from your hand. If you do, give control of Uchide’s Mallet to another player.",
     "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20062.jpg",
     "link": "https://danmaku.party/rules/cards/lunatic-extra/uchides-mallet/"
   }
