@@ -55,11 +55,11 @@ class CardCommand extends commando.Command {
             if (BATTLE_DECK.includes(card)) respuesta.setColor('#7C8FD6');
             else respuesta.setColor('#BD7F36');
             respuesta.addField('point_value', card.point_value, false);
-            respuesta.addField('Timing', card.timing_a, true);
+            if (card.timing_a) respuesta.addField('Timing', card.timing_a, true);
             if (card.cardTypes_a) respuesta.addField('Type', card.cardTypes_a.join(", "), true);
             respuesta.addField('Description', card.description_a, false);
             if (card.description_b) {
-                respuesta.addField('Timing', card.timing_b, true);
+                if (card.timing_b) respuesta.addField('Timing', card.timing_b, true);
                 if (card.cardTypes_b) respuesta.addField('Type', card.cardTypes_b.join(", "), true);
                 respuesta.addField('Description', card.description_b, false);
             }
