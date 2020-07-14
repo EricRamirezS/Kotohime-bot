@@ -57,8 +57,8 @@ const BANNED_TAGS = ["",
     "lifted_by_self",
     "skirt_lift",
     "pantyshot_(jumping)",
-    "groin"
-
+    "groin",
+    "thighs"
 ];
 
 
