@@ -6,8 +6,6 @@
  * @see https://discord.js.org/#/docs/main/stable/class/GuildMember
  */
 module.exports = (oldMember, newMember) => {
-    roleChanged(oldMember, newMember);
-    //TODO
 };
 
 
@@ -17,16 +15,4 @@ module.exports = (oldMember, newMember) => {
  * @param newMember El estado del miembro despues del cambio
  */
 function roleChanged(oldMember, newMember) {
-    let oldRoles = oldMember.roles;
-    let newRoles = newMember.roles;
-    let channelCambioRoles = newMember.guild.channels.find("id", "593913543833681920");
-    let distincRoles = oldRoles.filter((v, i, newRoles) => newRoles.indexOf(v) === i);
-    for (let i = 0; i < distincRoles.length; i++) {
-        if (oldRoles.includes(distincRoles[i])) {
-            channelCambioRoles.send("A " + oldMember + " se le ha removido el rol de " + distincRoles[i]);
-        }
-        if (newRoles.includes(distincRoles[i])) {
-            channelCambioRoles.send("A " + newMember + " se le ha otorgado el rol de " + distincRoles[i]);
-        }
-    }
 }
