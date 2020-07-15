@@ -1,6 +1,5 @@
 [
   {
-    "id": "1",
     "expansion": "BASE",
     "title": "Seven-Colored Puppeteer",
     "original_name": "ALICE MARGATROID",
@@ -10,10 +9,11 @@
     "spell_card_title": "Magic Sign",
     "spell_card_name": "\"Artful Sacrifice\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Flip cards from the top of the deck until you reveal an Item card, then put that card into play. Put all other cards revealed this way into the discard pile.\n\nYou may attack a player in range."
+    "spell_card_description": "Flip cards from the top of the deck until you reveal an Item card, then put that card into play. Put all other cards revealed this way into the discard pile.\n\nYou may attack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/front-113.png",
+    "link": "https://danmaku.party/rules/cards/base-game/alice-margatroid/"
   },
   {
-    "id": "2",
     "expansion": "BASE",
     "title": "Fairy of the Ice",
     "original_name": "CIRNO",
@@ -23,10 +23,11 @@
     "spell_card_title": "Freeze Sign ",
     "spell_card_name": "\"Perfect Freeze\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Attack a player in range. They must skip their next turn.\n\nPlayers cannot skip two turns in a row, but you may still target them."
+    "spell_card_description": "Attack a player in range. They must skip their next turn.\n\nPlayers cannot skip two turns in a row, but you may still target them.",
+    "image": "https://danmaku.party/wp-content/uploads/front-114.png",
+    "link": "https://danmaku.party/rules/cards/base-game/cirno/"
   },
   {
-    "id": "3",
     "expansion": "BASE",
     "title": "Shrine Maiden of Paradise",
     "original_name": "HAKUREI REIMU",
@@ -36,10 +37,11 @@
     "spell_card_title": "Spirit Sign ",
     "spell_card_name": "\"Fantasy Seal\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Choose Danmaku, Dodge, Invocation, or Item cards. Until your next turn, players cannot play cards of the chosen type.\n\nYou may attack a player in range."
+    "spell_card_description": "Choose Danmaku, Dodge, Invocation, or Item cards. Until your next turn, players cannot play cards of the chosen type.\n\nYou may attack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/front-115.png",
+    "link": "https://danmaku.party/rules/cards/base-game/hakurei-reimu/"
   },
   {
-    "id": "4",
     "expansion": "BASE",
     "title": "The Sealed Great Magician",
     "original_name": "HIJIRI BYAKUREN",
@@ -49,10 +51,11 @@
     "spell_card_title": "Super Human ",
     "spell_card_name": "\"Hijiri Byakuren\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "You gain +5 Range and +5 Distance until your next turn.\n\nYou may attack a player in range."
+    "spell_card_description": "You gain +5 Range and +5 Distance until your next turn.\n\nYou may attack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/front-116.png",
+    "link": "https://danmaku.party/rules/cards/base-game/hijiri-byakuren/"
   },
   {
-    "id": "5",
     "expansion": "BASE",
     "title": "Young Mistress of Bhavagra",
     "original_name": "HINANAWI TENSHI",
@@ -62,10 +65,11 @@
     "spell_card_title": "Swordplay",
     "spell_card_name": "\"Sword of Swagger\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Gain 1 life. You cannot go above your max life.\n\nChoose another player, regardless of range. Starting with that player, you and the chosen player take turns discarding Danmaku cards until one player passes. That player loses 1 life. This does not count as an attack."
+    "spell_card_description": "Gain 1 life. You cannot go above your max life.\n\nChoose another player, regardless of range. Starting with that player, you and the chosen player take turns discarding Danmaku cards until one player passes. That player loses 1 life. This does not count as an attack.",
+    "image": "https://danmaku.party/wp-content/uploads/front-117.png",
+    "link": "https://danmaku.party/rules/cards/base-game/hinanawi-tenshi/"
   },
   {
-    "id": "6",
     "expansion": "BASE",
     "title": "Colorful Rainbow Gatekeeper",
     "original_name": "HONG MEILING",
@@ -75,10 +79,11 @@
     "spell_card_title": "Colorful Sign ",
     "spell_card_name": "\"Extreme Color Typhoon\"",
     "spell_card_timing": "REACTION",
-    "spell_card_description": "Activate this when another player attacks.\n\nDraw two cards.\n\nAttack the attacker, regardless of range."
+    "spell_card_description": "Activate this when another player attacks.\n\nDraw two cards.\n\nAttack the attacker, regardless of range.",
+    "image": "https://danmaku.party/wp-content/uploads/front-118.png",
+    "link": "https://danmaku.party/rules/cards/base-game/hong-meiling/"
   },
   {
-    "id": "7",
     "expansion": "BASE",
     "title": "Free-Spirited Oni",
     "original_name": "IBUKI SUIKA",
@@ -88,10 +93,11 @@
     "spell_card_title": "Mist Sign",
     "spell_card_name": "\"Gathering and Dissipating\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Choose a number from 1 to 5. Until your next turn, all players use that number as the distance to each other, ignoring other modifiers.\n\nYou may attack a player in range."
+    "spell_card_description": "Choose a number from 1 to 5. Until your next turn, all players use that number as the distance to each other, ignoring other modifiers.\n\nYou may attack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/front-119.png",
+    "link": "https://danmaku.party/rules/cards/base-game/ibuki-suika/"
   },
   {
-    "id": "8",
     "expansion": "BASE",
     "title": "Perfect and Elegant Maid",
     "original_name": "IZAYOI SAKUYA",
@@ -101,10 +107,11 @@
     "spell_card_title": "Illusion World",
     "spell_card_name": "\"The World\"",
     "spell_card_timing": "REACTION",
-    "spell_card_description": "Activate this when any player is attacked.\n\nThat player avoids the attack. Attack the attacker, regardless of range.\n\nAdditional Action cards may not be played this turn."
+    "spell_card_description": "Activate this when any player is attacked.\n\nThat player avoids the attack. Attack the attacker, regardless of range.\n\nAdditional Action cards may not be played this turn.",
+    "image": "https://danmaku.party/wp-content/uploads/front-120.png",
+    "link": "https://danmaku.party/rules/cards/base-game/izayoi-sakuya/"
   },
   {
-    "id": "9",
     "expansion": "BASE",
     "title": "History-Eating Half Beast",
     "original_name": "KAMISHIRASAWA KEINE",
@@ -114,10 +121,11 @@
     "spell_card_title": "Ending Sign",
     "spell_card_name": "\"Phantasmal Emperor\"",
     "spell_card_timing": "REACTION",
-    "spell_card_description": "Activate this when another player plays an Action card or activates an Action Spell Card.\n\nCancel that card.\n\nYou may attack a player in range."
+    "spell_card_description": "Activate this when another player plays an Action card or activates an Action Spell Card.\n\nCancel that card.\n\nYou may attack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/front-121.png",
+    "link": "https://danmaku.party/rules/cards/base-game/kamishirasawa-keine/"
   },
   {
-    "id": "10",
     "expansion": "BASE",
     "title": "Aquatic Engineer",
     "original_name": "KAWASHIRO NITORI",
@@ -127,10 +135,11 @@
     "spell_card_title": "Water Sign",
     "spell_card_name": "\"Kappa’s Flash Flood\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Choose a player. Until your next turn, Item cards they control have no effect.\n\nYou may attack that player if they are in range."
+    "spell_card_description": "Choose a player. Until your next turn, Item cards they control have no effect.\n\nYou may attack that player if they are in range.",
+    "image": "https://danmaku.party/wp-content/uploads/front-122.png",
+    "link": "https://danmaku.party/rules/cards/base-game/kawashiro-nitori/"
   },
   {
-    "id": "11",
     "expansion": "BASE",
     "title": "Flower Master of the Four Seasons",
     "original_name": "KAZAMI YUUKA",
@@ -140,10 +149,11 @@
     "spell_card_title": "Flower Sign",
     "spell_card_name": "\"The Reflowering of Gensokyo\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Attack all other players, regardless of range."
+    "spell_card_description": "Attack all other players, regardless of range.",
+    "image": "https://danmaku.party/wp-content/uploads/front-123.png",
+    "link": "https://danmaku.party/rules/cards/base-game/kazami-yuuka/"
   },
   {
-    "id": "12",
     "expansion": "BASE",
     "title": "Ordinary Magician",
     "original_name": "KIRISAME MARISA",
@@ -153,10 +163,11 @@
     "spell_card_title": "Love Sign",
     "spell_card_name": "\"Master Spark\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Attack a player in range. This attack deals 1 damage, plus 1 damage for each Powerup card you have in play."
+    "spell_card_description": "Attack a player in range. This attack deals 1 damage, plus 1 damage for each Powerup card you have in play.",
+    "image": "https://danmaku.party/wp-content/uploads/front-124.png",
+    "link": "https://danmaku.party/rules/cards/base-game/kirisame-marisa/"
   },
   {
-    "id": "13",
     "expansion": "BASE",
     "title": "Newbie Goddess of the Mountain",
     "original_name": "KOCHIYA SANAE",
@@ -166,10 +177,11 @@
     "spell_card_title": "Miracle",
     "spell_card_name": "\"Miracle Fruit\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Choose a player in range. That player must reveal their hand.\n\nAttack that player once, then attack them once for each Danmaku card revealed this way beyond the first."
+    "spell_card_description": "Choose a player in range. That player must reveal their hand.\n\nAttack that player once, then attack them once for each Danmaku card revealed this way beyond the first.",
+    "image": "https://danmaku.party/wp-content/uploads/front-125.png",
+    "link": "https://danmaku.party/rules/cards/base-game/kochiya-sanae/"
   },
   {
-    "id": "14",
     "expansion": "BASE",
     "title": "The Girl Even the Evil Spirits Fear",
     "original_name": "KOMEIJI SATORI",
@@ -178,10 +190,11 @@
     "ability_description": "When Satori is attacked, she may flip the top card of the deck. If that card is a Winter, she avoids the attack.\n\nSatori may look at any player’s hand once per round.",
     "spell_card_title": "Recollection",
     "spell_card_name": "\"Terrifying Hypnotism\"",
-    "spell_card_description": "Choose another player’s character and activate their Spell Card as if it were your own. You may choose a defeated player’s character."
+    "spell_card_description": "Choose another player’s character and activate their Spell Card as if it were your own. You may choose a defeated player’s character.",
+    "image": "https://danmaku.party/wp-content/uploads/front-126.png",
+    "link": "https://danmaku.party/rules/cards/base-game/komeiji-satori/"
   },
   {
-    "id": "15",
     "expansion": "BASE",
     "title": "Half-Human Half-Phantom Gardener",
     "original_name": "KONPAKU YOUMU",
@@ -191,10 +204,11 @@
     "spell_card_title": "Hell Realm Sword",
     "spell_card_name": "\"200 Yojana in One Slash\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Until your next turn, all players are considered in range for you.\n\nAttack a player. You may also attack an additional different player."
+    "spell_card_description": "Until your next turn, all players are considered in range for you.\n\nAttack a player. You may also attack an additional different player.",
+    "image": "https://danmaku.party/wp-content/uploads/front-127.png",
+    "link": "https://danmaku.party/rules/cards/base-game/konpaku-youmu/"
   },
   {
-    "id": "16",
     "expansion": "BASE",
     "title": "Shikaisen from Ancient Japan",
     "original_name": "MONONOBE NO FUTO",
@@ -204,10 +218,11 @@
     "spell_card_title": "Saint Girl",
     "spell_card_name": "\"Oomonoimi’s Dinner\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "You may choose two other players and force them to swap hands.\n\nYou may attack a player in range."
+    "spell_card_description": "You may choose two other players and force them to swap hands.\n\nYou may attack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/front-128.png",
+    "link": "https://danmaku.party/rules/cards/base-game/mononobe-no-futo/"
   },
   {
-    "id": "17",
     "expansion": "BASE",
     "title": "The Unmoving Great Library",
     "original_name": "PATCHOULI KNOWLEDGE",
@@ -217,10 +232,11 @@
     "spell_card_title": "Fire Water Wood Metal Earth Sign",
     "spell_card_name": "\"Philosopher’s Stone\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Draw 2 cards.\n\nYou may attack a player in range."
+    "spell_card_description": "Draw 2 cards.\n\nYou may attack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/front-129.png",
+    "link": "https://danmaku.party/rules/cards/base-game/patchouli-knowledge/"
   },
   {
-    "id": "18",
     "expansion": "BASE",
     "title": "Lunatic Moon Rabbit",
     "original_name": "REISEN UDONGEIN INABA",
@@ -230,10 +246,11 @@
     "spell_card_title": "Pale Moon Illusion",
     "spell_card_name": "\"Lunatic Red Eyes\"",
     "spell_card_timing": "REACTION",
-    "spell_card_description": "Activate this when another player plays a Danmaku card or activates a Spell Card.\n\nCancel that card. You may copy that card with new targets."
+    "spell_card_description": "Activate this when another player plays a Danmaku card or activates a Spell Card.\n\nCancel that card. You may copy that card with new targets.",
+    "image": "https://danmaku.party/wp-content/uploads/front-130.png",
+    "link": "https://danmaku.party/rules/cards/base-game/reisen-udongein-inaba/"
   },
   {
-    "id": "19",
     "expansion": "BASE",
     "title": "Scorching, Troublesome Divine Flame",
     "original_name": "REIUJI UTSUHO",
@@ -243,10 +260,11 @@
     "spell_card_title": "Atomic Fire",
     "spell_card_name": "\"Nuclear Excursion\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Choose a player in range. Attack that player three times.\n\nYou lose 1 life."
+    "spell_card_description": "Choose a player in range. Attack that player three times.\n\nYou lose 1 life.",
+    "image": "https://danmaku.party/wp-content/uploads/front-131.png",
+    "link": "https://danmaku.party/rules/cards/base-game/reiuji-utsuho/"
   },
   {
-    "id": "20",
     "expansion": "BASE",
     "title": "The Scarlet Devil",
     "original_name": "REMILIA SCARLET",
@@ -256,10 +274,11 @@
     "spell_card_title": "Divine Spear",
     "spell_card_name": "\"Spear the Gungnir\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "This Spell Card cannot be canceled.\n\nAttack a player regardless of range.\nThis attack cannot be avoided."
+    "spell_card_description": "This Spell Card cannot be canceled.\n\nAttack a player regardless of range.\nThis attack cannot be avoided.",
+    "image": "https://danmaku.party/wp-content/uploads/front-132.png",
+    "link": "https://danmaku.party/rules/cards/base-game/remilia-scarlet/"
   },
   {
-    "id": "21",
     "expansion": "BASE",
     "title": "Traditional Reporter of Fantasy",
     "original_name": "SHAMEIMARU AYA",
@@ -269,10 +288,11 @@
     "spell_card_title": "Whirlwind",
     "spell_card_name": "\"Wind God Girl\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Reveal the top five cards of the deck. Place any Danmaku cards revealed this way into your hand and the rest into the discard pile.\n\nYou may attack a player in range."
+    "spell_card_description": "Reveal the top five cards of the deck. Place any Danmaku cards revealed this way into your hand and the rest into the discard pile.\n\nYou may attack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/front-133.png",
+    "link": "https://danmaku.party/rules/cards/base-game/shameimaru-aya/"
   },
   {
-    "id": "22",
     "expansion": "BASE",
     "title": "Shoutoku Taoist",
     "original_name": "TOYOSATOMIMI NO MIKO",
@@ -282,10 +302,11 @@
     "spell_card_title": "Secret Treasure",
     "spell_card_name": "\"Armillary Sphere of Ikaruga-dera\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Choose a player. That player must discard their hand and draw three cards.\n\nYou may attack a player in range."
+    "spell_card_description": "Choose a player. That player must discard their hand and draw three cards.\n\nYou may attack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/front-134.png",
+    "link": "https://danmaku.party/rules/cards/base-game/toyosatomimi-no-miko/"
   },
   {
-    "id": "23",
     "expansion": "BASE",
     "title": "Brain of the Moon",
     "original_name": "YAKOGORO EIRIN",
@@ -295,10 +316,11 @@
     "spell_card_title": "Forbidden Arcanum",
     "spell_card_name": "\"Hourai Elixir\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Gain 1 life. You may have another player of your choice gain 1 life. You cannot go above your max life.\n\nYou may attack a player in range."
+    "spell_card_description": "Gain 1 life. You may have another player of your choice gain 1 life. You cannot go above your max life.\n\nYou may attack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/front-135.png",
+    "link": "https://danmaku.party/rules/cards/base-game/yagokoro-eirin/"
   },
   {
-    "id": "24",
     "expansion": "BASE",
     "title": "Youkai of Boundaries",
     "original_name": "YAKUMO YUKARI",
@@ -308,10 +330,11 @@
     "spell_card_title": "Evil Spirits",
     "spell_card_name": "\"Yakumo Yukari’s Spiriting Away\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Choose any player. You may look at their hand, then either take a card of your choice from it, or take an Item that player controls in play.\n\nYou may attack that player if they are in range."
+    "spell_card_description": "Choose any player. You may look at their hand, then either take a card of your choice from it, or take an Item that player controls in play.\n\nYou may attack that player if they are in range.",
+    "image": "https://danmaku.party/wp-content/uploads/front-136.png",
+    "link": "https://danmaku.party/rules/cards/base-game/yakumo-yukari/"
   },
   {
-    "id": "25",
     "expansion": "LUNATIC",
     "title": "Sister of the Devil",
     "original_name": "FLANDRE SCARLET",
@@ -321,10 +344,11 @@
     "spell_card_title": "Taboo",
     "spell_card_name": "\"Lævateinn\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "This Spell Card cannot be canceled.\n\nChoose a player regardless of range. Attack that player and each player adjacent to them. You cannot attack yourself."
+    "spell_card_description": "This Spell Card cannot be canceled.\n\nChoose a player regardless of range. Attack that player and each player adjacent to them. You cannot attack yourself.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20069.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/flandre-scarlet/"
   },
   {
-    "id": "26",
     "expansion": "LUNATIC",
     "title": "Human Form of Hourai",
     "original_name": "FUJIWARA NO MOKOU",
@@ -334,7 +358,9 @@
     "spell_card_title": "Immortal",
     "spell_card_name": "\"Fire Bird -Soaring Phoenix Wings-\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Choose a player in range.\n\nIf you are at max life, attack that player once.\n\nOtherwise, if you are above 1 life, attack that player twice.\n\nOtherwise, attack that player three times."
+    "spell_card_description": "Choose a player in range.\n\nIf you are at max life, attack that player once.\n\nOtherwise, if you are above 1 life, attack that player twice.\n\nOtherwise, attack that player three times.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20070.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/fujiwara-no-mokou/"
   },
   {
     "id": "27",
@@ -347,10 +373,11 @@
     "spell_card_title": "Transformation",
     "spell_card_name": "\"Scrolls of Frolicking Animals\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Draw a card.\n\nIf you have an Extra Character from any source, you may dismiss it and recruit a new one. The source does not change.\n\nAttack a player in range."
+    "spell_card_description": "Draw a card.\n\nIf you have an Extra Character from any source, you may dismiss it and recruit a new one. The source does not change.\n\nAttack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20071.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/futatsuiwa-mamizou/"
   },
   {
-    "id": "28",
     "expansion": "LUNATIC",
     "title": "Poker Face of Abundant Expressions",
     "original_name": "HATA NO KOKORO",
@@ -360,10 +387,11 @@
     "spell_card_title": "Possession",
     "spell_card_name": "\"Four Humors Possession\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Flip the top three cards of the deck. For each card, you may perform an action according to its season.\n\nSpring: Choose a player. They draw a card.\nSummer: Attack a player in range.\nAutumn: Force a player to discard a card of their choice from their hand.\nWinter: Force a player to discard an Item card of your choice that they control."
+    "spell_card_description": "Flip the top three cards of the deck. For each card, you may perform an action according to its season.\n\nSpring: Choose a player. They draw a card.\nSummer: Attack a player in range.\nAutumn: Force a player to discard a card of their choice from their hand.\nWinter: Force a player to discard an Item card of your choice that they control.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20072.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/hata-no-kokoro/"
   },
   {
-    "id": "29",
     "expansion": "LUNATIC",
     "title": "Goddess of Hell",
     "original_name": "HECATIA LAPISLAZULI",
@@ -372,10 +400,11 @@
     "ability_description": "When Hecatia is at max life, she may play two additional Danmaku cards per turn.\n\nOtherwise, when Hecatia is above 1 life, she has +2 Range.\n\nOtherwise, Hecatia has +2 Distance.",
     "spell_card_name": "\"Trinitarian Rhapsody\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Choose three: (You cannot choose the same option more than once.)\n• Draw a card.\n• Choose another player. They draw a card.\n• Discard a card and gain 1 life.\n• Resolve the current incident.\n• Attack a player in range."
+    "spell_card_description": "Choose three: (You cannot choose the same option more than once.)\n• Draw a card.\n• Choose another player. They draw a card.\n• Discard a card and gain 1 life.\n• Resolve the current incident.\n• Attack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20073.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/hecatia-lapislazuli/"
   },
   {
-    "id": "30",
     "expansion": "LUNATIC",
     "title": "Phantasmal Percussionist",
     "original_name": "HORIKAWA RAIKO",
@@ -384,10 +413,11 @@
     "ability_description": "On her turn, Raiko may discard 3 points worth of cards from her hand to activate her Spell Card.\n\nWhen Raiko activates her Spell Card using an NInvocation card, it cannot be canceled. This includes Extra Characters.",
     "spell_card_name": "\"Pristine Beat\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "You may attack a player in range.\n\nThis attack deals damage equal to the number of consecutive rounds you have successfully activated \"Pristine Beat,\" including this one."
+    "spell_card_description": "You may attack a player in range.\n\nThis attack deals damage equal to the number of consecutive rounds you have successfully activated \"Pristine Beat,\" including this one.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20074.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/horikawa-raiko/"
   },
   {
-    "id": "31",
     "expansion": "LUNATIC",
     "title": "The Storied Unexplainable Phenomenon",
     "original_name": "HOSHIGUMA YUUGI",
@@ -397,10 +427,11 @@
     "spell_card_title": "Mysterious Cycle",
     "spell_card_name": "\"Hell’s Wheel of Pain\"",
     "spell_card_timing": "REACTION",
-    "spell_card_description": "Activate this when you are attacked, or when you lose life.\n\nDraw a card. Gain 1 life. You can’t go above your max life.\n\nYou may attack a player in range."
+    "spell_card_description": "Activate this when you are attacked, or when you lose life.\n\nDraw a card. Gain 1 life. You can’t go above your max life.\n\nYou may attack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20075.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/hoshiguma-yuugi/"
   },
   {
-    "id": "32",
     "expansion": "LUNATIC",
     "title": "The Unidentified Fantastic Flying Girl",
     "original_name": "HOUJUU NUE",
@@ -410,10 +441,11 @@
     "spell_card_title": "Nue Sign",
     "spell_card_name": "\"Danmaku Chimera\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Other players cannot activate this Spell Card.\n\nRecruit two Extra Characters. These count as Extra Characters from Nue’s Ability. Then, dismiss two Extra Characters of your choice recruited by Nue’s Ability or Spell Card.\n\nYou may attack a player in range."
+    "spell_card_description": "Other players cannot activate this Spell Card.\n\nRecruit two Extra Characters. These count as Extra Characters from Nue’s Ability. Then, dismiss two Extra Characters of your choice recruited by Nue’s Ability or Spell Card.\n\nYou may attack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20076.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/houjuu-nue/"
   },
   {
-    "id": "33",
     "expansion": "LUNATIC",
     "title": "Eternal Princess",
     "original_name": "HOURAISAN KAGUYA",
@@ -423,10 +455,11 @@
     "spell_card_title": "Divine Treasure ",
     "spell_card_name": "\"End of Imperishable Night -Dawn-\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "You may attack a player in range.\n\nThen, you may discard your hand. If you do, take an extra turn after this one. You cannot take more than one extra turn in a row."
+    "spell_card_description": "You may attack a player in range.\n\nThen, you may discard your hand. If you do, take an extra turn after this one. You cannot take more than one extra turn in a row.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20077.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/houraisan-kaguya/"
   },
   {
-    "id": "34",
     "expansion": "LUNATIC",
     "original_name": "JUNKO",
     "name": "JUNKO",
@@ -439,7 +472,6 @@
     "link": "https://danmaku.party/rules/cards/lunatic-extra/junko/"
   },
   {
-    "id": "35",
     "expansion": "LUNATIC",
     "title": "Hell’s Traffic Accident",
     "original_name": "KAENBYOU RIN",
@@ -448,10 +480,11 @@
     "ability_description": "During her draw step, Rin may choose to draw one fewer card. If she does, she may choose a playable card from the top three cards of the discard pile or collected by the current incident and put it into her hand.\n\nWhenever another non-Mob player is defeated, Rin may draw two cards.\n\nWhenever Rin activates \"Vengeful Cannibal Spirit,\" she may attack a player in range.",
     "spell_card_title": "Corpse Spirit ",
     "spell_card_name": "\"Vengeful Cannibal Spirit\"",
-    "spell_card_description": "Choose a defeated player’s character and activate their Spell Card as if it were your own.\n\nOther players can’t activate this spell card. This can’t be activated if no player is defeated."
+    "spell_card_description": "Choose a defeated player’s character and activate their Spell Card as if it were your own.\n\nOther players can’t activate this spell card. This can’t be activated if no player is defeated.",
+    "image": "https://danmaku.party/wp-content/uploads/Errata/KAENBYOU%20RIN.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/kaenbyou-rin/"
   },
   {
-    "id": "36",
     "expansion": "LUNATIC",
     "title": "Counterattacking Amanojaku",
     "original_name": "KIJIN SEIJA",
@@ -461,10 +494,11 @@
     "spell_card_title": "Turnabout",
     "spell_card_name": "\"Reverse Hierarchy\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Kijin Seija cannot be chosen as a target for this Spell Card.\n\nAttack a player in range. If that player controls an Item card, this attack deals damage equal to the highest point value among Item cards that player controls.\nOtherwise it deals 1 damage."
+    "spell_card_description": "Kijin Seija cannot be chosen as a target for this Spell Card.\n\nAttack a player in range. If that player controls an Item card, this attack deals damage equal to the highest point value among Item cards that player controls.\nOtherwise it deals 1 damage.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20080.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/kijin-seija/"
   },
   {
-    "id": "37",
     "expansion": "LUNATIC",
     "title": "The Closed Eye of Love",
     "original_name": "KOMEIJI KOISHI",
@@ -474,10 +508,11 @@
     "spell_card_title": "Symbol",
     "spell_card_name": "\"Danmaku Paranoia\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Choose another player. Until the start of your next turn, that player loses all BAbilities from their characters. This includes Extra Characters.\n\nYou may attack a player in range."
+    "spell_card_description": "Choose another player. Until the start of your next turn, that player loses all BAbilities from their characters. This includes Extra Characters.\n\nYou may attack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20081.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/komeiji-koishi/"
   },
   {
-    "id": "38",
     "expansion": "LUNATIC",
     "title": "The Protecting Protected Great Ring",
     "original_name": "KUMOI ICHIRIN",
@@ -487,10 +522,11 @@
     "spell_card_title": "Iron Fist",
     "spell_card_name": "\"Indisputable Youkai Punch\"",
     "spell_card_timing": "REACTION",
-    "spell_card_description": "Activate this when another player draws a card.\n\nAttack that player twice, regardless of range."
+    "spell_card_description": "Activate this when another player draws a card.\n\nAttack that player twice, regardless of range.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20082.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/kumoi-ichirin/"
   },
   {
-    "id": "39",
     "expansion": "LUNATIC",
     "title": "The Pinnacle of Native Gods",
     "original_name": "MORIYA SUWAKO",
@@ -500,10 +536,11 @@
     "spell_card_title": "Frog Hunt ",
     "spell_card_name": "\"The Snake Eats the Croaking Frog\"",
     "spell_card_timing": "REACTION",
-    "spell_card_description": "Activate this when another player plays an Action or Reaction card.\n\nPut that card into your hand instead\nof the discard pile after it resolves.\nThat card cannot be collected by incidents.\n\nYou may attack a player in range."
+    "spell_card_description": "Activate this when another player plays an Action or Reaction card.\n\nPut that card into your hand instead\nof the discard pile after it resolves.\nThat card cannot be collected by incidents.\n\nYou may attack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20083.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/moriya-suwako/"
   },
   {
-    "id": "40",
     "expansion": "LUNATIC",
     "title": "Beautiful Scarlet Cloth",
     "original_name": "NAGAE IKU",
@@ -513,10 +550,11 @@
     "spell_card_title": "Plumage",
     "spell_card_name": "\"Raiment Like the Sky\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Choose two different seasons. Then, flip cards from the top of the deck until you flip a card of each of the chosen seasons. For each chosen season, put the first card revealed this way into your hand.\n\nYou may attack a player in range."
+    "spell_card_description": "Choose two different seasons. Then, flip cards from the top of the deck until you flip a card of each of the chosen seasons. For each chosen season, put the first card revealed this way into your hand.\n\nYou may attack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20084.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/nagae-iku/"
   },
   {
-    "id": "41",
     "expansion": "LUNATIC",
     "title": "Ferryman of the Sanzu",
     "original_name": "ONOZUKA KOMACHI",
@@ -526,10 +564,11 @@
     "spell_card_title": "Death Sign",
     "spell_card_name": "\"Scythe of Final Judgment\"",
     "spell_card_timing": "REACTION",
-    "spell_card_description": "Activate this when a player would avoid an attack.\n\nThey do not avoid the attack.\n\nAttack that player regardless of range."
+    "spell_card_description": "Activate this when a player would avoid an attack.\n\nThey do not avoid the attack.\n\nAttack that player regardless of range.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20085.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/onozuka-komachi/"
   },
   {
-    "id": "42",
     "expansion": "LUNATIC",
     "title": "Ghost of Dreamland",
     "original_name": "SAGYOUJI YUYUKO",
@@ -539,10 +578,11 @@
     "spell_card_title": "Deadly Butterfly",
     "spell_card_name": "\"Eternal Sleep in Dreamland\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "All other players lose 1 life.\nThis cannot reduce a player’s life below 1. This is not an attack."
+    "spell_card_description": "All other players lose 1 life.\nThis cannot reduce a player’s life below 1. This is not an attack.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20085.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/saigyouji-yuyuko/"
   },
   {
-    "id": "43",
     "expansion": "LUNATIC",
     "title": "Supreme Judge of Paradise",
     "original_name": "SHIKI EIKI, YAMAXANADU",
@@ -552,10 +592,11 @@
     "spell_card_title": "Judgment ",
     "spell_card_name": "\"Guilty or Not Guilty\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Choose another player regardless of range and declare \"black\" or \"white.\"\n\nSecretly reveal a card in your hand to that player.\nIf you declared \"black\" and their role card matches the season of the revealed card, they lose 1 life.\nIf you declared \"white\" and their role card matches the season of the revealed card, they gain 1 life.\nOtherwise they announce that nothing happens."
+    "spell_card_description": "Choose another player regardless of range and declare \"black\" or \"white.\"\n\nSecretly reveal a card in your hand to that player.\nIf you declared \"black\" and their role card matches the season of the revealed card, they lose 1 life.\nIf you declared \"white\" and their role card matches the season of the revealed card, they gain 1 life.\nOtherwise they announce that nothing happens.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20087.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/shiki-eiki/"
   },
   {
-    "id": "44",
     "expansion": "LUNATIC",
     "title": "The Cheerful Forgotten Umbrella",
     "original_name": "TATARA KOGASA",
@@ -565,10 +606,11 @@
     "spell_card_title": "Surprising Rain",
     "spell_card_name": "\"Guerrilla Typhoon\"",
     "spell_card_timing": "REACTION",
-    "spell_card_description": "Activate this when another player plays an Action card.\n\nThis Spell Card cannot be canceled.\n\nAttack that player regardless of range. This attack cannot be avoided."
+    "spell_card_description": "Activate this when another player plays an Action card.\n\nThis Spell Card cannot be canceled.\n\nAttack that player regardless of range. This attack cannot be avoided.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20088.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/tatara-kogasa/"
   },
   {
-    "id": "45",
     "expansion": "LUNATIC",
     "title": "Disciple of Bishamonten",
     "original_name": "TORAMARU SHOU",
@@ -578,10 +620,11 @@
     "spell_card_title": "Jeweled Pagoda",
     "spell_card_name": "\"Radiant Treasure Gun\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "You may discard an Item card you control from play as you activate this.\n\nAttack a player in range. If you discarded an Item card, this attack deals damage equal to the point value of that card. Otherwise, the attack deals 1 damage."
+    "spell_card_description": "You may discard an Item card you control from play as you activate this.\n\nAttack a player in range. If you discarded an Item card, this attack deals damage equal to the point value of that card. Otherwise, the attack deals 1 damage.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20089.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/toramaru-shou/"
   },
   {
-    "id": "46",
     "expansion": "LUNATIC",
     "title": "The Secret Sealing Club’s First President",
     "original_name": "USAMI SUMIREKO",
@@ -591,10 +634,11 @@
     "spell_card_title": "Psychokinesis",
     "spell_card_name": "\"Psychexplosion\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Choose a player in range. That player must reveal their hand. Perform an action based on the highest point value revealed this way:\n\n5 or greater: Attack that player three times.\n3 — 4: Attack that player twice.\n1 — 2: Attack that player once.\nOtherwise: Attack that player once."
+    "spell_card_description": "Choose a player in range. That player must reveal their hand. Perform an action based on the highest point value revealed this way:\n\n5 or greater: Attack that player three times.\n3 — 4: Attack that player twice.\n1 — 2: Attack that player once.\nOtherwise: Attack that player once.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20090.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/usami-sumireko/"
   },
   {
-    "id": "47",
     "expansion": "LUNATIC",
     "title": "Shikigami of the Gap Youkai",
     "original_name": "YAKUMO RAN",
@@ -604,10 +648,11 @@
     "spell_card_title": "Shikigami",
     "spell_card_name": "\"Banquet of Twelve Heavenly Generals\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Choose one:\n• Draw two cards.\n• Discard a card and gain 1 life.\n• Attack a player regardless of range."
+    "spell_card_description": "Choose one:\n• Draw two cards.\n• Discard a card and gain 1 life.\n• Attack a player regardless of range.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20091.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/yakumo-ran/"
   },
   {
-    "id": "48",
     "expansion": "LUNATIC",
     "title": "Avatar of Mountains and Lakes",
     "original_name": "YASAKA KANAKO",
@@ -617,6 +662,8 @@
     "spell_card_title": "God Sign",
     "spell_card_name": "\"Omiwatari Walked by the Kami\"",
     "spell_card_timing": "ACTION",
-    "spell_card_description": "Resolve the current incident.\n\nThen, look at the top three cards of any deck and place them on the top or bottom of that deck in any order.\n\nYou may attack a player in range."
+    "spell_card_description": "Resolve the current incident.\n\nThen, look at the top three cards of any deck and place them on the top or bottom of that deck in any order.\n\nYou may attack a player in range.",
+    "image": "https://danmaku.party/wp-content/uploads/lunatic-extra/FRONT%20092.png",
+    "link": "https://danmaku.party/rules/cards/lunatic-extra/yasaka-kanako/"
   }
 ]
