@@ -5,7 +5,7 @@
  */
 module.exports = (member) => {
 
-    sendMemberAddLog(member);
+    sendLog(member);
 
 };
 
@@ -14,7 +14,7 @@ module.exports = (member) => {
  * Envia un mensaje de notificación al canal #general del servidor
  * @param member El miembro que se ha unido al servidor.
  */
-sendMemberAddLog = (member) => {
+let sendLog = (member) => {
     let chan = member.guild.channels.find("id","386366248306343937");
     chan.send(member.user.username +" se ha unido al servidor.");
 };

@@ -18,7 +18,7 @@ module.exports = function (oldMember, newMember) {
  * @param oldMember El miembro antes de la actualización del estado de voz.
  * @param newMember El miembro después de la actualización del estado de voz.
  */
-sendJoinMoveLeaveLog = (oldMember, newMember) => {
+let sendJoinMoveLeaveLog = (oldMember, newMember) => {
     let chan = newMember.guild.channels.find("id","385996736990281730");
     let nombre = "**"+oldMember.user.username+"**";
     let oldChannel = oldMember.voiceChannelID;

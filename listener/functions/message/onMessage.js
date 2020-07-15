@@ -8,6 +8,6 @@
  */
 module.exports = (message) => {
     if (message.author.username.toString()!=='HouraiESP') {
-        console.log(message.author.username + ": " + message.toString());
+        console.log(message.channel.name + " | " + message.author.username + ": " + message.toString());
     }
 };
