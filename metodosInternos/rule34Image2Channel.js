@@ -22,7 +22,6 @@ let rule34Image2Channel = function (message, tag) {
             .send({usingGoodRequestLibrary: true})
             .then(r => {
                 let postCount = getCantidadDeImagenes(r);
-
                 // Finalizar función si no hay imagenes indicados con los tags solicitados
                 if (postCount == 0) {
                     message.channel.send("No he encontrado ninguna imagen con los tags mencionados");
@@ -32,14 +31,14 @@ let rule34Image2Channel = function (message, tag) {
                 // Obteniendo 5 imagenes aleatoria
                 let pid = Math.floor(Math.random() * Math.floor((postCount - 1) / 5));
                 let req = BASE_REQUEST + "&limit=5&pid=" + pid;
-
+                console.log(req);
                 request.post(req)
                     .send({usingGoodRequestLibrary: true})
                     .then(r => enviarImagenAleatoria(r, message))
                     .catch(() => message.channel.send("*Lo siento, no pude encontrar una imagen que pueda enviar aquí.* <:notlikethis:414778768759062528>\n"));
             });
     } else{
-        message.channel.send("pervertido qliao");
+        message.channel.send("No puedo realizar este tipo de busquedas aquí.");
     }
 };
 
@@ -57,13 +56,14 @@ function buscarImagenMenor8MB(posts) {
         let postN = Math.floor(Math.random() * posts.length);
         try {
             if (posts.length) {
+                console.log(i);
                 let post = posts[postN];
                 let http = new XMLHttpRequest();
 
                 imageURL = post.attr.file_url;
                 http.open('HEAD', imageURL, false);
                 http.send(null);
-
+                console.log(imageURL);
                 if (http.status === 200) {
                     fileSize = http.getResponseHeader('content-length');
                 }
@@ -96,5 +96,5 @@ function enviarImagenAleatoria(r, message) {
 }
 
 module.exports = {
-    safebooruImageToChannel: rule34Image2Channel
+    rule34Image2Channel : rule34Image2Channel
 };

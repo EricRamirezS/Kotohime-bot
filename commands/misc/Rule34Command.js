@@ -17,7 +17,6 @@ class Rule34Command extends commando.Command {
                     key: 'tags',
                     prompt: 'Coloque los tags que desea buscar.',
                     type: 'string',
-                    default: ""
                 }
             ]
         });
