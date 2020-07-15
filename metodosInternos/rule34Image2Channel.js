@@ -96,6 +96,5 @@ function enviarImagenAleatoria(r, message) {
 }
 
 module.exports = {
-    safebooruImageToChannel: rule34Image2Channel,
-    BANNED_TAGS
+    safebooruImageToChannel: rule34Image2Channel
 };
