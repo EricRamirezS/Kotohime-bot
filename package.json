@@ -9,16 +9,5 @@
   "author": "EricRamirezS",
   "license": "ISC",
   "dependencies": {
-    "common-tags": "latest",
-    "discord.js": "^12.2.0",
-    "discord.js-commando": "github:discordjs/Commando",
-    "hashlib": "^1.0.1",
-    "jsdom": "^11.12.0",
-    "moment": "^2.27.0",
-    "node-fetch": "^2.6.0",
-    "pg": "^8.3.0",
-    "snekfetch": "^3.6.4",
-    "xmldoc": "^1.1.2",
-    "xmlhttprequest": "^1.8.0"
   }
 }
