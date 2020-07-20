@@ -7,7 +7,8 @@ class AliceCommand extends commando.Command {
             name: 'alice',
             group: 'touhou',
             memberName: 'alice',
-            description: ''
+            description: 'Enviaré una imagen de Alice Margatroid al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

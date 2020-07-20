@@ -7,7 +7,8 @@ class AwooCommand extends commando.Command {
             name: 'awoo',
             group: 'touhou',
             memberName: 'awoo',
-            description: ''
+            description: 'Enviaré una imagen de Inubashiri Momiji al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

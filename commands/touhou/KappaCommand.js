@@ -7,7 +7,8 @@ class KappaCommand extends commando.Command {
             name: 'kappa',
             group: 'touhou',
             memberName: 'kappa',
-            description: ''
+            description: 'Enviaré una imagen de Kawashiro Nitori al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

@@ -7,7 +7,8 @@ class EirinCommand extends commando.Command {
             name: 'eirin',
             group: 'touhou',
             memberName: 'eirin',
-            description: ''
+            description: 'Enviaré una imagen de Yagokoro Eirin al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

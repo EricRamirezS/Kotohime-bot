@@ -7,7 +7,8 @@ class PureCommand extends commando.Command {
             name: 'pure',
             group: 'touhou',
             memberName: 'pure',
-            description: ''
+            description: 'Enviaré una imagen de Junko al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

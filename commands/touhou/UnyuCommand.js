@@ -7,7 +7,8 @@ class UnyuCommand extends commando.Command {
             name: 'unyu',
             group: 'touhou',
             memberName: 'unyu',
-            description: ''
+            description: 'Enviaré una imagen de Reiuji Utsuho al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

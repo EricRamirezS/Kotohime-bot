@@ -7,7 +7,8 @@ class LawCommand extends commando.Command {
             name: 'law',
             group: 'touhou',
             memberName: 'law',
-            description: ''
+            description: 'Enviaré una imagen de Shikieiki Yamaxanadu al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

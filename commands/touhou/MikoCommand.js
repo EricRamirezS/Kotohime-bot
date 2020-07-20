@@ -7,7 +7,8 @@ class MikoCommand extends commando.Command {
             name: 'miko',
             group: 'touhou',
             memberName: 'miko',
-            description: ''
+            description: 'Enviaré una imagen de Hakurei Reimu o Kochiya Sanae al azar',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

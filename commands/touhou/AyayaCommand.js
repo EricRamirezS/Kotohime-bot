@@ -7,7 +7,8 @@ class AyayaCommand extends commando.Command {
             name: 'ayaya',
             group: 'touhou',
             memberName: 'ayaya',
-            description: ''
+            description: 'Enviaré una imagen de Shameimaru Aya al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

@@ -7,7 +7,8 @@ class UuuCommand extends commando.Command {
             name: 'uuu',
             group: 'touhou',
             memberName: 'uuu',
-            description: ''
+            description: 'Enviaré una imagen de Remilia Scarlet al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

@@ -6,6 +6,7 @@ class ChooseCommand extends commando.Command {
             name: 'escoger',
             group: 'comun',
             memberName: 'escoger',
+            aliases: ['choose'],
             description: 'Elige entre varias opciones proporcionadas.',
             args: [
                 {

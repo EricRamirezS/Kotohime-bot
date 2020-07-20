@@ -7,7 +7,9 @@ class PC98Command extends commando.Command {
             name: 'pc98',
             group: 'touhou',
             memberName: 'pc98',
-            description: ''
+            aliases: ['pc-98'],
+            description: 'Enviaré una imagen de touhou en la era de PC-98 al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

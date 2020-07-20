@@ -6,3 +6,10 @@
 module.exports = (guild) => {
     //TODO
 };
+
+function registrarGUild(guild){
+    let query = {
+        text: 'INSERT INTO GUILD(GUILD_ID) values($1)',
+        values: [guild.id]
+    }
+}

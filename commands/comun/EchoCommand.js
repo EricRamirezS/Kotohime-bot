@@ -6,6 +6,7 @@ class EchoCommand extends commando.Command {
             name: 'eco',
             group: 'comun',
             memberName: 'comun',
+            aliases: ['echo'],
             description: 'El bot ha repetido lo que dices\n',
             args: [
                 {

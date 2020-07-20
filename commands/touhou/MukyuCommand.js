@@ -7,7 +7,8 @@ class MukyuCommand extends commando.Command {
             name: 'mukyu',
             group: 'touhou',
             memberName: 'mukyu',
-            description: ''
+            description: 'Enviaré una imagen de Patchouli Knowledge al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

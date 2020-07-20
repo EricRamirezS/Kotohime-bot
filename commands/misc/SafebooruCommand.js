@@ -7,6 +7,7 @@ class SafebooruCommand extends commando.Command {
             name: 'safebooru',
             group: 'misc',
             memberName: 'safebooru',
+            aliases: ['sb'],
             description: 'Dejame googlear eso por ti.',
             examples: [
                 "~safebooru touhou",

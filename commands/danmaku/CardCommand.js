@@ -14,6 +14,7 @@ class CardCommand extends commando.Command {
             name: 'carta',
             group: 'danmaku',
             memberName: 'carta',
+            aliases: ['card'],
             description: '¿Quieres ver información de alguna carta??',
             args: [
                 {
@@ -49,7 +50,7 @@ class CardCommand extends commando.Command {
     }
 
     convertCardToString(card) {
-        let respuesta = new Discord.RichEmbed();
+        let respuesta = new Discord.MessageEmbed();
         respuesta.setTitle(card.name);
         if (BATTLE_DECK.includes(card) || LUNATIC_DECK.includes(card)) {
             if (BATTLE_DECK.includes(card)) respuesta.setColor('#7C8FD6');

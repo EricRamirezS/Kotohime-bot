@@ -7,7 +7,8 @@ class MokouCommand extends commando.Command {
             name: 'mokou',
             group: 'touhou',
             memberName: 'mokou',
-            description: ''
+            description: 'Enviaré una imagen de Fujiwara No Mokou al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

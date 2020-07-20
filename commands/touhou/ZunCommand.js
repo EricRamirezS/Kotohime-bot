@@ -55,8 +55,9 @@ class ZunCommand extends commando.Command {
         super(client, {
             name: 'zun',
             group: 'touhou',
-            memberName: 'zun    ',
-            description: ''
+            memberName: 'zun',
+            description: 'Enviare una imagen de ZUN al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

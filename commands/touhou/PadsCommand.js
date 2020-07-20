@@ -7,7 +7,8 @@ class PadsCommand extends commando.Command {
             name: 'pads',
             group: 'touhou',
             memberName: 'pads',
-            description: ''
+            description: 'Enviaré una imagen de Izayoi Sakuya al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

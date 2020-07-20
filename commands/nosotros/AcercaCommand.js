@@ -5,6 +5,7 @@ class AcercaCommand extends commando.Command {
         super(client, {
             name: 'sobremi',
             group: 'nosotros',
+            aliases: ['about'],
             memberName: 'sobremi',
             description: '¿Quieres saber sobre mi?',
             examples: ['~sobremi']

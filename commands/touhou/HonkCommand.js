@@ -7,7 +7,8 @@ class HonkCommand extends commando.Command {
             name: 'honk',
             group: 'touhou',
             memberName: 'honk',
-            description: ''
+            description: 'Enviaré una imagen de Chen al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

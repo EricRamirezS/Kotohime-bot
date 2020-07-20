@@ -7,7 +7,8 @@ class TeruyoCommand extends commando.Command {
             name: 'teruyo',
             group: 'touhou',
             memberName: 'teruyo',
-            description: ''
+            description: 'Enviaré una imagen de Houraisan Kaguya al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

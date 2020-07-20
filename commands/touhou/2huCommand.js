@@ -13,6 +13,9 @@ class _2huCommand extends commando.Command {
         });
     }
 
+    hasPermission(){
+        return false;
+    }
     async run(message, args) {
         safebooru(message, "touhou");
     }

@@ -31,7 +31,6 @@ let rule34Image2Channel = function (message, tag) {
                 // Obteniendo 5 imagenes aleatoria
                 let pid = Math.floor(Math.random() * Math.floor((postCount - 1) / 5));
                 let req = BASE_REQUEST + "&limit=5&pid=" + pid;
-                console.log(req);
                 request.post(req)
                     .send({usingGoodRequestLibrary: true})
                     .then(r => enviarImagenAleatoria(r, message))
@@ -56,14 +55,12 @@ function buscarImagenMenor8MB(posts) {
         let postN = Math.floor(Math.random() * posts.length);
         try {
             if (posts.length) {
-                console.log(i);
                 let post = posts[postN];
                 let http = new XMLHttpRequest();
 
                 imageURL = post.attr.file_url;
                 http.open('HEAD', imageURL, false);
                 http.send(null);
-                console.log(imageURL);
                 if (http.status === 200) {
                     fileSize = http.getResponseHeader('content-length');
                 }

@@ -7,7 +7,8 @@ class YuyukoCommand extends commando.Command {
             name: 'yuyuko',
             group: 'touhou',
             memberName: 'yuyuko',
-            description: ''
+            description: 'Enviare una imagen de Saigyouji Yuyuko al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

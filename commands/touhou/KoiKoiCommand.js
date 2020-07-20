@@ -7,7 +7,8 @@ class KoiKoiCommand extends commando.Command {
             name: 'koikoi',
             group: 'touhou',
             memberName: 'koikoi',
-            description: ''
+            description: 'Enviaré una imagen de Komeiji Koishi al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

@@ -7,7 +7,8 @@ class _9ballCommand extends commando.Command {
             name: '9ball',
             group: 'touhou',
             memberName: '9ball',
-            description: ''
+            description: 'Enviaré una imagen de Cirno al azar.',
+            clientPermissions: ['ATTACH_FILES']
         });
     }
 

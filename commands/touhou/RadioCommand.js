@@ -9,7 +9,8 @@ class RadioCommand extends commando.Command {
             name: 'radio',
             group: 'touhou',
             memberName: 'radio',
-            description: 'Extrae la canción que se está reproduciendo en la Gensokyou Radio'
+            description: 'Extrae la canción que se está reproduciendo en la Gensokyou Radio',
+            clientPermissions: ['ATTACH_FILES', 'EMBED_LINKS ']
         });
     }
 
@@ -26,19 +27,19 @@ class RadioCommand extends commando.Command {
                 let albumCancion = document.childNamed("SONGINFO").childNamed("ALBUM").val;
                 let circleCancion = document.childNamed("SONGINFO").childNamed("CIRCLE").val;
                 let albumImagen = document.childNamed("MISC").childNamed("ALBUMART").val;
-                albumImagen="https://gensokyoradio.net/images/albums/200/"+albumImagen;
-                if (albumID){
-                    albumID = " (https://gensokyoradio.net/music/album/"+albumID+")";
+                albumImagen = "https://gensokyoradio.net/images/albums/200/" + albumImagen;
+                if (albumID) {
+                    albumID = " (https://gensokyoradio.net/music/album/" + albumID + ")";
                 }
-                if (circleURL){
-                    circleURL = " ("+circleURL+")";
+                if (circleURL) {
+                    circleURL = " (" + circleURL + ")";
                 }
                 let embed = new Discord.RichEmbed()
                     .setTitle('En reproducción: ' + tituloCancion)
                     .setImage(albumImagen)
                     .addField('Artista', artistaCancion)
-                    .addField('Album', albumCancion+albumID)
-                    .addField('Circulo', circleCancion+circleURL)
+                    .addField('Album', albumCancion + albumID)
+                    .addField('Circulo', circleCancion + circleURL)
                     .setURL('https://gensokyoradio.net/music/playing/');
                 message.channel.send(embed);
             });

@@ -12,7 +12,7 @@ class BlahCommand extends commando.Command {
     }
 
     async run(message, args){
-        message.channel.send("Blah para ti también, " + message.author);
+        message.channel.send("Blah para ti también, " + message.author.toString());
     }
 }
 

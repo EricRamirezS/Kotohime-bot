@@ -7,7 +7,7 @@
  * @see https://discord.js.org/#/docs/main/stable/class/Message
  */
 module.exports = (message) => {
-    if (message.author.username.toString()!=='HouraiESP') {
+    if (message.author.username.toString()!=='Kotohime') {
         console.log(message.channel.name + " | " + message.author.username + ": " + message.toString());
     }
 };

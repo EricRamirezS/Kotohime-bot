@@ -7,6 +7,8 @@ class Rule34Command extends commando.Command {
             name: 'rule34',
             group: 'misc',
             memberName: 'rule34',
+            aliases: ['r34'],
+            nsfw: true,
             description: 'Dejame googlear eso por ti.',
             examples: [
                 "~rule34 touhou",
@@ -21,6 +23,10 @@ class Rule34Command extends commando.Command {
             ]
         });
     }
+    //
+    // hasPermission(msg) {
+    //     return msg.channel.nsfw;
+    // }
 
     async run(message, args) {
         if (args) {
