@@ -1,4 +1,5 @@
 const commando = require('discord.js-commando');
+const {syncGuild, keys} = require('../../listener/db/JSONSListeners');
 
 const imageLinks = [
     "https://media.discordapp.net/attachments/276329252289511424/389545017712050176/zun-cosplay-1.jpg",//1
@@ -59,6 +60,12 @@ class ZunCommand extends commando.Command {
             description: 'Enviare una imagen de ZUN al azar.',
             clientPermissions: ['ATTACH_FILES']
         });
+    }
+
+    hasPermission(msg) {
+        let guild_data = syncGuild(msg.guild.id);
+        if (guild_data) return guild_data[keys.allow_touhou_commands];
+        return false;
     }
 
     async run(message, args){

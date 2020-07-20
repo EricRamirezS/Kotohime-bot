@@ -2,6 +2,7 @@ const commando = require('discord.js-commando');
 const request = require('snekfetch');
 const Discord = require('discord.js');
 const xmldoc = require('xmldoc');
+const {syncGuild, keys} = require('../../listener/db/JSONSListeners');
 
 class RadioCommand extends commando.Command {
     constructor(client) {
@@ -12,6 +13,12 @@ class RadioCommand extends commando.Command {
             description: 'Extrae la canción que se está reproduciendo en la Gensokyou Radio',
             clientPermissions: ['ATTACH_FILES', 'EMBED_LINKS']
         });
+    }
+
+    hasPermission(msg) {
+        let guild_data = syncGuild(msg.guild.id);
+        if (guild_data) return guild_data[keys.allow_touhou_commands];
+        return false;
     }
 
     async run(message, args) {
