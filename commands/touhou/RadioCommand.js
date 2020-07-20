@@ -10,7 +10,7 @@ class RadioCommand extends commando.Command {
             group: 'touhou',
             memberName: 'radio',
             description: 'Extrae la canción que se está reproduciendo en la Gensokyou Radio',
-            clientPermissions: ['ATTACH_FILES', 'EMBED_LINKS ']
+            clientPermissions: ['ATTACH_FILES', 'EMBED_LINKS']
         });
     }
 
