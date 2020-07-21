@@ -31,9 +31,9 @@ const banned_keys = {
     ban_role_id: 7
 };
 
-function getBanneds() {
+async function getBanneds() {
     if (!json_baned) {
-        fetch(url_baned, settings)
+        await fetch(url_baned, settings)
             .then(res => res.json())
             .then((json) => {
                 json_baned = json.values;
@@ -44,24 +44,27 @@ function getBanneds() {
     return json_baned;
 }
 
-function getGuilds() {
+async function getGuilds() {
     if (!json_guild) {
-        fetch(url_guilds, settings)
+        await fetch(url_guilds, settings)
             .then(res => res.json())
             .then((json) => {
-                json_guild = json;
+                json_guild = json.values;
             });
     }
     return json_guild;
 }
 
-async function getGuild(guild_id) {
-    let guild_data = await getGuilds();
-    let data;
-    if (guild_data) {
-        for (let i = 0; i < guild_data.values.length; i++) { //Buscando el canal para log de voz en la guild
-            if (guild_data.values[i][keys.guild_id] === guild_id) {
-                data = guild_data.values[0];
+function getSyncBanneds() {
+    return json_baned;
+}
+
+function getSyncGuild(guild_id) {
+    let data = null;
+    if (json_guild) {
+        for (let i = 0; i < json_guild.length; i++) {
+            if (json_guild[i][keys.guild_id] === guild_id) {
+                data = json_guild[i];
                 break;
             }
         }
@@ -69,22 +72,38 @@ async function getGuild(guild_id) {
     return data;
 }
 
-function refresh() {
+async function getGuild(guild_id) {
+    let guild_data = await getGuilds();
+    let data;
+    if (guild_data) {
+        for (let i = 0; i < guild_data.length; i++) {
+            if (guild_data[i][keys.guild_id] === guild_id) {
+                data = guild_data[i];
+                break;
+            }
+        }
+    }
+    return data;
+}
+
+async function refresh() {
     fetch(url_baned, settings)
         .then(res => res.json())
         .then((json) => {
-            json_baned = json;
+            json_baned = json.values;
         });
     fetch(url_guilds, settings)
         .then(res => res.json())
         .then((json) => {
-            json_guild = json;
+            json_guild = json.values;
         });
 }
 
 module.exports = {
     banned_members: getBanneds,
+    syncBanned: getSyncBanneds,
     guild: getGuild,
+    syncGuild: getSyncGuild,
     refresh: refresh,
     keys: keys,
     banned_keys: banned_keys
