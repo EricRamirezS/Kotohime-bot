@@ -6,6 +6,7 @@ let url_guilds = process.env.GUILD_DATA;
 
 var json_baned;
 var json_guild;
+var manual_update = false;
 
 const keys = {
     guild_id: 0,
@@ -38,8 +39,8 @@ async function getBanneds() {
             .then((json) => {
                 json_baned = json.values;
             }).catch(e => {
-            json_baned = [];
-        });
+                json_baned = [];
+            });
     }
     return json_baned;
 }
@@ -59,6 +60,13 @@ function getSyncBanneds() {
     return json_baned;
 }
 
+/**
+ * Entrega la información sobre la guild si esta está almacenada en la variable
+ * en caso contrario, entrega null.
+ * Recomendado para funciones no compatibles con funciones async.
+ * @param guild_id id de la guild cuyos datos se consultan
+ * @returns {null}
+ */
 function getSyncGuild(guild_id) {
     let data = null;
     if (json_guild) {
@@ -87,16 +95,33 @@ async function getGuild(guild_id) {
 }
 
 async function refresh() {
-    fetch(url_baned, settings)
-        .then(res => res.json())
-        .then((json) => {
-            json_baned = json.values;
-        });
-    fetch(url_guilds, settings)
-        .then(res => res.json())
-        .then((json) => {
-            json_guild = json.values;
-        });
+    if (!manual_update) {
+        fetch(url_baned, settings)
+            .then(res => res.json())
+            .then((json) => {
+                json_baned = json.values;
+            }).catch(() => {/*DO NOTHING*/});
+        fetch(url_guilds, settings)
+            .then(res => res.json())
+            .then((json) => {
+                json_guild = json.values;
+            }).catch(() => {/*DO NOTHING*/});
+    } else {
+        manual_update = !manual_update;
+    }
+}
+
+/**
+ * Debido a que los JSONS de dataclip se actualizan cada 1 minuto, puede generar desfase con la
+ * información real de la base de datos, por tanto, si se ha hecho una transacción conocida a la db,
+ * esta se actualizará manualmente, y se dejará de consultar al JSON por 1-2 minutos
+ * @param guild_data
+ * @param banned_data
+ * @returns {Promise<void>}
+ */
+async function manualRefresh(guild_data, banned_data) {
+    json_guild = guild_data;
+    json_baned = banned_data;
 }
 
 module.exports = {
@@ -106,5 +131,6 @@ module.exports = {
     syncGuild: getSyncGuild,
     refresh: refresh,
     keys: keys,
-    banned_keys: banned_keys
+    banned_keys: banned_keys,
+    manual_update: manualRefresh
 };
