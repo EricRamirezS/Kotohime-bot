@@ -1,14 +1,9 @@
 const request = require('snekfetch');
-const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const xmldoc = require('xmldoc');
 
-const INTENTOS = 5;
-
-const MB_8 = 8388608;
-
-
 /**
- *
+ * Busca y envia una imagen aleatoria desde rule34 a un canal de Discord, con los tags solicitados
+ * por el usuario
  * @param message Discord message object
  * @param tag search tag
  */
@@ -29,69 +24,37 @@ let rule34Image2Channel = function (message, tag) {
                 }
 
                 // Obteniendo 5 imagenes aleatoria
-                let pid = Math.floor(Math.random() * Math.floor((postCount - 1) / 5));
-                let req = BASE_REQUEST + "&limit=5&pid=" + pid;
+                let pid = Math.floor(Math.random() * Math.floor((postCount - 1)));
+                let req = BASE_REQUEST + "&limit=1&pid=" + pid;
                 request.post(req)
                     .send({usingGoodRequestLibrary: true})
                     .then(r => enviarImagenAleatoria(r, message))
-                    .catch(() => message.channel.send("*Lo siento, no pude encontrar una imagen que pueda enviar aquí.* <:notlikethis:414778768759062528>\n"));
+                    .catch(() => message.channel.send("*Lo siento, no pude encontrar una imagen que pueda enviar aquí.*\n"));
             });
-    } else{
+    } else {
         message.channel.send("No puedo realizar este tipo de busquedas aquí.");
     }
 };
 
 function getCantidadDeImagenes(r) {
-    // Obteniendo el número de imagenes existentes con este resultado
     let s = r.body.toString();
     let document = new xmldoc.XmlDocument(s);
     return document.attr.count;
 }
 
-function buscarImagenMenor8MB(posts) {
-    let fileSize = MB_8 + 1;
-    let imageURL;
-    for (let i = 0; fileSize > MB_8 && i <= INTENTOS; i++) {
-        let postN = Math.floor(Math.random() * posts.length);
-        try {
-            if (posts.length) {
-                let post = posts[postN];
-                let http = new XMLHttpRequest();
-
-                imageURL = post.attr.file_url;
-                http.open('HEAD', imageURL, false);
-                http.send(null);
-                if (http.status === 200) {
-                    fileSize = http.getResponseHeader('content-length');
-                }
-
-                posts.slice(postN, 1);
-            }
-        } catch (e) {
-            console.log(e);
-        }
-        if (i === INTENTOS) {
-            throw "imagenes muy grande";
-        }
-    }
-    return imageURL;
-}
-
 function enviarImagenAleatoria(r, message) {
     let s = r.body.toString();
     let document = new xmldoc.XmlDocument(s);
-    let posts = document.childrenNamed("post");
+    let post = document.childNamed("post");
 
-    let imageURL = buscarImagenMenor8MB(posts);
+    let imageURL = post.attr.file_url;
 
     //Enviando imagen al canal de discord desde donde fue solicitada
     if (imageURL) {
-        message.channel.send('', {
-            files: [imageURL]
-        });
+        message.channel.send(imageURL);
     }
 }
 
 module.exports = {
-    rule34Image2Channel : rule34Image2Channel
+    rule34Image2Channel: rule34Image2Channel
 };
