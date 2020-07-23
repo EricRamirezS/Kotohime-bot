@@ -36,4 +36,3 @@ bot.on('ready', function () {
     let avatar_code = avatar.split("/").pop().split(".")[0];
     if (bot.user.avatar !== avatar_code) bot.user.setAvatar(avatar);
 });
-
