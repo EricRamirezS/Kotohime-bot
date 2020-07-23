@@ -23,6 +23,7 @@ class Rule34Command extends commando.Command {
             ]
         });
     }
+
     //
     // hasPermission(msg) {
     //     return msg.channel.nsfw;
@@ -31,9 +32,13 @@ class Rule34Command extends commando.Command {
     async run(message, args) {
         if (args) {
             let tags = args.tags.replace(" ", "+");
-            rule34.rule34Image2Channel(message, tags);
+            try {
+                rule34.rule34Image2Channel(message, tags);
+            } catch (e) {
+               message.reply("por alguna razón inesperada, no pude enviar una imagen.");
+            }
         } else {
-            message.channel.send("El texto de entrada tiene muy pocos parametros.");
+            await message.channel.send("El texto de entrada tiene muy pocos parametros.");
         }
     }
 }
