@@ -143,7 +143,7 @@ async function refreshData() {
     });
     await con.connect();
     let guild_data = await con.query('SELECT * FROM "GUILD"');
-    let banned_data = await con.query('SELECT * FROM "USUARIO_BANEADO"');
+    let banned_data = await con.query('SELECT * FROM "USUARIO_BANEADO" where "END_DATE" < current_timestamp AND "CURRENTLY_BANNED"' );
     con.end();
     let guild_values = [];
     for (let i = 0; i < guild_data.rows.length; i++) {
