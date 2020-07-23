@@ -1,7 +1,5 @@
 const commando = require('discord.js-commando');
 const updateDB = require('../../listener/db/DBUpdateGuildSetting');
-const {guild, keys} = require('../../listener/db/JSONSListeners');
-
 
 class ChannelSettingCommand extends commando.Command {
     constructor(client) {
