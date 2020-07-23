@@ -1,10 +1,6 @@
 const {Client} = require('pg');
 const { banned_members, banned_keys} = require('./JSONSListeners');
 
-let url = process.env.BANNED_USERS;
-
-let settings = {method: "Get"};
-
 /**
  * Revisa cada 1 minuto por los usuarios baneados en la db que ya han
  * cumplido el periodo de baneo.
