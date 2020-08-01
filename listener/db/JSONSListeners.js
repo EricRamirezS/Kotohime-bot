@@ -5,8 +5,8 @@ let settings = {method: "Get"};
 let url_baned = process.env.BANNED_USERS;
 let url_guilds = process.env.GUILD_DATA;
 
-var json_baned;
-var json_guild;
+var json_baned = [];
+var json_guild = [];
 var manual_update = false;
 
 const keys = {
@@ -51,7 +51,7 @@ async function getGuilds() {
         await fetch(url_guilds, settings)
             .then(res => res.json())
             .then((json) => {
-                json_guild = json.values;
+                 json_guild = json.values;
             });
     }
     return json_guild;
@@ -97,8 +97,8 @@ async function getGuild(guild_id) {
     }
     if (!data) {
         await registerGuild(guild_id);
-        data = getGuild().catch(e => {
-            return null;
+        data = await getGuild().catch(e => {
+            return [];
         });
     }
     return data;

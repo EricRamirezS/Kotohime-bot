@@ -30,17 +30,17 @@ class RoleCommand extends commando.Command {
     }
 
     async run(message, args) {
-        let guild = await guild(message.guild.id);
-        if (guild) {
+        let guild_data = await guild(message.guild.id);
+        if (guild_data) {
             switch (args.accion) {
                 case 'listar':
-                    listar(message, guild[keys.roles_bot_can_add]);
+                    listar(message, guild_data[keys.roles_bot_can_add]);
                     break;
                 case 'obtener':
-                    obtenerOabandonar(message, args.Nombre_Rol, guild[keys.roles_bot_can_add]);
+                    obtenerOabandonar(message, args.Nombre_Rol, guild_data[keys.roles_bot_can_add]);
                     break;
                 case 'abandonar':
-                    obtenerOabandonar(message, args.Nombre_Rol, guild[keys.roles_bot_can_add], false);
+                    obtenerOabandonar(message, args.Nombre_Rol, guild_data[keys.roles_bot_can_add], false);
                     break;
                 default:
                     message.channel.send("La acción ingresada no es valida.");
@@ -83,11 +83,11 @@ function obtenerOabandonar(message, role_name, roles, obtener = true) {
     }
     if (flag) {
         if (obtener) {
-            message.member.addRole(rol_soli).then(function (value) {
+            message.member.roles.add(rol_soli).then(function (value) {
                 message.channel.send(":thumbsup:")
             });
         } else {
-            message.member.removeRole(rol_soli).then(function (value) {
+            message.member.roles.remove(rol_soli).then(function (value) {
                 message.channel.send(":thumbsup:")
             });
         }
