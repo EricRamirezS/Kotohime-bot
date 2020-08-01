@@ -7,9 +7,9 @@ const {syncGuild, keys} = require('../../listener/db/JSONSListeners');
 class RadioCommand extends commando.Command {
     constructor(client) {
         super(client, {
-            name: 'radio',
-            group: 'touhou',
-            memberName: 'radio',
+            name: 'verradio',
+            group: 'musica',
+            memberName: 'verradio',
             description: 'Extrae la canción que se está reproduciendo en la Gensokyou Radio',
             clientPermissions: ['ATTACH_FILES', 'EMBED_LINKS']
         });
@@ -36,12 +36,12 @@ class RadioCommand extends commando.Command {
                 let albumImagen = document.childNamed("MISC").childNamed("ALBUMART").val;
                 albumImagen = "https://gensokyoradio.net/images/albums/200/" + albumImagen;
                 if (albumID) {
-                    albumID = " (https://gensokyoradio.net/music/album/" + albumID + ")";
+                    albumID = " (https://gensokyoradio.net/music/album/" + albumID + "/)";
                 }
                 if (circleURL) {
                     circleURL = " (" + circleURL + ")";
                 }
-                let embed = new Discord.RichEmbed()
+                let embed = new Discord.MessageEmbed()
                     .setTitle('En reproducción: ' + tituloCancion)
                     .setImage(albumImagen)
                     .addField('Artista', artistaCancion)
