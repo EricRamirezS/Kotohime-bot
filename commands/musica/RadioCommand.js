@@ -2,7 +2,7 @@ const commando = require('discord.js-commando');
 const request = require('snekfetch');
 const Discord = require('discord.js');
 const xmldoc = require('xmldoc');
-const {syncGuild, keys} = require('../../listener/db/JSONSListeners');
+const {syncGuild, keys} = require('../../db/JSONSListeners');
 
 class RadioCommand extends commando.Command {
     constructor(client) {

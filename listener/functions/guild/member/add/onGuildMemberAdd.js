@@ -10,7 +10,7 @@ module.exports = (member) => {
 };
 
 
-const {guild, keys} = require('../../../../db/JSONSListeners');
+const {guild, keys} = require('../../../../../db/JSONSListeners');
 /**
  * Envia un mensaje de notificación al canal #general del servidor
  * @param member El miembro que se ha unido al servidor.

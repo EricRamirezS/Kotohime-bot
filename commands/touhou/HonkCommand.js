@@ -1,6 +1,6 @@
 const commando = require('discord.js-commando');
 const safebooru = require('../../metodosInternos/safebooruImage2Channel').safebooruImageToChannel;
-const {syncGuild, keys} = require('../../listener/db/JSONSListeners');
+const {syncGuild, keys} = require('../../db/JSONSListeners');
 
 class HonkCommand extends commando.Command {
     constructor(client){

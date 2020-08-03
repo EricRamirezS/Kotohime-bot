@@ -12,7 +12,7 @@ module.exports = function (oldMember, newMember) {
 };
 
 
-const { guild, keys} = require('../../../../db/JSONSListeners');
+const { guild, keys} = require('../../../../../db/JSONSListeners');
 /**
  * Verificando si el usuario se unió/movió/abandonó un canal de voz, y enviando
  * el mensaje de log pertinente al canal #voz del servidor

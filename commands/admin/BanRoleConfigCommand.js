@@ -1,5 +1,5 @@
 const commando = require('discord.js-commando');
-const updateDB = require('../../listener/db/DBUpdateGuildSetting');
+const updateDB = require('../../db/DBUpdateGuildSetting');
 
 class BanRoleConfigCommand extends commando.Command {
     constructor(client) {

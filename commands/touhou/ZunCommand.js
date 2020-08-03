@@ -1,5 +1,5 @@
 const commando = require('discord.js-commando');
-const {syncGuild, keys} = require('../../listener/db/JSONSListeners');
+const {syncGuild, keys} = require('../../db/JSONSListeners');
 
 const imageLinks = [
     "https://media.discordapp.net/attachments/276329252289511424/389545017712050176/zun-cosplay-1.jpg",//1

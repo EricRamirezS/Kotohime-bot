@@ -1,4 +1,4 @@
-const {registerGuild} = require('../../../db/DBUpdateGuildSetting');
+const {registerGuild} = require('../../../../db/DBUpdateGuildSetting');
 
 /**
  * Se emite cada vez que el cliente se une a un servidor.

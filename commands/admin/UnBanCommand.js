@@ -1,8 +1,8 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js');
 const moment = require('moment');
-const updateDB = require('../../listener/db/DBUpdateGuildSetting').unban;
-const {guild, keys} = require('../../listener/db/JSONSListeners');
+const updateDB = require('../../db/DBUpdateGuildSetting').unban;
+const {guild, keys} = require('../../db/JSONSListeners');
 
 class UnBanCommand extends commando.Command {
     constructor(client) {

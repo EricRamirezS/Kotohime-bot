@@ -1,7 +1,7 @@
 const commando = require('discord.js-commando');
 const bot = new commando.Client(); //commando bot
 const setListenerFunctions = require('./listener/ListenersSet');
-const refresher = require('./listener/db/Refresher');
+const refresher = require('./metodosInternos/Refresher');
 
 const avatar = "https://cdn.discordapp.com/avatars/386007907113762816/cb23b22070e056c422074c454bb6f76f.png";
 

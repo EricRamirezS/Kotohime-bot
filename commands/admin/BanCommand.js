@@ -1,8 +1,8 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js');
 const moment = require('moment');
-const updateDB = require('../../listener/db/DBUpdateGuildSetting').ban;
-const {guild, keys} = require('../../listener/db/JSONSListeners');
+const updateDB = require('../../db/DBUpdateGuildSetting').ban;
+const {guild, keys} = require('../../db/JSONSListeners');
 
 class BanCommand extends commando.Command {
     constructor(client) {

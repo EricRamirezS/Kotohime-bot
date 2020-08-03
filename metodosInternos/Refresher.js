@@ -1,11 +1,12 @@
-const ban_update = require('./DbBanUpdater');
-const json_refresh = require('./JSONSListeners').refresh;
-
+const ban_update = require('../db/DbBanUpdater');
+const json_refresh = require('../db/JSONSListeners').refresh;
+const { leaveVoiceChannels } = require('./Especial');
 let running = false;
 
 async function refresh(callback, bot) {
     ban_update(bot);
     json_refresh();
+    leaveVoiceChannels(bot);
     callback(bot);
 }
 
