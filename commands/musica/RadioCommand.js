@@ -49,6 +49,10 @@ class RadioCommand extends commando.Command {
                     .addField('Circulo', circleCancion + circleURL)
                     .setURL('https://gensokyoradio.net/music/playing/');
                 message.channel.send(embed);
+            })
+            .catch(e => {
+                console.log(e);
+                message.channel.send("En estos momentos Gensokyo Radio se encuentra en mantención y no puedo revisar qué canción está sonando.");
             });
     }
 }
