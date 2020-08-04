@@ -22,7 +22,7 @@ class RadioCommand extends commando.Command {
         let connection = await voiceChannel.join();
         if (connection) {
             let dispatcher = connection
-                .play("http://stream.gensokyoradio.net:8000/stream/1/")
+                .play("https://stream.gensokyoradio.net/3/")
                 .on("finish", () => {
                     voiceChannel.leave();
                 })
