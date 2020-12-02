@@ -1,5 +1,6 @@
 const {Client} = require('pg');
-const {manual_update} = require('./JSONSListeners');
+
+const manual_refresh = require('./JSONSListeners').manualRefresh;
 
 async function registerGuild(guild_id) {
     let q = 'INSERT INTO "GUILD"("GUILD_ID") VALUES($1) ON CONFLICT DO NOTHING';
@@ -173,7 +174,14 @@ async function refreshData() {
             banned_data.rows[i].BAN_ROLE_ID
         ]);
     }
-    manual_update(guild_values, banned_values);
+
+    /*
+    * TODO: Está funcion retorna indefinido, al parecer tiene que ver con la forma en que NodeJS importa los modulos
+    *  Necesito investigar más sobre el tema
+    *
+    * Actualmente arroja UnhandledPromiseRejectionWarning: TypeError: manual_refresh is not a function */
+    // console.log(typeof manual_refresh);
+    // manual_refresh(guild_values, banned_values);
 }
 
 module.exports = {
