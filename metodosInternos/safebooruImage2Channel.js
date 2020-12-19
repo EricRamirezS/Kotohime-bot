@@ -57,7 +57,9 @@ const BANNED_TAGS = ["",
     "skirt_lift",
     "pantyshot_(jumping)",
     "groin",
-    "thighs"
+    "thighs",
+    "kaenuco",
+    "oouso"
 ];
 
 /**
@@ -79,6 +81,7 @@ let safebooruImageToChannel = function (message, tag) {
             let postCount = getCantidadDeImagenes(r);
 
             // Finalizar función si no hay imagenes indicados con los tags solicitados
+            // noinspection EqualityComparisonWithCoercionJS
             if (postCount == 0) {
                 message.channel.send("No he encontrado ninguna imagen con los tags mencionados");
                 return;
