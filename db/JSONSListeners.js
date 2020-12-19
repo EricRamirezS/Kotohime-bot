@@ -1,5 +1,4 @@
 const fetch = require('node-fetch');
-const registerGuild = require('./DBUpdateGuildSetting').registerGuild;
 
 let settings = {method: "Get"};
 let url_baned = process.env.BANNED_USERS;
@@ -39,7 +38,7 @@ async function getBanneds() {
             .then(res => res.json())
             .then((json) => {
                 json_baned = json.values;
-            }).catch(e => {
+            }).catch(() => {
                 json_baned = [];
             });
     }
@@ -51,7 +50,7 @@ async function getGuilds() {
         await fetch(url_guilds, settings)
             .then(res => res.json())
             .then((json) => {
-                 json_guild = json.values;
+                json_guild = json.values;
             });
     }
     return json_guild;
@@ -78,9 +77,6 @@ function getSyncGuild(guild_id) {
             }
         }
     }
-    if (!data) {
-        registerGuild(guild_id).catch(e => {/*DO NOTHING*/});
-    }
     return data;
 }
 
@@ -96,15 +92,12 @@ async function getGuild(guild_id) {
         }
     }
     if (!data) {
-        await registerGuild(guild_id);
-        data = await getGuild().catch(e => {
-            return [];
-        });
+        return [];
     }
     return data;
 }
 
-function manualRefresh(guild_data, banned_data) {
+const manualRefresh = async function manualRefresh(guild_data, banned_data) {
     json_guild = guild_data;
     json_baned = banned_data;
     manual_update = true;

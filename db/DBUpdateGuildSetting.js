@@ -1,6 +1,5 @@
-const {Client} = require('pg');
-
 const manual_refresh = require('./JSONSListeners').manualRefresh;
+const {Client} = require('pg');
 
 async function registerGuild(guild_id) {
     let q = 'INSERT INTO "GUILD"("GUILD_ID") VALUES($1) ON CONFLICT DO NOTHING';
@@ -181,7 +180,7 @@ async function refreshData() {
     *
     * Actualmente arroja UnhandledPromiseRejectionWarning: TypeError: manual_refresh is not a function */
     // console.log(typeof manual_refresh);
-    // manual_refresh(guild_values, banned_values);
+    manual_refresh(guild_values, banned_values);
 }
 
 module.exports = {
