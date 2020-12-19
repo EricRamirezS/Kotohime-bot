@@ -8,11 +8,11 @@ const avatar = "https://cdn.discordapp.com/avatars/386007907113762816/cb23b22070
 queue = new Map();
 
 bot.registry.registerGroup('admin', 'Admin');
-bot.registry.registerGroup('misc', 'Misc');
-bot.registry.registerGroup('comun', 'Comun');
-bot.registry.registerGroup('touhou', 'Touhou');
-bot.registry.registerGroup('danmaku', 'Danmaku!!');
-bot.registry.registerGroup('nosotros', 'Kotohime BOT!');
+bot.registry.registerGroup('misc', 'Miscelánea');
+bot.registry.registerGroup('comun', 'Común');
+bot.registry.registerGroup('touhou', 'Touhou Project');
+bot.registry.registerGroup('danmaku', 'Danmaku!! Card Game');
+bot.registry.registerGroup('nosotros', 'Kotohime Bot!');
 bot.registry.registerGroup('musica', 'Música');
 
 bot.registry.registerDefaults();
