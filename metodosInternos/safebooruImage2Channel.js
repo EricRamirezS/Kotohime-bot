@@ -59,7 +59,21 @@ const BANNED_TAGS = ["",
     "groin",
     "thighs",
     "kaenuco",
-    "oouso"
+    "oouso",
+    "maemi_(maemi12)",
+    "double_bun",
+    "feet",
+    "www-1171575199",
+    "yuri_(chocho_q)",
+    "penis",
+    "sex",
+    "pussy",
+    "pussy juice",
+    "areola_slip",
+    "areolae",
+    "cameltoe",
+    "kairunoburogu",
+    "soles"
 ];
 
 /**
