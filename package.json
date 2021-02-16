@@ -25,6 +25,6 @@
     "snekfetch": "^3.6.4",
     "xmldoc": "^1.1.2",
     "xmlhttprequest": "^1.8.0",
-    "ytdl-core": "^3.2.0"
+    "ytdl-core": "^4.4.5"
   }
 }
