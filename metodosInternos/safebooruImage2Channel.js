@@ -73,7 +73,8 @@ const BANNED_TAGS = ["",
     "areolae",
     "cameltoe",
     "kairunoburogu",
-    "soles"
+    "soles",
+    "nude"
 ];
 
 /**
