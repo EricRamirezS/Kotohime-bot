@@ -14,6 +14,8 @@ bot.registry.registerGroup('touhou', 'Touhou Project');
 bot.registry.registerGroup('danmaku', 'Danmaku!! Card Game');
 bot.registry.registerGroup('nosotros', 'Kotohime Bot!');
 bot.registry.registerGroup('musica', 'Música');
+bot.registry.registerGroup('genshin', 'Genshin Impact');
+
 
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + "/commands");

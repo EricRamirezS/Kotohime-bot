@@ -18,7 +18,9 @@ const keys = {
     ban_public_notification_channel: 6,
     allow_touhou_commands: 7,
     allow_danmaku_commands: 8,
-    prefix: 9
+    prefix: 9,
+    welcome_message: 10,
+    allow_genshin_commands: 11
 };
 
 const banned_keys = {
