@@ -55,6 +55,13 @@ async function updateDanmakuCommands(guild_id, allow) {
     await query(q, [allow, guild_id]);
 }
 
+async function updateGenshinCommands(guild_id, allow) {
+    let q = 'UPDATE "GUILD"' +
+        'SET "ALLOW_GENSHIN_COMMANDS" = $1' +
+        'WHERE "GUILD_ID" = $2';
+    await query(q, [allow, guild_id]);
+}
+
 async function updatePrefix(guild_id, prefix) {
     let q = 'UPDATE "GUILD"' +
         'SET "PREFIX" = $1' +
@@ -157,7 +164,9 @@ async function refreshData() {
             guild_data.rows[i].BAN_PUBLIC_NOTIFICATION_CHANNEL_ID,
             guild_data.rows[i].ALLOW_TOUHOU_COMMANDS,
             guild_data.rows[i].ALLOW_DANMAKU_COMMANDS,
-            guild_data.rows[i].PREFIX
+            guild_data.rows[i].PREFIX,
+            guild_data.rows[i].WELCOME_MESSAGE,
+            guild_data.rows[i].ALLOW_GENSHIN_COMMANDS
         ]);
     }
     let banned_values = [];
@@ -170,7 +179,7 @@ async function refreshData() {
             banned_data.rows[i].END_DATE,
             banned_data.rows[i].REASON,
             banned_data.rows[i].CURRENTLY_BANNED,
-            banned_data.rows[i].BAN_ROLE_ID
+            banned_data.rows[i].BAN_ROLE_ID,
         ]);
     }
 
@@ -192,6 +201,7 @@ module.exports = {
     updateBanAnnouncementChannel: updateBanAnnouncementChannel,
     updateTouhouCommands: updateTouhouCommands,
     updateDanmakuCommands: updateDanmakuCommands,
+    updateGenshinCommands,
     updatePrefix: updatePrefix,
     addRoleToManage: addRoleToManage,
     removeRoleToManage: removeRoleToManage,
