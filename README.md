@@ -24,14 +24,14 @@ pero es lo suficientemente versatil para encajar en cualquier tipo de servidor.
     * [Grupos de comandos](#Grupos_de_comandos)
     * [Prefijo](#Prefijo)
 - [Comandos](#Comandos)
-    * [Admin](#Admin:)
-    * [Miscelánea](#Miscelánea:)
-    * [Común](#Común:)
-    * [Touhou Project](#Touhou_Project:)
-    * [Danmaku!! Card Game](#Danmaku_Card_Game:)
-    * [Genshin Impact](#Genshin_Impact:)
-    * [Música](#Música:)
-    * [Kotohime Bot!](#Kotohime_Bot:)
+    * [Admin](#Admin)
+    * [Miscelánea](#Miscelanea)
+    * [Común](#Comun)
+    * [Touhou Project](#Touhou_Project)
+    * [Danmaku!! Card Game](#Danmaku_Card_Game)
+    * [Genshin Impact](#Genshin_Impact)
+    * [Música](#Musica)
+    * [Kotohime Bot!](#Kotohime_Bot)
 - [Licencia](#Licencia)
 - [Créditos](#Creditos)
 
@@ -111,7 +111,7 @@ corresponden a temas más específicos.
 
 ## Comandos
 
-### Admin:
+### Admin
 
 * **ban:** "banea" a un usuario si está configurado.
 * **rol:** Permite a los usuarios agregarse o eliminarse un rol.
@@ -119,7 +119,7 @@ corresponden a temas más específicos.
 * **unban:** remueve el "baneo" a un usuario.
 * **feedback:** Envía un mensaje privado al desarrollador de este bot.
 
-### Miscelánea:
+### Miscelanea
 
 * **blah:** blah.
 * **lenny:** ( ͡~ ͜ʖ ͡°)
@@ -133,12 +133,12 @@ corresponden a temas más específicos.
     * Solo funciona en canales NSFW
     * ¡Contenido pornográfico explícito!
 
-### Común:
+### Comun
 
 * **escoger:** Seleccionaré algo al azar entre las opciones que me des.
 * **eco:** eco.
 
-### Touhou_Project:
+### Touhou_Project
 
 * **2hu:** Enviaré una imagen de Touhou Project al azar.
 * **9ball:** Enviaré una imagen de Cirno al azar.
@@ -164,14 +164,14 @@ corresponden a temas más específicos.
 * **yuyuko:** Enviaré una imagen de Yuyuko Saigyouji al azar.
 * **zun:** Enviaré una imagen de Zun al azar.
 
-### Danmaku_Card_Game:
+### Danmaku_Card_Game
 
 * **carta:** Enviaré información sobre la carta solicitada.
 * **lunatic:** Muestra el estado actual de la expansión Lunatic Extra.
 * **mobs:** Muestra el estado actual de la expansión Mutiny of Belittled Spirits.
 * **nueuser:** Responde con el saludo de bienvenido clásico de la comunidad de Mistery Parfait.
 
-### Genshin_Impact:
+### Genshin_Impact
 
 * **amber:** Enviaré una imagen de Amber al azar.
 * **baron_bunny:** Enviaré una imagen del Baron Bunny al azar.
@@ -184,7 +184,7 @@ corresponden a temas más específicos.
 * **xiao:** Enviaré una imagen de Xiao al azar.
 * **zhongli:** Enviaré una imagen de Zhongli al azar.
 
-### Música:
+### Musica
 
 * **tocar:** reproduce una canción de youtube en un canal de voz.
 * **radio:** Transmite Gensokyo radio a un canal de voz.
@@ -194,7 +194,7 @@ corresponden a temas más específicos.
 * **siguiente:** Saltar a la siguiente canción de la playlist.
 * **detener:** Detiene la reproducción de música.
 
-### Kotohime_Bot:
+### Kotohime_Bot
 
 * **sobremi:** Detalles sobre mi.
 
