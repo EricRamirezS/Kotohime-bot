@@ -60,6 +60,7 @@ class AcercaCommand extends commando.Command {
             "No creo tener nada más que decir sobre mi~ \n\n" +
             "Si sabes programar y quieres aportar en mi desarrollo, visita mi código fuente en " +
             "https://github.com/EricRamirezS/Discord-bot-DanmakuESP \n\n" +
+            "Buy me a coofe: https://ko-fi.com/ericramirezs\n\n" +
             "Adiós <:spoopy:414776794651033600>";
 
         message.channel.send(mensaje);
