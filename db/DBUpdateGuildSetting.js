@@ -183,12 +183,6 @@ async function refreshData() {
         ]);
     }
 
-    /*
-    * TODO: Está funcion retorna indefinido, al parecer tiene que ver con la forma en que NodeJS importa los modulos
-    *  Necesito investigar más sobre el tema
-    *
-    * Actualmente arroja UnhandledPromiseRejectionWarning: TypeError: manual_refresh is not a function */
-    // console.log(typeof manual_refresh);
     manual_refresh(guild_values, banned_values);
 }
 
