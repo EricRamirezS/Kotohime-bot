@@ -22,6 +22,7 @@ pero es lo suficientemente versatil para encajar en cualquier tipo de servidor.
     * [Configuraciones de Rol](#Configuraciones_de_Rol)
     * [Configuraciones de Canales](#Configuraciones_de_Canales)
     * [Grupos de comandos](#Grupos_de_comandos)
+    * [Prefijo](#Prefijo)
 - [Comandos](#Comandos)
     * [Admin](#Admin:)
     * [Miscelánea](#Miscelánea:)
@@ -60,21 +61,25 @@ Kotohime es un bot configurable, para realizar diversas tareas o apoyar a los ad
 
 Para modificar cualquier configuración, utiliza el siguiente comando
 
-`config <conguriacion> <valor>`
+`config <configuracion> <valor>`
+
+Para ver las configuraciones actuales, utiliza
+
+`config ver`
 
 ### Configuración_de_baneos
 
 Kotohime "**banea**" a los usuarios de manera diferente a como lo hacer Discord. El baneo de Kotohime no conlleva
 expulsión del servidor.
 
-Ten en cuenta que deberas crear un rol que prohíba al usuario realizar acciones dentro del servidor. También se
+Ten en cuenta que deberás crear un rol que prohíba al usuario realizar acciones dentro del servidor. También se
 recomienda crear un canal de prisión para que el usuario pueda apelar si lo considera necesario, y los moderadores
 puedan tomar decisiones, sin afectar al resto del servidor
 
 * `rol-ban <rol>`: Configura el rol para usuario baneados, este rol se les asignará cuando un administrador/moderador
   banee al usuario a través del comando `ban`. Esta configuración es necesario para que el comando `ban` funcione.
     * Ejemplo: `config rol-ban @Baneado`
-* `prision <canal>`: (opcional) Configura el canal de prision, donde se informará al usuario que ha sido baneado.
+* `prision <canal>`: (opcional) Configura el canal de prisión, donde se informará al usuario que ha sido baneado.
 * `anuncio-baneos <canal>`: (opcional) Configura el canal donde Kotohime informará a la comunidad que un usuario ha sido
   baneado.
 
@@ -88,16 +93,21 @@ Los siguientes comandos requieren que Kotohime tenga el permiso de Gestionar rol
 ### Configuraciones_de_Canales
 
 * `canal-bienvenida <canal>`: Registra el canal donde Kotohime anunciará que alguien se unió o abandonó el servidor.
-* `log-voz <canal>`: Registra el canal donde Kotohime informará sobre lso movimientos en canales de voz.
+* `log-voz <canal>`: Registra el canal donde Kotohime informará sobre los movimientos en canales de voz.
 
 ### Grupos_de_comandos
 
-Los siguientes grupos de comandos vienen desactivados por defecto, corresponden a temas más especiicos.
+Los siguientes grupos de comandos vienen desactivados por defecto, 
+corresponden a temas más específicos.
 
 * `comandos-touhou <permitir?>` : Grupo de comandos relacionados a Touhou Project.
 * `comandos-danmaku <permitir?>` : Grupo de comandos relacionados al juego de cartas Danmaku!! Card Game de Mystery
   Parfait.
 * `comandos-genshin <permitir?>` : Grupo de comandos relacionados a Genshin Impact.
+
+### Prefijo
+
+* `prefijo <prefijo>` : Cambia el prefijo al cual debo responder.
 
 ## Comandos
 
@@ -107,19 +117,19 @@ Los siguientes grupos de comandos vienen desactivados por defecto, corresponden 
 * **rol:** Permite a los usuarios agregarse o eliminarse un rol.
 * **configuraciones:** Permite a los administradores cambiar las configuraciones bot.
 * **unban:** remueve el "baneo" a un usuario.
-* **feedback:** Envia un mensaje privado al desarrollador de este bot.
+* **feedback:** Envía un mensaje privado al desarrollador de este bot.
 
 ### Miscelánea:
 
 * **blah:** blah.
 * **lenny:** ( ͡~ ͜ʖ ͡°)
-* **lmgtfy:** Dejame googlear eso por ti.
+* **lmgtfy:** Déjame googlear eso por ti.
 * **roll:** Lanza un dado.
 * **shrug:** ¯\_(ツ)_/¯
-* **safebooru:** Envia una imagen al azar con los tag mencionados.
+* **safebooru:** Envía una imagen al azar con los tags mencionados.
     * Hay una gran cantidad de tags bloqueados para mantener los servidores SFW.
-    * Estos tags bloqueados seran ignorados si el canal esta marcado como NSFW.
-* **rule34:** Envia una imagen al azar con los tag mencionados.
+    * Estos tags bloqueados serán ignorados si el canal está marcado como NSFW.
+* **rule34:** Envía una imagen al azar con los tags mencionados.
     * Solo funciona en canales NSFW
     * ¡Contenido pornográfico explícito!
 
@@ -159,7 +169,7 @@ Los siguientes grupos de comandos vienen desactivados por defecto, corresponden 
 * **carta:** Enviaré información sobre la carta solicitada.
 * **lunatic:** Muestra el estado actual de la expansión Lunatic Extra.
 * **mobs:** Muestra el estado actual de la expansión Mutiny of Belittled Spirits.
-* **nueuser:** Responde con el saludo de bienvenido clasico de la comunidad de Mistery Parfait.
+* **nueuser:** Responde con el saludo de bienvenido clásico de la comunidad de Mistery Parfait.
 
 ### Genshin_Impact:
 
