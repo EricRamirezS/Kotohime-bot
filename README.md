@@ -4,7 +4,7 @@
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/H2H31CS8H)
 [![Donate on PayPal](https://img.shields.io/badge/paypal-donate-blue.svg)](https://paypal.me/TouhouPlus)
-[![Discord](https://discordapp.com/api/guilds/252317073814978561/embed.png)](https://discord.gg/paD7W5F)
+[![Discord](https://discordapp.com/api/guilds/385986894678196234/embed.png)](https://discord.gg/paD7W5F)
 
 Kotohime es un bot escrito en Javascript usando
 [discord.js](https://discord.js.org/) junto con el framework
