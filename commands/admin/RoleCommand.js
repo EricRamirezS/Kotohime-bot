@@ -37,9 +37,11 @@ class RoleCommand extends commando.Command {
                     listar(message, guild_data[keys.roles_bot_can_add]);
                     break;
                 case 'obtener':
+                case 'get':
                     obtenerOabandonar(message, args.Nombre_Rol, guild_data[keys.roles_bot_can_add]);
                     break;
                 case 'abandonar':
+                case 'drop':
                     obtenerOabandonar(message, args.Nombre_Rol, guild_data[keys.roles_bot_can_add], false);
                     break;
                 default:
