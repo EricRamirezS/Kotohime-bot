@@ -18,19 +18,19 @@ pero es lo suficientemente versatil para encajar en cualquier tipo de servidor.
 - [Copyright](#copyright)
 - [Permisos](#permisos)
 - [Configuraciones](#Configuraciones)
-    * [Configuración de baneos](#Configuración de baneos)
-    * [Configuraciones de Rol](#Configuraciones de Rol)
-    * [Configuraciones de Canales](#Configuraciones de Canales)
-    * [Grupos de comandos](#Grupos de comandos)
+    * [Configuración de baneos](#Configuración_de_baneos)
+    * [Configuraciones de Rol](#Configuraciones_de_Rol)
+    * [Configuraciones de Canales](#Configuraciones_de_Canales)
+    * [Grupos de comandos](#Grupos_de_comandos)
 - [Comandos](#Comandos)
     * [Admin](#Admin:)
     * [Miscelánea](#Miscelánea:)
     * [Común](#Común:)
-    * [Touhou Project](#Touhou Project:)
-    * [Danmaku!! Card Game](#Danmaku Card Game:)
-    * [Genshin Impact](#Genshin Impact:)
+    * [Touhou Project](#Touhou_Project:)
+    * [Danmaku!! Card Game](#Danmaku_Card_Game:)
+    * [Genshin Impact](#Genshin_Impact:)
     * [Música](#Música:)
-    * [Kotohime Bot!](#Kotohime Bot:)
+    * [Kotohime Bot!](#Kotohime_Bot:)
 - [Licencia](#Licencia)
 - [Créditos](#Creditos)
 
@@ -62,7 +62,7 @@ Para modificar cualquier configuración, utiliza el siguiente comando
 
 `config <conguriacion> <valor>`
 
-### Configuración de baneos
+### Configuración_de_baneos
 
 Kotohime "**banea**" a los usuarios de manera diferente a como lo hacer Discord. El baneo de Kotohime no conlleva
 expulsión del servidor.
@@ -78,19 +78,19 @@ puedan tomar decisiones, sin afectar al resto del servidor
 * `anuncio-baneos <canal>`: (opcional) Configura el canal donde Kotohime informará a la comunidad que un usuario ha sido
   baneado.
 
-### Configuraciones de Rol
+### Configuraciones_de_Rol
 
 Los siguientes comandos requieren que Kotohime tenga el permiso de Gestionar roles, para funcionar apropiadamente.
 
 * `rol-agregar <rol>`: Registra un rol que los usuarios puedan agregarse manualmente
 * `rol-eliminar <rol>`: Remueve un rol de los que usuarios puedan agregarse manualmente
 
-### Configuraciones de Canales
+### Configuraciones_de_Canales
 
 * `canal-bienvenida <canal>`: Registra el canal donde Kotohime anunciará que alguien se unió o abandonó el servidor.
 * `log-voz <canal>`: Registra el canal donde Kotohime informará sobre lso movimientos en canales de voz.
 
-### Grupos de comandos
+### Grupos_de_comandos
 
 Los siguientes grupos de comandos vienen desactivados por defecto, corresponden a temas más especiicos.
 
@@ -127,7 +127,7 @@ Los siguientes grupos de comandos vienen desactivados por defecto, corresponden 
 * **escoger:** Seleccionaré algo al azar entre las opciones que me des.
 * **eco:** eco.
 
-### Touhou Project:
+### Touhou_Project:
 
 * **2hu:** Enviaré una imagen de Touhou Project al azar.
 * **9ball:** Enviaré una imagen de Cirno al azar.
@@ -153,14 +153,14 @@ Los siguientes grupos de comandos vienen desactivados por defecto, corresponden 
 * **yuyuko:** Enviaré una imagen de Yuyuko Saigyouji al azar.
 * **zun:** Enviaré una imagen de Zun al azar.
 
-### Danmaku Card Game:
+### Danmaku_Card_Game:
 
 * **carta:** Enviaré información sobre la carta solicitada.
 * **lunatic:** Muestra el estado actual de la expansión Lunatic Extra.
 * **mobs:** Muestra el estado actual de la expansión Mutiny of Belittled Spirits.
 * **nueuser:** Responde con el saludo de bienvenido clasico de la comunidad de Mistery Parfait.
 
-### Genshin Impact:
+### Genshin_Impact:
 
 * **amber:** Enviaré una imagen de Amber al azar.
 * **baron_bunny:** Enviaré una imagen del Baron Bunny al azar.
@@ -183,7 +183,7 @@ Los siguientes grupos de comandos vienen desactivados por defecto, corresponden 
 * **siguiente:** Saltar a la siguiente canción de la playlist.
 * **detener:** Detiene la reproducción de música.
 
-### Kotohime Bot:
+### Kotohime_Bot:
 
 * **sobremi:** Detalles sobre mi.
 
