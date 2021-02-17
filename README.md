@@ -6,6 +6,8 @@
 [![Donate on PayPal](https://img.shields.io/badge/paypal-donate-blue.svg)](https://paypal.me/TouhouPlus)
 [![Discord](https://discordapp.com/api/guilds/385986894678196234/embed.png)](https://discord.gg/paD7W5F)
 
+<hr>
+
 Kotohime es un bot escrito en Javascript usando
 [discord.js](https://discord.js.org/) junto con el framework
 [Commando](https://github.com/discordjs/Commando). Está orientada especialmente a servidores dedicados a Touhou Project,
