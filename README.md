@@ -44,12 +44,12 @@ pero es lo suficientemente versatil para encajar en cualquier tipo de servidor.
 Kotohime necesita diversos permisos para hacer lo que hace. Abajo encontrarás una lista con cada permiso que solicita, y
 para qué será usado.
 
-- **Gestionar roles**: Es utilizado en el comando ban, y los comandos para autoasignación de roles.
+- **Gestionar roles**: Es utilizado en el comando ban, y los comandos para auto-asignación de roles.
 - **Cambiar apodo**: No es _necesario_, pero se incluye como permiso básico.
 - **Ver canales**: Es necesario para que todos los comandos funcionen.
 - **Leer mensajes**: Es necesario para que todos los comandos funcionen.
-- **Insertar enlaces**: Es necesario para los menjases con embedidos. Muchas comandos lo utilizan.
-- **Adjuntar archivo**: Es necesario para enviar imagenes, los comandos relacionados a safebooru y rule34 lo utilizan.
+- **Insertar enlaces**: Es necesario para los mensajes con embedidos. Muchos comandos lo utilizan.
+- **Adjuntar archivo**: Es necesario para enviar imágenes, los comandos relacionados a safebooru y rule34 lo utilizan.
 - **Connect**: Le permite a Kotohime conectarse a canales de voz. Necesario para los comandos de música.
 - **Speak**: Le permite a Kotohime hablar por canales de voz. Necesario para los comandos de música.
 - **Use Voice Activity**: No es _necesario_, pero es incluido como precaución extra para los comandos de voz.
@@ -67,12 +67,12 @@ Para modificar cualquier configuración, utiliza el siguiente comando
 Kotohime "**banea**" a los usuarios de manera diferente a como lo hacer Discord. El baneo de Kotohime no conlleva
 expulsión del servidor.
 
-Ten en cuenta que deberas crear un rol que prohiba al usuario realizar acciones dentro del servidor. Tambien se
-recomienda crear un canal de prision para que el usuario pueda apelar si lo considera necesario, y los moderadores
+Ten en cuenta que deberas crear un rol que prohíba al usuario realizar acciones dentro del servidor. También se
+recomienda crear un canal de prisión para que el usuario pueda apelar si lo considera necesario, y los moderadores
 puedan tomar decisiones, sin afectar al resto del servidor
 
 * `rol-ban <rol>`: Configura el rol para usuario baneados, este rol se les asignará cuando un administrador/moderador
-  banee al usuario a traves del comando `ban`. Esta configuración es necesario para que el comando `ban` funcione.
+  banee al usuario a través del comando `ban`. Esta configuración es necesario para que el comando `ban` funcione.
     * Ejemplo: `config rol-ban @Baneado`
 * `prision <canal>`: (opcional) Configura el canal de prision, donde se informará al usuario que ha sido baneado.
 * `anuncio-baneos <canal>`: (opcional) Configura el canal donde Kotohime informará a la comunidad que un usuario ha sido
