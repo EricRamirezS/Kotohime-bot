@@ -212,7 +212,9 @@ function verificarBoleano(val, msg) {
     if (val === "") data.res = false;
     if (typeof data.res === "boolean") {
         if (data.res) {
-            data.value = new validateBoolean(this, 'channel').parse(val, msg).id;
+            data.value = new validateBoolean(this, 'boolean').parse(val, msg);
+        } else {
+            data.mes = "Esta configuración no puede quedar en blanco.";
         }
     } else {
         data.mes = data.res;
