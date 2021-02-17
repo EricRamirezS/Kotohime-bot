@@ -107,6 +107,7 @@ Los siguientes grupos de comandos vienen desactivados por defecto, corresponden 
 * **rol:** Permite a los usuarios agregarse o eliminarse un rol.
 * **configuraciones:** Permite a los administradores cambiar las configuraciones bot.
 * **unban:** remueve el "baneo" a un usuario.
+* **feedback:** Envia un mensaje privado al desarrollador de este bot.
 
 ### Miscelánea:
 
