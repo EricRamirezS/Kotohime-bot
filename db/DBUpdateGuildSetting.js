@@ -71,7 +71,7 @@ async function updatePrefix(guild_id, prefix) {
 
 async function addRoleToManage(guild_id, role) {
     let q = 'UPDATE "GUILD" ' +
-        'SET "ROLES_BOT_CAN_ADD" = array_cat("ROLES_BOT_CAN_ADD", $1) ' +
+        'SET "ROLES_BOT_CAN_ADD" = array_append("ROLES_BOT_CAN_ADD", $1) ' +
         'WHERE "GUILD_ID" = $2';
     await query(q, [role, guild_id]);
 }
