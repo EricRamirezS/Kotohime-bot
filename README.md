@@ -225,11 +225,12 @@ usuarios. Gracias a todos los mencionados aquí
   * npm (API)
 - [PayPal](https://www.paypal.com/us/home)
   * donate (Donaciones)
-- [Safebooru](https://safebooru.org/)
-    * safebooru (API)
 - [Rule34](https://rule34.xxx/)
   * Rule34 (API)
-
+- [Safebooru](https://safebooru.org/)
+  * safebooru (API)
+- [Trace.moe](https://trace.moe)
+  * tracemoe (API)
 
 
 
