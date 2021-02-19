@@ -50,15 +50,18 @@ function searchImage(channel, url) {
         .then(r => {
             let title = "";
             let animedata = JSON.parse(r.text).docs[0];
+            console.log(JSON.parse(r.text));
+            if (animedata.title_english) {
+                title = animedata.title_english;
+            } else if (animedata.title_romaji) {
+                title = animedata.title_romaji;
+            } else {
+                title = animedata.title;
+            }
             if (animedata.similarity > 0.9) {
-                if (animedata.title_english) {
-                    title = animedata.title_english;
-                } else if (animedata.title_romaji) {
-                    title = animedata.title_romaji;
-                } else {
-                    title = animedata.title;
-                }
                 channel.send("El anime es " + title);
+            } else if (animedata.similarity > 0.8) {
+                channel.send("Creo que el anime es " + title);
             } else {
                 channel.send("No he encontrado ningún anime con esa imagen");
             }
