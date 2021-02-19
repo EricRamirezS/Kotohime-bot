@@ -15,8 +15,39 @@ class SettingCommand extends commando.Command {
             group: 'admin',
             memberName: 'configuraciones',
             aliases: ['settings', 'set', 'config'],
-            // TODO: Modificar descripción del comando
-            description: 'Muestra las configuraciones de este servidor',
+            description: '**Configuraciones**\n' +
+                'Para modificar cualquier configuración, utiliza el siguiente comando\n' +
+                '`config <configuracion> <valor>`\n' +
+                'Para ver las configuraciones actuales, utiliza `config ver`\n' +
+                '\n' +
+                '**Configuración de ban**\n' +
+                'Más información `ayuda ban`\n' +
+                '\n' +
+                '`rol-ban <rol>`: Configura el rol para usuario baneados, este rol se les asignará cuando un administrador/moderador banee al usuario a través del comando ban. Esta configuración es necesario para que el comando ban funcione.\n' +
+                '        Ejemplo: config rol-ban @Baneado\n' +
+                '    `prision <canal>`: (opcional) Configura el canal de prisión, donde informaré al usuario que ha sido baneado.\n' +
+                '   ` anuncio-baneos <canal>`: (opcional) Configura el canal donde informaré a la comunidad que un usuario ha sido baneado.\n' +
+                '\n' +
+                '**Configuraciones de Rol**\n' +
+                'Los siguientes comandos requieren que tenga el permiso de Gestionar roles, para funcionar apropiadamente.\n' +
+                '\n' +
+                '    `rol-agregar <rol>`: Registra un rol que los usuarios puedan agregarse manualmente\n' +
+                '    `rol-eliminar <rol>`: Remueve un rol de los que usuarios puedan agregarse manualmente\n' +
+                '\n' +
+                '**Configuraciones de Canales**\n' +
+                '    `canal-bienvenida <canal>`: Registra el canal donde anunciaré que alguien se unió o abandonó el servidor.\n' +
+                '    `log-voz <canal>`: Registra el canal donde informaré sobre los movimientos en canales de voz.\n' +
+                '\n' +
+                '**Grupos de comandos**\n' +
+                '\n' +
+                'Los siguientes grupos de comandos vienen desactivados por defecto, corresponden a temas más específicos.\n' +
+                '\n' +
+                '    `comandos-touhou <permitir?>`\n' +
+                '    `comandos-danmaku <permitir?>`\n' +
+                '    `comandos-genshin <permitir?>`\n' +
+                '\n' +
+                '**Prefijo**\n' +
+                '    `prefijo <prefijo>`: Cambia el prefijo al cual debo responder.\n',
             examples: ['configuraciones', 'settings'],
             guildOnly: true,
             userPermissions: ['ADMINISTRATOR'],
@@ -27,7 +58,15 @@ class SettingCommand extends commando.Command {
                         '> ver\n' +
                         '> prefijo\n' +
                         '> canal-bienvenida\n' +
-                        '> log-de-voz\n> ',
+                        '> anuncio-baneos\n> ' +
+                        '> log-voz\n' +
+                        '> prision\n' +
+                        '> comandos-touhou\n' +
+                        '> comandos-danmaku\n' +
+                        '> comandos-genshin\n' +
+                        '> rol-agregar\n' +
+                        '> rol-eliminar\n' +
+                        '> rol-ban',
                     type: 'string',
                     oneOf: ['ver', 'see',
                         'prefijo', 'prefix',
