@@ -6,6 +6,7 @@ const LUNATIC_DECK = require('../danmaku/data/lunatic_cards.json');
 const ROLE_DECK = require('../danmaku/data/role_cards.json');
 const {stripIndents} = require('common-tags');
 const Discord = require('discord.js');
+const {syncGuild, keys} = require('../../db/JSONSListeners');
 
 
 class CardCommand extends commando.Command {
@@ -24,6 +25,12 @@ class CardCommand extends commando.Command {
                 }
             ]
         });
+    }
+
+    hasPermission(msg) {
+        let guild_data = syncGuild(msg.guild.id);
+        if (guild_data) return guild_data[keys.allow_danmaku_commands];
+        return false;
     }
 
     async run(message, args) {

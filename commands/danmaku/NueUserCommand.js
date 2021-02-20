@@ -5,6 +5,7 @@ const imageLinks = [
     "https://cdn.discordapp.com/attachments/274920985029902336/730448333792870481/Oh_hi_NUE.gif",
     "https://cdn.discordapp.com/attachments/274920985029902336/725697204974780436/Nue_User.png",
 ];
+const {syncGuild, keys} = require('../../db/JSONSListeners');
 
 class NueUserCommand extends commando.Command {
     constructor(client) {
@@ -14,6 +15,12 @@ class NueUserCommand extends commando.Command {
             memberName: 'nueuser',
             description: 'Por favor, usame cuando tengamos un nuevo usuario.'
         });
+    }
+
+    hasPermission(msg) {
+        let guild_data = syncGuild(msg.guild.id);
+        if (guild_data) return guild_data[keys.allow_danmaku_commands];
+        return false;
     }
 
     async run(message, args){
