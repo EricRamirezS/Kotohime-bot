@@ -18,6 +18,10 @@ class SaucenaoCommand extends commando.Command {
             memberName: 'saucenao',
             description: 'Dame una imagen y te diré su fuente.',
             examples: ['saucenao'],
+            throttling: {
+                usages: 5,
+                duration: 30,
+            },
             args: [{
                 key: 'url',
                 prompt: 'Link de la imagen que debo investigar',
