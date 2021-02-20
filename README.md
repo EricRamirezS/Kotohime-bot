@@ -1,4 +1,4 @@
-<img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="Xiao" src="https://cdn.discordapp.com/app-icons/386007907113762816/be7aa2b536f91a631cc557e15a94d37b.png">  
+<img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="Kotohime" src="https://cdn.discordapp.com/app-icons/386007907113762816/be7aa2b536f91a631cc557e15a94d37b.png">  
 
 # Kotohime
 
