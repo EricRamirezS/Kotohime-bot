@@ -48,13 +48,13 @@ function validURL(str) {
     return !!pattern.test(str);
 }
 
-async function searchImage(channel, url) {
+function searchImage(channel, url) {
     let BASE_REQUEST = "https://saucenao.com/search.php?";
     let request_params = [
         "api_key=" + process.env.SAUCENAO_KEY,
         "output_type=2", //JSON
         "testmode=1",
-        "numred=3",
+        "numres=3",
         "url=" + url,
     ]
 
@@ -80,18 +80,19 @@ async function searchImage(channel, url) {
     if (res.length > 0) {
         channel.send("Esto ha sido lo más parecido que he encontrado");
         res.sort(((a, b) => b.header.similarity - a.header.similarity))
-        for (let i = 0; i < 3 || i < res.length; i++) {
+        for (let i = 0; i < 3 && i < res.length; i++) {
+            console.log(i);
             let keys = Object.keys(res[i].data);
             let embed = new Discord.MessageEmbed();
-            for (let i = 0; i < keys.length; i++) {
-                let key = keys[i];
+            for (let j = 0; j < keys.length; j++) {
+                let key = keys[j];
                 if (Array.isArray(res[i].data[key])) {
                     embed.addField(key.replace("_", " "), res[i].data[key].join("\n"), true);
                 } else {
                     embed.addField(key.replace("_", " "), res[i].data[key], true);
                 }
-                channel.send(embed);
             }
+            channel.send(embed);
         }
     } else if (!error) {
         channel.send("No he podido encontrar nada.");
