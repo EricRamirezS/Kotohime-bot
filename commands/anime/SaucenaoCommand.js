@@ -48,7 +48,7 @@ function validURL(str) {
     return !!pattern.test(str);
 }
 
-function searchImage(channel, url) {
+async function searchImage(channel, url) {
     let BASE_REQUEST = "https://saucenao.com/search.php?";
     let request_params = [
         "api_key=" + process.env.SAUCENAO_KEY,
@@ -60,7 +60,7 @@ function searchImage(channel, url) {
 
     let res = [];
     let error = false;
-    request.post(BASE_REQUEST + "db=" + 999 + "&" + request_params.join("&"))
+    await request.post(BASE_REQUEST + "db=" + 999 + "&" + request_params.join("&"))
         .send()
         .then(r => {
             let results = JSON.parse(r.text).results;
