@@ -59,6 +59,7 @@ async function searchImage(channel, url) {
     ]
 
     let res = [];
+    let error = false;
     request.post(BASE_REQUEST + "db=" + 999 + "&" + request_params.join("&"))
         .send()
         .then(r => {
@@ -67,8 +68,12 @@ async function searchImage(channel, url) {
                 for (let j = 0; j < results.length; j++) res.push(results[j]);
             }
         }).catch(e => {
-            console.log(e);
-            channel.send("¿Realmente me has enviado una imagen? Ha pasado algo inesperado.")
+            error = true;
+            if (e.status === 429) {
+                channel.send("No puedo buscar en estos momentos, ¿Puedes intentarlo más tarde?");
+            } else {
+                channel.send("¿Realmente me has enviado una imagen? Ha pasado algo inesperado.");
+            }
         }
     );
 
@@ -88,7 +93,7 @@ async function searchImage(channel, url) {
                 channel.send(embed);
             }
         }
-    } else {
+    } else if (!error) {
         channel.send("No he podido encontrar nada.");
     }
 }
