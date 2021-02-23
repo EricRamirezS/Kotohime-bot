@@ -19,12 +19,13 @@ let safebooruImageToChannel = function (message, tag) {
     } else {
         BASE_REQUEST = 'https://safebooru.org/index.php?page=dapi&s=post&q=index&tags=' + tag;
     }
+
     request.post(BASE_REQUEST + "&limit=0") //En este momento, solo importa el count}
         .send({usingGoodRequestLibrary: true})
         .then(r => {
-            let postCount = getCantidadDeImagenes(r);
+            let postCount = getNumberOfImages(r);
 
-            // Finalizar función si no hay imagenes indicados con los tags solicitados
+            // Finalizar función si no hay imágenes indicados con los tags solicitados
             // noinspection EqualityComparisonWithCoercionJS
             if (postCount == 0) {
                 message.channel.send("No he encontrado ninguna imagen con los tags mencionados");
@@ -37,7 +38,7 @@ let safebooruImageToChannel = function (message, tag) {
 
             request.post(req)
                 .send({usingGoodRequestLibrary: true})
-                .then(r => enviarImagenAleatoria(r, message))
+                .then(r => sendRandomImage(r, message))
                 .catch(() => message.channel.send("*Lo siento, no pude encontrar una imagen que pueda enviar.*"));
         });
 };
@@ -62,7 +63,7 @@ function getNumberOfImages(r) {
     return document.attr.count;
 }
 
-function enviarImagenAleatoria(r, message) {
+function sendRandomImage(r, message) {
     let s = r.body.toString();
     let document = new xmldoc.XmlDocument(s);
     let post = document.childNamed("post");

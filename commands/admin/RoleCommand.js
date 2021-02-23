@@ -31,24 +31,24 @@ class RoleCommand extends commando.Command {
 
     async run(message, args) {
         let guild_data = await guild(message.guild.id);
-        if (guild_data) {
-            switch (args.accion) {
-                case 'listar':
-                    listar(message, guild_data[keys.roles_bot_can_add]);
-                    break;
-                case 'obtener':
-                case 'get':
-                    obtenerOabandonar(message, args.Nombre_Rol, guild_data[keys.roles_bot_can_add]);
-                    break;
-                case 'abandonar':
-                case 'drop':
-                    obtenerOabandonar(message, args.Nombre_Rol, guild_data[keys.roles_bot_can_add], false);
-                    break;
-                default:
-                    message.channel.send("La acción ingresada no es valida.");
-                    break;
+        if (!guild_data) return;
 
-            }
+        switch (args.accion) {
+            case 'listar':
+                listar(message, guild_data[keys.roles_bot_can_add]);
+                break;
+            case 'obtener':
+            case 'get':
+                obtenerOabandonar(message, args.Nombre_Rol, guild_data[keys.roles_bot_can_add]);
+                break;
+            case 'abandonar':
+            case 'drop':
+                obtenerOabandonar(message, args.Nombre_Rol, guild_data[keys.roles_bot_can_add], false);
+                break;
+            default:
+                message.channel.send("La acción ingresada no es valida.");
+                break;
+
         }
     }
 }

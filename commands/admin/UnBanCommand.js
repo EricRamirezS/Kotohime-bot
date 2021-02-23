@@ -28,22 +28,20 @@ class UnBanCommand extends commando.Command {
 
     async run(message, args) {
         let guild_data = await guild(message.guild.id);
-        if (guild_data) {
-            if (guild_data[keys.ban_role_id]) {
-                let role = message.guild.roles.cache.get(guild_data[keys.ban_role_id]);
-                updateDB(args.usuario.id, message.guild.id)
+        if (!(guild_data && guild_data[keys.ban_role_id])) return;
+
+        let role = message.guild.roles.cache.get(guild_data[keys.ban_role_id]);
+        updateDB(args.usuario.id, message.guild.id)
+            .then(() => {
+                args.usuario.roles.remove(role)
                     .then(() => {
-                        args.usuario.roles.remove(role)
-                            .then(() => {
-                                message.channel.send(args.usuario.toString() + " ha sido desbaneado exitosamente.");
-                            });
-                    })
-                    .catch(e => {
-                        console.log(e);
-                        message.reply("Por alguna razón, no he podido realizar el baneo, si este problema persiste, informale al desarrollador a traves del comandos `feedback`");
+                        message.channel.send(args.usuario.toString() + " ha sido desbaneado exitosamente.");
                     });
-            }
-        }
+            })
+            .catch(e => {
+                console.log(e);
+                message.reply("Por alguna razón, no he podido realizar el baneo, si este problema persiste, informale al desarrollador a traves del comandos `feedback`");
+            });
     }
 }
 

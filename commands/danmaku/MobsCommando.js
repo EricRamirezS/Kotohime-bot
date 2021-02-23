@@ -1,7 +1,7 @@
 const commando = require('discord.js-commando');
 const {syncGuild, keys} = require('../../db/JSONSListeners');
 
-class LanzamientoLunatic extends commando.Command {
+class LanzamientoMobs extends commando.Command {
         constructor(client){
             super(client, {
                 name: 'mobs',
@@ -22,4 +22,4 @@ class LanzamientoLunatic extends commando.Command {
     }
 }
 
-module.exports = LanzamientoLunatic;
+module.exports = LanzamientoMobs;

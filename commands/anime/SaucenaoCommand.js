@@ -68,14 +68,16 @@ async function searchImage(channel, url) {
                 for (let j = 0; j < results.length; j++) res.push(results[j]);
             }
         }).catch(e => {
-            error = true;
-            if (e.status === 429) {
-                channel.send("No puedo buscar en estos momentos, ¿Puedes intentarlo más tarde?");
-            } else {
-                channel.send("¿Realmente me has enviado una imagen? Ha pasado algo inesperado.");
+                error = true;
+                if (e.status === 429) {
+                    channel.send("No puedo buscar en estos momentos, ¿Puedes intentarlo más tarde?");
+                } else {
+                    channel.send("¿Realmente me has enviado una imagen? Ha pasado algo inesperado.");
+                }
             }
-        }
-    );
+        );
+
+    if (error) return;
 
     if (res.length > 0) {
         channel.send("Esto ha sido lo más parecido que he encontrado");
@@ -94,9 +96,10 @@ async function searchImage(channel, url) {
             }
             channel.send(embed);
         }
-    } else if (!error) {
-        channel.send("No he podido encontrar nada.");
+        return;
     }
+
+    channel.send("No he podido encontrar nada.");
 }
 
 module.exports = SaucenaoCommand;

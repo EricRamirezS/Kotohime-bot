@@ -20,17 +20,17 @@ class RadioCommand extends commando.Command {
                 "Debes estar en un canal de voz para usar este comando"
             );
         let connection = await voiceChannel.join();
-        if (connection) {
-            let dispatcher = connection
-                .play("https://stream.gensokyoradio.net/3/")
-                .on("finish", () => {
-                    voiceChannel.leave();
-                })
-                .on("error", error => {
-                    voiceChannel.leave();
-                });
-            dispatcher.setVolumeLogarithmic(1);
-        }
+        if (!connection) return;
+
+        let dispatcher = connection
+            .play("https://stream.gensokyoradio.net/3/")
+            .on("finish", () => {
+                voiceChannel.leave();
+            })
+            .on("error", error => {
+                voiceChannel.leave();
+            });
+        dispatcher.setVolumeLogarithmic(1);
     }
 }
 

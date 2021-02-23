@@ -22,9 +22,7 @@ class StopCommand extends commando.Command {
             }
             message.guild.voice.channel.leave();
         } catch (ignored) {
-            console.log(ignored);
             try {
-                console.log("awa");
                 message.guild.voice.channel.leave();
             } catch (ignored) {
             }

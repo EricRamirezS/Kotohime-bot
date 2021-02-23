@@ -1,9 +1,9 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js');
 const {guild, keys} = require('../../db/JSONSListeners');
-const validateChannel = require('discord.js-commando/src/types/channel');
-const validateBoolean = require('discord.js-commando/src/types/boolean');
-const validateRole = require('discord.js-commando/src/types/role');
+const ValidateChannel = require('discord.js-commando/src/types/channel');
+const ValidateBoolean = require('discord.js-commando/src/types/boolean');
+const ValidateRole = require('discord.js-commando/src/types/role');
 
 const updateDB = require('../../db/DBUpdateGuildSetting');
 
@@ -104,7 +104,7 @@ class SettingCommand extends commando.Command {
                 //Ver configuraciones
                 case 'see':
                 case "ver":
-                    mostrarConfiguracion(msg);
+                    showSettings(msg);
                     break;
 
                 //Cambiar Prefijo del bot
@@ -123,10 +123,10 @@ class SettingCommand extends commando.Command {
                 case 'prision':
                     func = func ? func : updateDB.updateBanChannel;
 
-                    result = verificarCanal(args.valor, msg);
+                    result = validateChannel(args.valor, msg);
                     if (result.res) {
                         //Actualizar DB
-                        actualizarCanal(func, msg, result.value);
+                        updateChannelSetting(func, msg, result.value);
                     } else {
                         msg.reply(result.mes);
                     }
@@ -139,10 +139,10 @@ class SettingCommand extends commando.Command {
                 case 'comandos-genshin':
                     func = func ? func : updateDB.updateGenshinCommands;
 
-                    result = verificarBoleano(args.valor, msg);
+                    result = validateBoolean(args.valor, msg);
                     if (result.res) {
                         //Actualizar DB
-                        actualizarPermiso(func, msg, result.value);
+                        updateGroupCommandSetting(func, msg, result.value);
                     } else {
                         msg.reply(result.mes);
                     }
@@ -158,9 +158,9 @@ class SettingCommand extends commando.Command {
                 case 'rol-remove':
                     func = func ? func : updateDB.removeRoleToManage;
 
-                    result = verificarRol(args.valor, msg, false);
+                    result = validateRole(args.valor, msg, false);
                     if (result.res) {
-                        actualizarRol(func, msg, result.value);
+                        updateRoleSetting(func, msg, result.value);
                     } else {
                         msg.reply(result.mes);
                     }
@@ -169,9 +169,9 @@ class SettingCommand extends commando.Command {
                 case 'rol-ban':
                     func = func ? func : updateDB.updateBanRole;
 
-                    result = verificarRol(args.valor, msg);
+                    result = validateRole(args.valor, msg);
                     if (result.res) {
-                        actualizarRol(func, msg, result.value);
+                        updateRoleSetting(func, msg, result.value);
                     } else {
                         msg.reply(result.mes);
                     }
@@ -183,7 +183,7 @@ class SettingCommand extends commando.Command {
     }
 }
 
-function actualizarCanal(func, msg, val) {
+function updateChannelSetting(func, msg, val) {
     func(msg.guild.id, val)
         .then(() => {
             let accion = val ? "actualizada" : "eliminada";
@@ -195,7 +195,7 @@ function actualizarCanal(func, msg, val) {
         });
 }
 
-function actualizarRol(func, msg, val) {
+function updateRoleSetting(func, msg, val) {
     func(msg.guild.id, val)
         .then(() => {
             let accion = val ? "actualizado" : "eliminado";
@@ -207,7 +207,7 @@ function actualizarRol(func, msg, val) {
         });
 }
 
-function actualizarPermiso(func, msg, val) {
+function updateGroupCommandSetting(func, msg, val) {
     func(msg.guild.id, val)
         .then(() => {
             msg.reply(`La configuración ha sido actualizada con exito.`);
@@ -219,17 +219,17 @@ function actualizarPermiso(func, msg, val) {
 }
 
 // Verifica que el parametro ingresado corresponda al nombre o mencion de un canal en el servidor
-function verificarCanal(val, msg) {
+function validateChannel(val, msg) {
     let data = {
         res: false,
         value: null,
         mes: null
     }
-    data.res = new validateChannel(this, 'channel').validate(val, msg, {});
+    data.res = new ValidateChannel(this, 'channel').validate(val, msg, {});
     if (val === "") data.res = true;
     if (typeof data.res === "boolean") {
         if (data.res) {
-            data.value = val ? new validateChannel(this, 'channel').parse(val, msg).id : null;
+            data.value = val ? new ValidateChannel(this, 'channel').parse(val, msg).id : null;
         } else {
             data.mes = "No se ha encontrado ningun canal con ese nombre";
             data.res = false;
@@ -241,17 +241,17 @@ function verificarCanal(val, msg) {
     return data;
 }
 
-function verificarBoleano(val, msg) {
+function validateBoolean(val, msg) {
     let data = {
         res: false,
         value: null,
         mes: null
     }
-    data.res = new validateBoolean(this, 'boolean').validate(val, msg, {});
+    data.res = new ValidateBoolean(this, 'boolean').validate(val, msg, {});
     if (val === "") data.res = false;
     if (typeof data.res === "boolean") {
         if (data.res) {
-            data.value = new validateBoolean(this, 'boolean').parse(val, msg);
+            data.value = new ValidateBoolean(this, 'boolean').parse(val, msg);
         } else {
             data.mes = "Esta configuración no puede quedar en blanco.";
         }
@@ -262,13 +262,13 @@ function verificarBoleano(val, msg) {
     return data;
 }
 
-function verificarRol(val, msg, nullable = true) {
+function validateRole(val, msg, nullable = true) {
     let data = {
         res: false,
         value: null,
         mes: null
     }
-    data.res = new validateRole(this, 'role').validate(val, msg, {});
+    data.res = new ValidateRole(this, 'role').validate(val, msg, {});
     console.log(data.res);
     if (nullable) {
         if (val === "") data.res = true;
@@ -276,7 +276,7 @@ function verificarRol(val, msg, nullable = true) {
 
     if (typeof data.res === "boolean") {
         if (data.res) {
-            data.value = val ? new validateRole(this, 'role').parse(val, msg).id : null;
+            data.value = val ? new ValidateRole(this, 'role').parse(val, msg).id : null;
         } else {
             data.mes = "No se ha encontrado ningun rol con ese nombre";
             data.res = false;
@@ -288,44 +288,46 @@ function verificarRol(val, msg, nullable = true) {
     return data;
 }
 
-async function mostrarConfiguracion(msg) {
+async function showSettings(msg) {
     let guild_data = await guild(msg.guild.id);
-    if (guild_data) {
-        let embed = new Discord.MessageEmbed();
-        embed.setTitle("CONFIGURACIÓN ACTUAL");
-        let channel_chache = msg.guild.channels.cache;
-        let welcome_channel = elementToString(channel_chache, guild_data[keys.welcome_channel_id]);
-        let voice_log = elementToString(channel_chache, guild_data[keys.voice_log_id]);
-        let ban_channel = elementToString(channel_chache, guild_data[keys.ban_channel_id]);
-        let ban_public_noti_channel = elementToString(channel_chache, guild_data[keys.ban_public_notification_channel]);
-        let touhou_commands = guild_data[keys.allow_touhou_commands] ? 'Sí' : 'No';
-        let danmaku_commands = guild_data[keys.allow_danmaku_commands] ? 'Sí' : 'No';
-        let genshin_commands = guild_data[keys.allow_genshin_commands] ? 'Sí' : 'No';
-        let prefix = guild_data[keys.prefix];
-        let ban_role = elementToString(msg.guild.roles.cache, guild_data[keys.ban_role_id]);
-        let roles = [];
-        if (guild_data[keys.roles_bot_can_add]) {
-            for (let i = 0; i < guild_data[keys.roles_bot_can_add].length; i++) {
-                let role = msg.guild.roles.cache.find(x => x.id === guild_data[keys.roles_bot_can_add][i]);
-                if (role)
-                    roles.push(role.toString());
-            }
+    if (!guild_data) return;
+
+    let embed = new Discord.MessageEmbed();
+
+    embed.setTitle("CONFIGURACIÓN ACTUAL");
+
+    let channel_chache = msg.guild.channels.cache;
+    let welcome_channel = elementToString(channel_chache, guild_data[keys.welcome_channel_id]);
+    let voice_log = elementToString(channel_chache, guild_data[keys.voice_log_id]);
+    let ban_channel = elementToString(channel_chache, guild_data[keys.ban_channel_id]);
+    let ban_public_noti_channel = elementToString(channel_chache, guild_data[keys.ban_public_notification_channel]);
+
+    let touhou_commands = guild_data[keys.allow_touhou_commands] ? 'Sí' : 'No';
+    let danmaku_commands = guild_data[keys.allow_danmaku_commands] ? 'Sí' : 'No';
+    let genshin_commands = guild_data[keys.allow_genshin_commands] ? 'Sí' : 'No';
+
+    let prefix = guild_data[keys.prefix];
+    let ban_role = elementToString(msg.guild.roles.cache, guild_data[keys.ban_role_id]);
+    let roles = [];
+    if (guild_data[keys.roles_bot_can_add]) {
+        for (let i = 0; i < guild_data[keys.roles_bot_can_add].length; i++) {
+            let role = msg.guild.roles.cache.find(x => x.id === guild_data[keys.roles_bot_can_add][i]);
+            if (!role) continue;
+            roles.push(role.toString());
         }
-
-        if (!roles.length) roles = ["No definido"];
-
-        embed.addField("Prefijo del bot", prefix, true);
-        embed.addField("Canal de Bienvenida:", welcome_channel, true);
-        embed.addField("Log de voz:", voice_log, true);
-        embed.addField("Canal de baneos:", ban_channel, true);
-        embed.addField("Notificación pública de baneo:", ban_public_noti_channel, true);
-        embed.addField("Permitir comandos de Touhou", touhou_commands, true);
-        embed.addField("Permitir comandos de Danmaku!! Card Game", danmaku_commands, true);
-        embed.addField("Permitir comandos de Genshin Impact", genshin_commands, true);
-        embed.addField("Rol para baneos", ban_role, true);
-        embed.addField("Roles que los usuarios pueden autoagregar", roles.join("\n"), true);
-        msg.channel.send(embed);
     }
+    if (!roles.length) roles = ["No definido"];
+    embed.addField("Prefijo del bot", prefix, true);
+    embed.addField("Canal de Bienvenida:", welcome_channel, true);
+    embed.addField("Log de voz:", voice_log, true);
+    embed.addField("Canal de baneos:", ban_channel, true);
+    embed.addField("Notificación pública de baneo:", ban_public_noti_channel, true);
+    embed.addField("Permitir comandos de Touhou", touhou_commands, true);
+    embed.addField("Permitir comandos de Danmaku!! Card Game", danmaku_commands, true);
+    embed.addField("Permitir comandos de Genshin Impact", genshin_commands, true);
+    embed.addField("Rol para baneos", ban_role, true);
+    embed.addField("Roles que los usuarios pueden autoagregar", roles.join("\n"), true);
+    msg.channel.send(embed);
 }
 
 function elementToString(cache, id) {

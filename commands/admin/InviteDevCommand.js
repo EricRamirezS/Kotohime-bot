@@ -10,6 +10,7 @@ class InviteDevCommand extends commando.Command {
                 'quieres que sea parte de tu comunidad.',
             guildOnly: true,
             aliases: ["invitedev"],
+            userPermissions: ['ADMINISTRATOR'],
             clientPermissions: ['CREATE_INSTANT_INVITE'],
         });
     }

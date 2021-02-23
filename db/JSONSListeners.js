@@ -99,6 +99,14 @@ async function getGuild(guild_id) {
     return data;
 }
 
+/**
+ * Debido a que los JSONS de dataclip se actualizan cada 1 minuto, puede generar desfase con la
+ * información real de la base de datos, por tanto, si se ha hecho una transacción conocida a la db,
+ * esta se actualizará manualmente, y se dejará de consultar al JSON por 1-2 minutos
+ * @param guild_data
+ * @param banned_data
+ * @returns {Promise<void>}
+ */
 const manualRefresh = async function manualRefresh(guild_data, banned_data) {
     json_guild = guild_data;
     json_baned = banned_data;
@@ -135,12 +143,3 @@ module.exports = {
     keys: keys,
     banned_keys: banned_keys,
 };
-
-/**
- * Debido a que los JSONS de dataclip se actualizan cada 1 minuto, puede generar desfase con la
- * información real de la base de datos, por tanto, si se ha hecho una transacción conocida a la db,
- * esta se actualizará manualmente, y se dejará de consultar al JSON por 1-2 minutos
- * @param guild_data
- * @param banned_data
- * @returns {Promise<void>}
- */

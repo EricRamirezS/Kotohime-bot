@@ -38,53 +38,53 @@ class PlayCommand extends commando.Command {
             }
             return;
         }
-        if (songInfo) {
-            const song = {
-                title: songInfo.videoDetails.title,
-                url: songInfo.videoDetails.video_url,
+        if (!songInfo) return;
+
+        const song = {
+            title: songInfo.videoDetails.title,
+            url: songInfo.videoDetails.video_url,
+        };
+        let serverQueue = global.queue.get(message.guild.id);
+        if (!serverQueue) {
+            const queueContruct = {
+                textChannel: message.channel,
+                voiceChannel: voiceChannel,
+                connection: null,
+                songs: [],
+                volume: 5,
+                playing: true,
             };
-            let serverQueue = global.queue.get(message.guild.id);
-            if (!serverQueue) {
-                const queueContruct = {
-                    textChannel: message.channel,
-                    voiceChannel: voiceChannel,
-                    connection: null,
-                    songs: [],
-                    volume: 5,
-                    playing: true,
-                };
-                global.queue.set(message.guild.id, queueContruct);
-                queueContruct.songs.push(song);
-                message.reply(`${song.title} ha sido agregada a la Playlist!`);
-                try {
-                    queueContruct.connection = await voiceChannel.join();
-                    play(message.guild, queueContruct.songs[0]);
-                } catch (err) {
-                    global.queue.delete(message.guild.id);
-                    return message.channel.send(err.toString());
-                }
-            } else {
-                let flag = false;
-                try {
-                    let vcs = message.client.voice.connections.keyArray();
-                    for (let i = 0; i < vcs.length; i++) {
-                        if (message.guild.id === vcs[i]) {
-                            flag = true;
-                            break;
-                        }
-                    }
-                    if (!flag) {
-                        serverQueue.songs = [];
-                    }
-                } catch (ignore) {
-                }
-                serverQueue.songs.push(song);
-                message.reply(`${song.title} ha sido agregada a la Playlist!`);
-                if (!flag) {
-                    serverQueue.connection = await voiceChannel.join();
-                    play(message.guild, serverQueue.songs[0]);
-                }
+            global.queue.set(message.guild.id, queueContruct);
+            queueContruct.songs.push(song);
+            message.reply(`${song.title} ha sido agregada a la Playlist!`);
+            try {
+                queueContruct.connection = await voiceChannel.join();
+                play(message.guild, queueContruct.songs[0]);
+            } catch (err) {
+                global.queue.delete(message.guild.id);
+                return message.channel.send(err.toString());
             }
+        } else {
+            let flag = false;
+            try {
+                let vcs = message.client.voice.connections.keyArray();
+                for (let i = 0; i < vcs.length; i++) {
+                    if (message.guild.id === vcs[i]) {
+                        flag = true;
+                        break;
+                    }
+                }
+                if (!flag) {
+                    serverQueue.songs = [];
+                }
+            } catch (ignore) {
+            }
+            serverQueue.songs.push(song);
+            message.reply(`${song.title} ha sido agregada a la Playlist!`);
+            if (flag) return;
+
+            serverQueue.connection = await voiceChannel.join();
+            play(message.guild, serverQueue.songs[0]);
         }
     }
 }

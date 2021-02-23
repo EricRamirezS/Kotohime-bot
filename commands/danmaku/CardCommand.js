@@ -57,42 +57,42 @@ class CardCommand extends commando.Command {
     }
 
     convertCardToString(card) {
-        let respuesta = new Discord.MessageEmbed();
-        respuesta.setTitle(card.name);
+        let reply = new Discord.MessageEmbed();
+        reply.setTitle(card.name);
         if (BATTLE_DECK.includes(card) || LUNATIC_DECK.includes(card)) {
-            if (BATTLE_DECK.includes(card)) respuesta.setColor('#7C8FD6');
-            else respuesta.setColor('#BD7F36');
-            respuesta.addField('point_value', card.point_value, false);
-            if (card.timing_a) respuesta.addField('Timing', card.timing_a, true);
-            if (card.cardTypes_a) respuesta.addField('Type', card.cardTypes_a.join(", "), true);
-            respuesta.addField('Description', card.description_a, false);
+            if (BATTLE_DECK.includes(card)) reply.setColor('#7C8FD6');
+            else reply.setColor('#BD7F36');
+            reply.addField('point_value', card.point_value, false);
+            if (card.timing_a) reply.addField('Timing', card.timing_a, true);
+            if (card.cardTypes_a) reply.addField('Type', card.cardTypes_a.join(", "), true);
+            reply.addField('Description', card.description_a, false);
             if (card.description_b) {
-                if (card.timing_b) respuesta.addField('Timing', card.timing_b, true);
-                if (card.cardTypes_b) respuesta.addField('Type', card.cardTypes_b.join(", "), true);
-                respuesta.addField('Description', card.description_b, false);
+                if (card.timing_b) reply.addField('Timing', card.timing_b, true);
+                if (card.cardTypes_b) reply.addField('Type', card.cardTypes_b.join(", "), true);
+                reply.addField('Description', card.description_b, false);
             }
         } else if (CHARACTER_DECK.includes(card)) {
-            respuesta.setColor('#C196CC');
-            respuesta.addField('Ability', card.ability_description, false);
-            respuesta.addField('Spell Card:', card.spell_card_name, false);
-            if (card.spell_card_timing) respuesta.addField('Timing', card.spell_card_timing);
-            respuesta.addField('Description:', card.spell_card_description, false);
+            reply.setColor('#C196CC');
+            reply.addField('Ability', card.ability_description, false);
+            reply.addField('Spell Card:', card.spell_card_name, false);
+            if (card.spell_card_timing) reply.addField('Timing', card.spell_card_timing);
+            reply.addField('Description:', card.spell_card_description, false);
 
         } else if (INCIDENT_DECK.includes(card)) {
-            respuesta.setColor('#A13D3D');
-            respuesta.addField('Description', card.description, false);
+            reply.setColor('#A13D3D');
+            reply.addField('Description', card.description, false);
         } else if (ROLE_DECK.includes(card)) {
-            respuesta.setColor('#959F94');
-            respuesta.addField('Type', card.type, true);
-            if(card.players) respuesta.addField('Number of players', card.players, true);
-            else respuesta.addField('Number of players', "-", true);
-            respuesta.addField('Description', card.description, false);
+            reply.setColor('#959F94');
+            reply.addField('Type', card.type, true);
+            if(card.players) reply.addField('Number of players', card.players, true);
+            else reply.addField('Number of players', "-", true);
+            reply.addField('Description', card.description, false);
 
         }
-        respuesta.setThumbnail(card.image);
-        respuesta.setURL(card.link);
-        respuesta.setFooter('See more: ' + card.link, "https://danmaku.party/favicon.png");
-        return respuesta;
+        reply.setThumbnail(card.image);
+        reply.setURL(card.link);
+        reply.setFooter('See more: ' + card.link, "https://danmaku.party/favicon.png");
+        return reply;
     }
 }
 

@@ -12,7 +12,7 @@ class SafebooruCommand extends commando.Command {
             examples: [
                 "~safebooru touhou",
                 "~safebooru touhou alice_margatroid",
-                "~safebooru banned_tags"
+                "~safebooru banned_tags.txt"
             ],
             args: [
                 {

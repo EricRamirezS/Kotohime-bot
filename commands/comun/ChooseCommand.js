@@ -1,7 +1,7 @@
 const commando = require('discord.js-commando');
 
 class ChooseCommand extends commando.Command {
-    constructor(client){
+    constructor(client) {
         super(client, {
             name: 'escoger',
             group: 'comun',
@@ -19,49 +19,50 @@ class ChooseCommand extends commando.Command {
         });
     }
 
-    async run(message, args){
-        if (!(args.opciones==='')){
-            let texto = args.opciones;
-            let finalizado = false;
-            let arrayOpciones = [];
-            let ini = -1;
-            let fin = -1;
-            while(!finalizado){
-                ini = -1;
-                fin = -1;
-                for(let i=0; i < texto.length;i++){
-                    if(texto.charAt(i)==='"'){
-                        if(ini===-1){
-                            ini=i;
-                        }else{
-                            fin = i;
-                            break;
-                        }
+    async run(message, args) {
+        if (args.opciones === '') {
+            message.channel.send("¡No hay nada de lo cual escoger!");
+            return;
+        }
+
+        let options = args.opciones;
+        let finished = false;
+        let optionsArray = [];
+        let start = -1;
+        let end = -1;
+        while (!finished) {
+            start = -1;
+            end = -1;
+            for (let i = 0; i < options.length; i++) {
+                if (options.charAt(i) === '"') {
+                    if (start === -1) {
+                        start = i;
+                    } else {
+                        end = i;
+                        break;
                     }
                 }
-                if(ini===-1 && fin===-1){
-                    finalizado=true;
-                }else{
-                    let subStr = texto.substr(ini,fin+1);
-                    texto = texto.replace(subStr,'');
-                    subStr = subStr.replace("\" ", "\"");
-                    arrayOpciones.push(subStr);
-                }
             }
-            let arrayOpciones2 = texto.split(" ");
-            for(let i=0; i < arrayOpciones2.length;i++) {
-                arrayOpciones.push(arrayOpciones2[i])
+            if (start === -1 && end === -1) {
+                finished = true;
+            } else {
+                let subStr = options.substr(start, end + 1);
+                options = options.replace(subStr, '');
+                subStr = subStr.replace("\" ", "\"");
+                optionsArray.push(subStr);
             }
-            for(let i=0; i < arrayOpciones.length;i++){
-                if(arrayOpciones[i]==='')
-                    arrayOpciones.splice(i,1);
-            }
-            let choose = Math.floor(Math.random() * arrayOpciones.length);
-            message.channel.send("¡Escojo "+arrayOpciones[choose]+"!");
         }
-        else{
-            message.channel.send("¡No hay nada de lo cual escoger!");
+        let optionsArray2 = options.split(" ");
+        for (let i = 0; i < optionsArray2.length; i++) {
+            optionsArray.push(optionsArray2[i])
         }
+        for (let i = 0; i < optionsArray.length; i++) {
+            if (optionsArray[i] === '')
+                optionsArray.splice(i, 1);
+        }
+        let choose = Math.floor(Math.random() * optionsArray.length);
+        message.channel.send("¡Escojo " + optionsArray[choose] + "!");
+
     }
 }
 

@@ -52,59 +52,64 @@ class BanCommand extends commando.Command {
 
     async run(message, args) {
         let guild_data = await guild(message.guild.id);
-        if (guild_data) {
-            let ban_public_notification_channel = message.guild.channels.cache.find(x => x.id === guild_data[keys.ban_public_notification_channel]);
-            let ban_channel = message.guild.channels.cache.find(x => x.id === guild_data[keys.ban_channel_id]);
-            let ban_role = message.guild.roles.cache.find(x => x.id === guild_data[keys.ban_role_id]);
-            if (ban_role) {
-                let tiempo;
-                let inicio = Date.now();
-                let inicio_str = moment(inicio).format('DD/MM/YYYY h:mm:ss');
-                let fin;
-                let fin_str;
-                if (args.duracion) {
-                    tiempo = args.duracion + " minutos";
-                    fin = Date.now() + args.duracion * 60000;
-                    fin_str = moment(fin).format('DD/MM/YYYY h:mm:ss');
-                } else {
-                    tiempo = "Indefinido";
-                    fin = null;
-                    fin_str = "Indefinido";
-                }
-                updateDB(args.usuario.user.id, message.guild.id, inicio, fin, args.razon, ban_role.id)
-                    .then(() => {
-                        args.usuario.roles.add(ban_role).then(async () => {
+        if (!guild_data) return;
 
-                            let embed = new Discord.MessageEmbed()
-                                .setTitle('Usuario Baneado')
-                                .setThumbnail(args.usuario.user.displayAvatarURL())
-                                .addField('Usuario', args.usuario.user.username, true)
-                                .addField('Duración', tiempo, true)
-                                .addField('Razón', args.razon, false)
-                                .addField('Hora del baneo', inicio_str, true)
-                                .addField('Hora de termino', fin_str, true)
-                                .setColor("#FF0000");
-                            if (ban_public_notification_channel) {
-                                ban_public_notification_channel.send(embed);
-                            }
-                            if (ban_channel) {
-                                ban_channel.send(args.usuario.toString() + ", lo siento, pero has sido baneado/a.", embed);
-                            }
-                        });
-                    }).catch(() => {
-                    message.reply("Por alguna razón, no he podido realizar el baneo, si este problema persiste, informale al desarrollador a traves del comandos `feedback`");
-                });
+        let ban_public_notification_channel = message.guild.channels.cache.find(x => x.id === guild_data[keys.ban_public_notification_channel]);
+        let ban_channel = message.guild.channels.cache.find(x => x.id === guild_data[keys.ban_channel_id]);
+        let ban_role = message.guild.roles.cache.find(x => x.id === guild_data[keys.ban_role_id]);
+
+        if (!ban_role) {
+            if (message.member.hasPermission('ADMINISTRATOR')) {
+                message.reply("No se ha configurado ningun rol para realizar baneos, por favor, configurame un rol " +
+                    "para baneos, para ayudarte en esta tarea.");
+
             } else {
-                if (message.member.hasPermission('ADMINISTRATOR')) {
-                    message.reply("No se ha configurado ningun rol para realizar baneos, por favor, configurame un rol " +
-                        "para baneos, para ayudarte en esta tarea.");
-
-                } else {
-                    message.reply("No se ha configurado ningun rol para realizar baneos. Pidele a algún administrador " +
-                        "que configure esta propiedad.");
-                }
+                message.reply("No se ha configurado ningun rol para realizar baneos. Pidele a algún administrador " +
+                    "que configure esta propiedad.");
             }
+            return;
         }
+
+        let time;
+        let start = Date.now();
+        let startString = moment(start).format('DD/MM/YYYY h:mm:ss');
+        let end;
+        let endString;
+
+        if (args.duracion) {
+            time = args.duracion + " minutos";
+            end = Date.now() + args.duracion * 60000;
+            endString = moment(end).format('DD/MM/YYYY h:mm:ss');
+        } else {
+            time = "Indefinido";
+            end = null;
+            endString = "Indefinido";
+        }
+
+        updateDB(args.usuario.user.id, message.guild.id, start, end, args.razon, ban_role.id)
+            .then(() => {
+                args.usuario.roles.add(ban_role)
+                    .then(async () => {
+
+                        let embed = new Discord.MessageEmbed()
+                            .setTitle('Usuario Baneado')
+                            .setThumbnail(args.usuario.user.displayAvatarURL())
+                            .addField('Usuario', args.usuario.user.username, true)
+                            .addField('Duración', time, true)
+                            .addField('Razón', args.razon, false)
+                            .addField('Hora del baneo', startString, true)
+                            .addField('Hora de termino', endString, true)
+                            .setColor("#FF0000");
+                        if (ban_public_notification_channel) {
+                            ban_public_notification_channel.send(embed);
+                        }
+                        if (ban_channel) {
+                            ban_channel.send(args.usuario.toString() + ", lo siento, pero has sido baneado/a.", embed);
+                        }
+                    });
+            }).catch(() => {
+            message.reply("Por alguna razón, no he podido realizar el baneo, si este problema persiste, informale al desarrollador a traves del comandos `feedback`");
+        });
     }
 }
 
