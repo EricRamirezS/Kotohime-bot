@@ -8,6 +8,7 @@ const ValidateRole = require('discord.js-commando/src/types/role');
 const updateDB = require('../../db/DBUpdateGuildSetting');
 
 
+// noinspection FallThroughInSwitchStatementJS
 class SettingCommand extends commando.Command {
     constructor(client) {
         super(client, {
