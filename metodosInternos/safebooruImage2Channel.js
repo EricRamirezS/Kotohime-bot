@@ -1,81 +1,8 @@
 const request = require('snekfetch');
 const xmldoc = require('xmldoc');
+const fs = require('fs');
 
-const BANNED_TAGS = ["",
-    "ass",
-    "ecchi",
-    "underwear",
-    "underwear_only",
-    "ecchi",
-    "bikini",
-    "breast_hold",
-    "breast_press",
-    "breasts",
-    "leotard",
-    "sexually_suggestive",
-    "sexual_harassment",
-    "gym_uniform",
-    "gym_shirt",
-    "gym_shorts",
-    "black_bikini_top",
-    "black_bikini_bottom",
-    "arms_under_breasts",
-    "medium_breasts",
-    "shirtless",
-    "no_pants",
-    "grabbing_own_breast",
-    "naked_tabard",
-    "yuri",
-    "yaoi",
-    "groping",
-    "breast_grab",
-    "cat_lingerie",
-    "upskirt",
-    "strap_gap",
-    "naked_shirt",
-    "cameltoe",
-    "white_panties",
-    "wet_clothes",
-    "no_panties",
-    "panties",
-    "pantyshot",
-    "black_panties",
-    "lingerie",
-    "lingeries",
-    "on_bed",
-    "multico",
-    "one-piece_swimsuit",
-    "revealing_clothes",
-    "self_fondle",
-    "breast_grab",
-    "mktr_(princess_mktr)",
-    "naked_towel",
-    "skirt_lift",
-    "microskirt",
-    "anal_beads",
-    "lifted_by_self",
-    "skirt_lift",
-    "pantyshot_(jumping)",
-    "groin",
-    "thighs",
-    "kaenuco",
-    "oouso",
-    "maemi_(maemi12)",
-    "double_bun",
-    "feet",
-    "www-1171575199",
-    "yuri_(chocho_q)",
-    "penis",
-    "sex",
-    "pussy",
-    "pussy_juice",
-    "areola_slip",
-    "areolae",
-    "cameltoe",
-    "kairunoburogu",
-    "soles",
-    "nude"
-];
+let BANNED_TAGS = null;
 
 /**
  *
@@ -83,6 +10,8 @@ const BANNED_TAGS = ["",
  * @param tag search tag
  */
 let safebooruImageToChannel = function (message, tag) {
+
+    loadBannedTags();
 
     let BASE_REQUEST;
     if (!message.channel.nsfw) {
@@ -113,7 +42,20 @@ let safebooruImageToChannel = function (message, tag) {
         });
 };
 
-function getCantidadDeImagenes(r) {
+function loadBannedTags() {
+    if (BANNED_TAGS) return;
+
+    BANNED_TAGS = [""];
+
+    try {
+        const data = fs.readFileSync('./dataFiles/BannedTagsData/banned_tags.txt', 'utf8');
+        BANNED_TAGS = data.split("\n");
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+function getNumberOfImages(r) {
     // Obteniendo el número de imagenes existentes con este resultado
     let s = r.body.toString();
     let document = new xmldoc.XmlDocument(s);

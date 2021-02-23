@@ -1,9 +1,9 @@
 const commando = require('discord.js-commando');
-const BATTLE_DECK = require('../danmaku/data/battle_cards.json');
-const CHARACTER_DECK = require('../danmaku/data/character_cards.json');
-const INCIDENT_DECK = require('../danmaku/data/incident_cards.json');
-const LUNATIC_DECK = require('../danmaku/data/lunatic_cards.json');
-const ROLE_DECK = require('../danmaku/data/role_cards.json');
+const BATTLE_DECK = require('../../dataFiles/DanmakuData/battle_cards.json');
+const CHARACTER_DECK = require('../../dataFiles/DanmakuData/character_cards.json');
+const INCIDENT_DECK = require('../../dataFiles/DanmakuData/incident_cards.json');
+const LUNATIC_DECK = require('../../dataFiles/DanmakuData/lunatic_cards.json');
+const ROLE_DECK = require('../../dataFiles/DanmakuData/role_cards.json');
 const {stripIndents} = require('common-tags');
 const Discord = require('discord.js');
 const {syncGuild, keys} = require('../../db/JSONSListeners');
