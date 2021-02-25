@@ -53,9 +53,9 @@ para qué será usado.
 - **Leer mensajes**: Es necesario para que todos los comandos funcionen.
 - **Insertar enlaces**: Es necesario para los mensajes con embedidos. Muchos comandos lo utilizan.
 - **Adjuntar archivo**: Es necesario para enviar imágenes, los comandos relacionados a safebooru y rule34 lo utilizan.
-- **Connect**: Le permite a Kotohime conectarse a canales de voz. Necesario para los comandos de música.
-- **Speak**: Le permite a Kotohime hablar por canales de voz. Necesario para los comandos de música.
-- **Use Voice Activity**: No es _necesario_, pero es incluido como precaución extra para los comandos de voz.
+- **Conectar**: Le permite a Kotohime conectarse a canales de voz. Necesario para los comandos de música.
+- **Hblar**: Le permite a Kotohime hablar por canales de voz. Necesario para los comandos de música.
+- **Usar Actividad de voz**: No es _necesario_, pero es incluido como precaución extra para los comandos de voz.
 
 ## Configuraciones
 
@@ -120,7 +120,19 @@ corresponden a temas más específicos.
 * **configuraciones:** Permite a los administradores cambiar las configuraciones bot.
 * **unban:** remueve el "baneo" a un usuario.
 * **feedback:** Envía un mensaje privado al desarrollador de este bot.
+* **invitardev:** Envia un enlace de invitación al desarrollador del bot.
 
+### Anime
+* **tracemoe:** Enviame una imagen e intentaré averiguar de qué anime es.
+* **saucenao:** Envíame una imagen e intentaré averiguar de donde proviene.
+* **rule34:** Envía una imagen al azar con los tags mencionados.
+    * Solo funciona en canales NSFW
+    * ¡Contenido pornográfico explícito!
+* **safebooru:** Envía una imagen al azar con los tags mencionados.
+    * Hay una gran cantidad de tags bloqueados para mantener los servidores SFW.
+    * Estos tags bloqueados serán ignorados si el canal está marcado como NSFW.
+
+    
 ### Miscelanea
 
 * **blah:** blah.
@@ -128,12 +140,6 @@ corresponden a temas más específicos.
 * **lmgtfy:** Déjame googlear eso por ti.
 * **roll:** Lanza un dado.
 * **shrug:** ¯\_(ツ)_/¯
-* **safebooru:** Envía una imagen al azar con los tags mencionados.
-    * Hay una gran cantidad de tags bloqueados para mantener los servidores SFW.
-    * Estos tags bloqueados serán ignorados si el canal está marcado como NSFW.
-* **rule34:** Envía una imagen al azar con los tags mencionados.
-    * Solo funciona en canales NSFW
-    * ¡Contenido pornográfico explícito!
 
 ### Comun
 
@@ -213,6 +219,8 @@ usuarios. Gracias a todos los mencionados aquí
 
 - [Dragon Fire](https://github.com/dragonfire535)
   * Xiao bot (Referencias)
+- [Gensokyou Radio](https://gensokyoradio.net/)
+  * Gensokyo Radio (Streaming)
 - [James](https://github.com/james7132)
   * Hourai bot (Referencias)
 - [Ko-fi](https://ko-fi.com/)
