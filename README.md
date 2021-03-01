@@ -237,6 +237,8 @@ usuarios. Gracias a todos los mencionados aquí
   * Rule34 (API)
 - [Safebooru](https://safebooru.org/)
   * safebooru (API)
+- [SauceNAO](https://saucenao.com/)
+  * SauceNAO (API)
 - [Trace.moe](https://trace.moe)
   * tracemoe (API)
 
