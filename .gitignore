@@ -3,4 +3,6 @@
 .idea/runConfigurations
 .idea/runConfigurations/bin_wwww.xml
 .github/
+/node_modules/
 /node_modules/discord.js-commando/.github/
+!/node_modules/discord.js-commando/
