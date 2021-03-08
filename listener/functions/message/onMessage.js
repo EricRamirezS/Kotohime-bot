@@ -10,7 +10,11 @@ const registerGuild = require("../../../db/DBUpdateGuildSetting").registerGuild;
  */
 module.exports = (message) => {
     if (message.author.username.toString() !== 'Kotohime') {
-        console.log(message.channel.name + " | " + message.author.username + ": " + message.toString());
+        console.log(message.guild.id + "| " +
+            message.guild.name + " | " +
+            message.channel.name + " | " +
+            message.author.username + ": " +
+            message.toString());
     }
 
     if (message.guild === null ) return;
