@@ -9,15 +9,15 @@ const registerGuild = require("../../../db/DBUpdateGuildSetting").registerGuild;
  * @see https://discord.js.org/#/docs/main/stable/class/Message
  */
 module.exports = (message) => {
-    if (message.author.username.toString() !== 'Kotohime') {
-        console.log(message.guild.id + "| " +
-            message.guild.name + " | " +
-            message.channel.name + " | " +
-            message.author.username + ": " +
-            message.toString());
-    }
 
-    if (message.guild === null ) return;
+    console.log(message.guild.id + "| " +
+        message.guild.name + " | " +
+        message.channel.name + " | " +
+        message.author.username + ": " +
+        message.toString());
+
+
+    if (message.guild === null) return;
 
     checkGuild(message.guild.id);
 };
