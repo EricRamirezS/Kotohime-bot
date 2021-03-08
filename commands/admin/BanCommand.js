@@ -23,7 +23,7 @@ class BanCommand extends commando.Command {
                 'automático puede tardar hasta 2 minutos en efectuarse.',
             examples: ['ban <@386007907113762816> 1', 'ban <@386007907113762816> 60 ¡Por ser genial!'],
             guildOnly: true,
-            clientPermissions: ['MANAGE_ROLES'],
+            clientPermissions: ['MANAGE_ROLES', 'SEND_MESSAGES', 'EMBED_LINKS'],
             userPermissions: ['BAN_MEMBERS'],
             args: [
                 {
