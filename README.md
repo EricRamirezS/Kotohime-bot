@@ -54,7 +54,7 @@ para qué será usado.
 - **Insertar enlaces**: Es necesario para los mensajes con embedidos. Muchos comandos lo utilizan.
 - **Adjuntar archivo**: Es necesario para enviar imágenes, los comandos relacionados a safebooru y rule34 lo utilizan.
 - **Conectar**: Le permite a Kotohime conectarse a canales de voz. Necesario para los comandos de música.
-- **Hblar**: Le permite a Kotohime hablar por canales de voz. Necesario para los comandos de música.
+- **Hablar**: Le permite a Kotohime hablar por canales de voz. Necesario para los comandos de música.
 - **Usar Actividad de voz**: No es _necesario_, pero es incluido como precaución extra para los comandos de voz.
 
 ## Configuraciones
