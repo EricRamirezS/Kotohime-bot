@@ -90,7 +90,6 @@ class BanCommand extends commando.Command {
             .then(() => {
                 args.usuario.roles.add(ban_role)
                     .then(async () => {
-
                         let embed = new Discord.MessageEmbed()
                             .setTitle('Usuario Baneado')
                             .setThumbnail(args.usuario.user.displayAvatarURL())
@@ -106,6 +105,7 @@ class BanCommand extends commando.Command {
                         if (ban_channel) {
                             ban_channel.send(args.usuario.toString() + ", lo siento, pero has sido baneado/a.", embed);
                         }
+                        message.reply("¡Usuario \"baneado\" exitosamente!");
                     });
             }).catch(() => {
             message.reply("Por alguna razón, no he podido realizar el baneo, si este problema persiste, informale al desarrollador a traves del comandos `feedback`");
