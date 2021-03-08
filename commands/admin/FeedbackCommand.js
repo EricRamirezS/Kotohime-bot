@@ -24,6 +24,8 @@ class UnBanCommand extends commando.Command {
 
     async run(message, args) {
         await this.client.users.cache.get(process.env.DEVELOPER_ID).send(message.author.toString() + " | " + args.mensaje);
+        return message.channel.send("El mensaje ha sido enviado exitosamente. " +
+            "Recuerda que tambien puedes invitar al desarrollador usando el comando `invitardev` si necesitas ayuda directa");
     }
 
 }
