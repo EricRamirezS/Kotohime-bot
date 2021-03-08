@@ -79,7 +79,7 @@ recomienda crear un canal de prisión para que el usuario pueda apelar si lo con
 puedan tomar decisiones, sin afectar al resto del servidor
 
 * `rol-ban <rol>`: Configura el rol para usuario baneados, este rol se les asignará cuando un administrador/moderador
-  banee al usuario a través del comando `ban`. Esta configuración es necesario para que el comando `ban` funcione.
+  banee al usuario a través del comando `ban`. **Esta configuración es necesario para que el comando `ban` funcione.**
     * Ejemplo: `config rol-ban @Baneado`
 * `prision <canal>`: (opcional) Configura el canal de prisión, donde se informará al usuario que ha sido baneado.
 * `anuncio-baneos <canal>`: (opcional) Configura el canal donde Kotohime informará a la comunidad que un usuario ha sido
@@ -115,7 +115,7 @@ corresponden a temas más específicos.
 
 ### Admin
 
-* **ban:** "banea" a un usuario si está configurado.
+* **ban:** "banea" a un usuario **si está configurado.**
 * **rol:** Permite a los usuarios agregarse o eliminarse un rol.
 * **configuraciones:** Permite a los administradores cambiar las configuraciones bot.
 * **unban:** remueve el "baneo" a un usuario.
