@@ -5,7 +5,7 @@ class Rule34Command extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'rule34',
-            group: 'misc',
+            group: 'anime',
             memberName: 'rule34',
             aliases: ['r34'],
             nsfw: true,

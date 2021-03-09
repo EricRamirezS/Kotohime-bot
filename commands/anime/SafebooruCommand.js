@@ -5,14 +5,14 @@ class SafebooruCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'safebooru',
-            group: 'misc',
+            group: 'anime',
             memberName: 'safebooru',
             aliases: ['sb'],
-            description: 'Dejame googlear eso por ti.',
+            description: 'Buscaré una imagen en por ti.',
             examples: [
                 "~safebooru touhou",
                 "~safebooru touhou alice_margatroid",
-                "~safebooru banned_tags.txt"
+                "~safebooru banned_tags"
             ],
             args: [
                 {
@@ -28,10 +28,16 @@ class SafebooruCommand extends commando.Command {
     async run(message, args) {
         if (args) {
             if (args.tags.toLowerCase() === "banned_tags"){
-                message.channel.send("Estos son los tags que me han prohibido buscar" +
-                    "```" +
-                    safebooru.BANNED_TAGS.join("\n") +
-                    "```")
+                try {
+                    const data = fs.readFileSync('./dataFiles/BannedTagsData/banned_tags.txt', 'utf8');
+                    let BANNED_TAGS = data.split("\n");
+                    message.channel.send("Estos son los tags que me han prohibido buscar" +
+                        "```" +
+                        BANNED_TAGS.join("\n") +
+                        "```")
+                } catch (err) {
+                    console.error(err);
+                }
             }
             let tags = args.tags.replace(" ", "+");
             safebooru.safebooruImageToChannel(message, tags);
