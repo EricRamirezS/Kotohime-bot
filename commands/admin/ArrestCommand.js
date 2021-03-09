@@ -2,7 +2,7 @@ const commando = require('discord.js-commando');
 const Discord = require('discord.js');
 const moment = require('moment');
 const updateDB = require('../../db/DBUpdateGuildSetting').ban;
-const {guild, keys} = require('../../db/JSONSListeners');
+const {guild, keys, syncGuild} = require('../../db/JSONSListeners');
 
 class ArrestCommand extends commando.Command {
     constructor(client) {

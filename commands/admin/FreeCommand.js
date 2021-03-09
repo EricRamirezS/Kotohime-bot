@@ -1,6 +1,6 @@
 const commando = require('discord.js-commando');
 const updateDB = require('../../db/DBUpdateGuildSetting').unban;
-const {guild, keys} = require('../../db/JSONSListeners');
+const {guild, keys, syncGuild} = require('../../db/JSONSListeners');
 
 class FreeCommand extends commando.Command {
     constructor(client) {
