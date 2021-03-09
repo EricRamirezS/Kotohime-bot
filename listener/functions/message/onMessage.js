@@ -9,15 +9,17 @@ const registerGuild = require("../../../db/DBUpdateGuildSetting").registerGuild;
  * @see https://discord.js.org/#/docs/main/stable/class/Message
  */
 module.exports = (message) => {
+    let guild = message.guild;
 
+    if (guild){
     console.log(message.guild.id + "| " +
         message.guild.name + " | " +
         message.channel.name + " | " +
         message.author.username + ": " +
         message.toString());
+    }
 
-
-    if (message.guild === null) return;
+    if (guild === null) return;
 
     checkGuild(message.guild.id);
 };
