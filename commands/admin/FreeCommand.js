@@ -1,18 +1,16 @@
 const commando = require('discord.js-commando');
-const Discord = require('discord.js');
-const moment = require('moment');
 const updateDB = require('../../db/DBUpdateGuildSetting').unban;
 const {guild, keys} = require('../../db/JSONSListeners');
 
-class UnBanCommand extends commando.Command {
+class FreeCommand extends commando.Command {
     constructor(client) {
         super(client, {
-            name: 'unban',
+            name: 'liberar',
             group: 'admin',
-            memberName: 'unban',
-            description: 'Remover baneo temporal o indefinido realizado a traves del comando `ban`.\n' +
-                '*Esto no remueve los baneos realizados a traves de las opciones de Discord.*',
-            examples: ['ban <@386007907113762816> 1', 'ban <@386007907113762816> 60 ¡Por ser genial!'],
+            memberName: 'liberar',
+            aliases: ["free"],
+            description: 'Remover arresto temporal o indefinido realizado a traves del comando `arrestar`.',
+            examples: ['liverar <@386007907113762816>'],
             guildOnly: true,
             clientPermissions: ['MANAGE_ROLES'],
             userPermissions: ['BAN_MEMBERS'],
@@ -24,6 +22,13 @@ class UnBanCommand extends commando.Command {
                 }
             ]
         });
+    }
+
+    hasPermission(msg, ownerOverride) {
+        let guild_data = syncGuild(msg.guild.id);
+        let ban_role = msg.guild.roles.cache.find(x => x.id === guild_data[keys.ban_role_id]);
+
+        return !!ban_role;
     }
 
     async run(message, args) {
@@ -45,4 +50,4 @@ class UnBanCommand extends commando.Command {
     }
 }
 
-module.exports = UnBanCommand;
+module.exports = FreeCommand;

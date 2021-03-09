@@ -4,24 +4,25 @@ const moment = require('moment');
 const updateDB = require('../../db/DBUpdateGuildSetting').ban;
 const {guild, keys} = require('../../db/JSONSListeners');
 
-class BanCommand extends commando.Command {
+class ArrestCommand extends commando.Command {
     constructor(client) {
         super(client, {
-            name: 'ban',
+            name: 'arrestar',
             group: 'admin',
-            memberName: 'ban',
+            memberName: 'arrestar',
+            aliases: ["arrest"],
             description: 'Banear temporalmente a un usuario sin expulsarlo del servidor.\n' +
                 'A diferencia del metodo de baneos interno de Discord, yo no expulso al usuario del canal, en cambio, ' +
                 'le asigno un rol, el cual le eliminaré pasado un tiempo definido. Asegurate de indicarme que rol ' +
-                'debo usar para los baneos y de quitarle los permisos a ese rol para que no pueda acceder a los canales ' +
+                'debo usar para los arrestos y de quitarle los permisos a ese rol para que no pueda acceder a los canales ' +
                 'del servidor, excepto por la `prisión`, si así lo deseas.\n' +
-                'La duración indica cuanto tiempo (en minutos) el usuario estará baneado. una vez cumplido este tiempo, ' +
-                'me encargaré de quitarle el rol asignado para los baneos.\n' +
-                'Si quieres que el baneo sea permanente, o decidir manualmente cuando levantaras el baneo, indica ' +
+                'La duración indica cuanto tiempo (en minutos) el usuario estará arrestado. una vez cumplido este tiempo, ' +
+                'me encargaré de quitarle el rol asignado para los arrestos.\n' +
+                'Si quieres que el arresto sea cadena perpetua, o decidir manualmente cuando levantaras el arresto, indica ' +
                 'una duración de 0 minutos.\n' +
-                'Para remover manualmente un ban, utiliza la función `unban`\n\n***La duración no es exacta, el desbaneo' +
-                'automático puede tardar hasta 2 minutos en efectuarse.',
-            examples: ['ban <@386007907113762816> 1', 'ban <@386007907113762816> 60 ¡Por ser genial!'],
+                'Para remover manualmente un arresto, utiliza la función `libertad`\n\n***La duración no es exacta, la liberacion ' +
+                'automática puede tardar hasta 2 minutos en efectuarse.',
+            examples: ['arrestar <@386007907113762816> 1', 'arrestar <@386007907113762816> 60 ¡Por ser genial!'],
             guildOnly: true,
             clientPermissions: ['MANAGE_ROLES', 'SEND_MESSAGES', 'EMBED_LINKS'],
             userPermissions: ['BAN_MEMBERS'],
@@ -48,6 +49,13 @@ class BanCommand extends commando.Command {
                 }
             ]
         });
+    }
+
+    hasPermission(msg, ownerOverride) {
+        let guild_data = syncGuild(msg.guild.id);
+        let ban_role = msg.guild.roles.cache.find(x => x.id === guild_data[keys.ban_role_id]);
+
+        return !!ban_role;
     }
 
     async run(message, args) {
@@ -113,4 +121,4 @@ class BanCommand extends commando.Command {
     }
 }
 
-module.exports = BanCommand;
+module.exports = ArrestCommand;
