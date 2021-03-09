@@ -21,13 +21,13 @@ class SettingCommand extends commando.Command {
                 '`config <configuracion> <valor>`\n' +
                 'Para ver las configuraciones actuales, utiliza `config ver`\n' +
                 '\n' +
-                '**Configuración de ban**\n' +
-                'Más información `ayuda ban`\n' +
+                '**Configuración de arrestos**\n' +
+                'Más información `ayuda arrestar`\n' +
                 '\n' +
-                '`rol-ban <rol>`: Configura el rol para usuario baneados, este rol se les asignará cuando un administrador/moderador banee al usuario a través del comando ban. Esta configuración es necesario para que el comando ban funcione.\n' +
-                '        Ejemplo: config rol-ban @Baneado\n' +
-                '    `prision <canal>`: (opcional) Configura el canal de prisión, donde informaré al usuario que ha sido baneado.\n' +
-                '   ` anuncio-baneos <canal>`: (opcional) Configura el canal donde informaré a la comunidad que un usuario ha sido baneado.\n' +
+                '`rol-arrestos <rol>`: Configura el rol para usuario arrestados, este rol se les asignará cuando un moderador arreste al usuario a través del comando arrestar. Esta configuración es necesario para que el comando arrestar funcione.\n' +
+                '        Ejemplo: config rol-arrestos @Arrestado\n' +
+                '    `prision <canal>`: (opcional) Configura el canal de prisión, donde informaré al usuario que ha sido arrestado.\n' +
+                '   ` anuncio-arrestos <canal>`: (opcional) Configura el canal donde informaré a la comunidad que un usuario ha sido arrestado.\n' +
                 '\n' +
                 '**Configuraciones de Rol**\n' +
                 'Los siguientes comandos requieren que tenga el permiso de Gestionar roles, para funcionar apropiadamente.\n' +
@@ -59,7 +59,7 @@ class SettingCommand extends commando.Command {
                         '> ver\n' +
                         '> prefijo\n' +
                         '> canal-bienvenida\n' +
-                        '> anuncio-baneos\n> ' +
+                        '> anuncio-arrestos\n> ' +
                         '> log-voz\n' +
                         '> prision\n' +
                         '> comandos-touhou\n' +
@@ -67,13 +67,12 @@ class SettingCommand extends commando.Command {
                         '> comandos-genshin\n' +
                         '> rol-agregar\n' +
                         '> rol-eliminar\n' +
-                        '> rol-ban',
+                        '> rol-arrestos',
                     type: 'string',
                     oneOf: ['ver', 'see',
                         'prefijo', 'prefix',
                         'canal-bienvenida',
-                        'anuncio-baneos',
-                        'anuncio-baneos',
+                        'anuncio-arrestos',
                         'log-voz',
                         'prision',
                         'comandos-touhou',
@@ -81,7 +80,7 @@ class SettingCommand extends commando.Command {
                         'comandos-genshin',
                         'rol-agregar', 'role-agregar', 'role-add', 'rol-add',
                         'rol-eliminar', 'role-eliminar', 'rol-remove', 'role-remove',
-                        'rol-ban', 'role-ban',
+                        'rol-arrestos', 'rol-arrestar', 'role-arrest',
                     ]
                 },
                 {
@@ -117,7 +116,7 @@ class SettingCommand extends commando.Command {
                 //Cambiar canales a usar para ciertas funcinoes
                 case 'canal-bienvenida':
                     func = func ? func : updateDB.updateWelcomeChannel;
-                case 'anuncio-baneos':
+                case 'anuncio-arrestos':
                     func = func ? func : updateDB.updateBanAnnouncementChannel;
                 case 'log-voz':
                     func = func ? func : updateDB.updateVoiceLogChannel;
@@ -166,8 +165,9 @@ class SettingCommand extends commando.Command {
                         msg.reply(result.mes);
                     }
                     break;
-                case 'role-ban':
-                case 'rol-ban':
+                case 'role-arrest':
+                case 'rol-arrestar':
+                case 'rol-arrestos':
                     func = func ? func : updateDB.updateBanRole;
 
                     result = validateRole(args.valor, msg);
@@ -321,12 +321,12 @@ async function showSettings(msg) {
     embed.addField("Prefijo del bot", prefix, true);
     embed.addField("Canal de Bienvenida:", welcome_channel, true);
     embed.addField("Log de voz:", voice_log, true);
-    embed.addField("Canal de baneos:", ban_channel, true);
-    embed.addField("Notificación pública de baneo:", ban_public_noti_channel, true);
+    embed.addField("Canal de arrestos:", ban_channel, true);
+    embed.addField("Notificación pública de arrestos:", ban_public_noti_channel, true);
     embed.addField("Permitir comandos de Touhou", touhou_commands, true);
     embed.addField("Permitir comandos de Danmaku!! Card Game", danmaku_commands, true);
     embed.addField("Permitir comandos de Genshin Impact", genshin_commands, true);
-    embed.addField("Rol para baneos", ban_role, true);
+    embed.addField("Rol para arrestos", ban_role, true);
     embed.addField("Roles que los usuarios pueden autoagregar", roles.join("\n"), true);
     msg.channel.send(embed);
 }
