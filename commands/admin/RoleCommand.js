@@ -1,5 +1,5 @@
 const commando = require('discord.js-commando');
-const {guild, keys} = require('../../db/JSONSListeners');
+const {guild, keys, syncGuild} = require('../../db/JSONSListeners');
 
 class RoleCommand extends commando.Command {
     constructor(client) {
