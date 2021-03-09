@@ -29,6 +29,14 @@ class RoleCommand extends commando.Command {
         });
     }
 
+    hasPermission(msg, ownerOverride) {
+        let guild_data = syncGuild(msg.guild.id);
+        let roles = guild_data[keys.roles_bot_can_add];
+        if (roles) return roles.length > 0;
+
+        return false;
+    }
+
     async run(message, args) {
         let guild_data = await guild(message.guild.id);
         if (!guild_data) return;
