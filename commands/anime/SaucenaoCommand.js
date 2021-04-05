@@ -88,10 +88,12 @@ async function searchImage(channel, url) {
             let embed = new Discord.MessageEmbed();
             for (let j = 0; j < keys.length; j++) {
                 let key = keys[j];
+                let header = key.replace("_", " ");
+                let data = res[i].data[key];
                 if (Array.isArray(res[i].data[key])) {
-                    embed.addField(key.replace("_", " "), res[i].data[key].join("\n"), true);
+                    embed.addField(header, data?data.join("\n"):"-", true);
                 } else {
-                    embed.addField(key.replace("_", " "), res[i].data[key], true);
+                    embed.addField(header, data?data:"-", true);
                 }
             }
             channel.send(embed);
