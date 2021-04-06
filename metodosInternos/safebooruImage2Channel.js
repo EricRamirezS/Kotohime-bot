@@ -2,7 +2,7 @@ const request = require('snekfetch');
 const xmldoc = require('xmldoc');
 const fs = require('fs');
 
-let BANNED_TAGS = null;
+var BANNED_TAGS = null;
 
 /**
  *
