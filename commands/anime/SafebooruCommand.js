@@ -29,20 +29,20 @@ class SafebooruCommand extends commando.Command {
         if (args) {
             if (args.tags.toLowerCase() === "banned_tags"){
                 try {
-                    const data = fs.readFileSync('./dataFiles/BannedTagsData/banned_tags.txt', 'utf8');
-                    let BANNED_TAGS = data.split("\n");
-                    message.channel.send("Estos son los tags que me han prohibido buscar" +
+                    let BANNED_TAGS = safebooru.BANNED_TAGS;
+                    return message.channel.send("Estos son los tags que me han prohibido buscar" +
                         "```" +
                         BANNED_TAGS.join("\n") +
                         "```")
                 } catch (err) {
                     console.error(err);
+                    return;
                 }
             }
             let tags = args.tags.replace(" ", "+");
             safebooru.safebooruImageToChannel(message, tags);
         } else {
-            message.channel.send("El texto de entrada tiene muy pocos parametros.");
+            return message.channel.send("El texto de entrada tiene muy pocos parametros.");
         }
     }
 }

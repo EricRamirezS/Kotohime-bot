@@ -20,7 +20,7 @@ pero es lo suficientemente versátil para encajar en cualquier tipo de servidor.
 - [Copyright](#copyright)
 - [Permisos](#permisos)
 - [Configuraciones](#Configuraciones)
-    * [Configuración de baneos](#Configuración_de_baneos)
+    * [Configuración de arrestos](#Configuración_de_arrestos)
     * [Configuraciones de Rol](#Configuraciones_de_Rol)
     * [Configuraciones de Canales](#Configuraciones_de_Canales)
     * [Grupos de comandos](#Grupos_de_comandos)
@@ -57,6 +57,10 @@ para qué será usado.
 - **Hablar**: Le permite a Kotohime hablar por canales de voz. Necesario para los comandos de música.
 - **Usar Actividad de voz**: No es _necesario_, pero es incluido como precaución extra para los comandos de voz.
 
+####NOTA
+* `<parámetro>` parámetro obligatorio.
+* `[parámetro]` Parámetro opcional.
+
 ## Configuraciones
 
 Kotohime es un bot configurable, para realizar diversas tareas o apoyar a los administradores/moderadores
@@ -69,21 +73,21 @@ Para ver las configuraciones actuales, utiliza
 
 `config ver`
 
-### Configuración_de_baneos
+### Configuración_de_arrestos
 
-Kotohime "**banea**" a los usuarios de manera diferente a como lo hacer Discord. El baneo de Kotohime no conlleva
+Kotohime "**banea**" a los usuarios de manera diferente a como lo hacer Discord. El arresto de Kotohime no conlleva
 expulsión del servidor.
 
-Ten en cuenta que deberás crear un rol que prohíba al usuario realizar acciones dentro del servidor. También se
+Ten en cuenta que **deberás crear un rol que prohíba** al usuario realizar acciones dentro del servidor. También se
 recomienda crear un canal de prisión para que el usuario pueda apelar si lo considera necesario, y los moderadores
 puedan tomar decisiones, sin afectar al resto del servidor
 
-* `rol-ban <rol>`: Configura el rol para usuario baneados, este rol se les asignará cuando un administrador/moderador
-  banee al usuario a través del comando `ban`. **Esta configuración es necesario para que el comando `ban` funcione.**
-    * Ejemplo: `config rol-ban @Baneado`
-* `prision <canal>`: (opcional) Configura el canal de prisión, donde se informará al usuario que ha sido baneado.
-* `anuncio-baneos <canal>`: (opcional) Configura el canal donde Kotohime informará a la comunidad que un usuario ha sido
-  baneado.
+* `rol-arrestar [rol]`: Configura el rol para usuario arrestado, este rol se les asignará cuando un administrador/moderador
+  arreste al usuario a través del comando `arrestar`. **Esta configuración es necesario para que los comandos `arrestar` y `liberar` funcione.**
+    * Ejemplo: `config rol-arrestar @Arrestado`
+* `prision [canal]`: (opcional) Configura el canal de prisión, donde se informará al usuario que ha sido arrestado.
+* `anuncio-baneos [canal]`: (opcional) Configura el canal donde Kotohime informará a la comunidad que un usuario ha sido
+  arrestado.
 
 ### Configuraciones_de_Rol
 
@@ -94,18 +98,18 @@ Los siguientes comandos requieren que Kotohime tenga el permiso de Gestionar rol
 
 ### Configuraciones_de_Canales
 
-* `canal-bienvenida <canal>`: Registra el canal donde Kotohime anunciará que alguien se unió o abandonó el servidor.
-* `log-voz <canal>`: Registra el canal donde Kotohime informará sobre los movimientos en canales de voz.
+* `canal-bienvenida [canal]`: Registra el canal donde Kotohime anunciará que alguien se unió o abandonó el servidor.
+* `log-voz [canal]`: Registra el canal donde Kotohime informará sobre los movimientos en canales de voz.
 
 ### Grupos_de_comandos
 
 Los siguientes grupos de comandos vienen desactivados por defecto, 
 corresponden a temas más específicos.
 
-* `comandos-touhou <permitir?>` : Grupo de comandos relacionados a Touhou Project.
-* `comandos-danmaku <permitir?>` : Grupo de comandos relacionados al juego de cartas Danmaku!! Card Game de Mystery
+* `comandos-touhou <¿permitir?>` : Grupo de comandos relacionados a Touhou Project.
+* `comandos-danmaku <¿permitir?>` : Grupo de comandos relacionados con juego de cartas Danmaku!! Card Game de Mystery
   Parfait.
-* `comandos-genshin <permitir?>` : Grupo de comandos relacionados a Genshin Impact.
+* `comandos-genshin <¿permitir?>` : Grupo de comandos relacionados a Genshin Impact.
 
 ### Prefijo
 
@@ -115,14 +119,15 @@ corresponden a temas más específicos.
 
 ### Admin
 
-* **ban:** "banea" a un usuario **si está configurado.**
 * **rol:** Permite a los usuarios agregarse o eliminarse un rol.
 * **configuraciones:** Permite a los administradores cambiar las configuraciones bot.
-* **unban:** remueve el "baneo" a un usuario.
 * **feedback:** Envía un mensaje privado al desarrollador de este bot.
-* **invitardev:** Envia un enlace de invitación al desarrollador del bot.
+* **invitardev:** Envía un enlace de invitación al desarrollador del bot.
+* **arrestar:** "arresta" a un usuario **si está configurado.**
+* **liberar:** remueve el "arresto" a un usuario **si está configurado.**
 
 ### Anime
+
 * **tracemoe:** Enviame una imagen e intentaré averiguar de qué anime es.
 * **saucenao:** Envíame una imagen e intentaré averiguar de donde proviene.
 * **rule34:** Envía una imagen al azar con los tags mencionados.
@@ -131,8 +136,7 @@ corresponden a temas más específicos.
 * **safebooru:** Envía una imagen al azar con los tags mencionados.
     * Hay una gran cantidad de tags bloqueados para mantener los servidores SFW.
     * Estos tags bloqueados serán ignorados si el canal está marcado como NSFW.
-
-    
+  
 ### Miscelanea
 
 * **blah:** blah.
@@ -147,6 +151,7 @@ corresponden a temas más específicos.
 * **eco:** eco.
 
 ### Touhou_Project
+#### Requiere activar el grupo en configuraciones
 
 * **2hu:** Enviaré una imagen de Touhou Project al azar.
 * **9ball:** Enviaré una imagen de Cirno al azar.
@@ -173,6 +178,7 @@ corresponden a temas más específicos.
 * **zun:** Enviaré una imagen de Zun al azar.
 
 ### Danmaku_Card_Game
+#### Requiere activar el grupo en configuraciones
 
 * **carta:** Enviaré información sobre la carta solicitada.
 * **lunatic:** Muestra el estado actual de la expansión Lunatic Extra.
@@ -180,6 +186,7 @@ corresponden a temas más específicos.
 * **nueuser:** Responde con el saludo de bienvenido clásico de la comunidad de Mistery Parfait.
 
 ### Genshin_Impact
+#### Requiere activar el grupo en configuraciones
 
 * **amber:** Enviaré una imagen de Amber al azar.
 * **baron_bunny:** Enviaré una imagen del Baron Bunny al azar.

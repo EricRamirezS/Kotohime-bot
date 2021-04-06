@@ -20,7 +20,9 @@ const keys = {
     allow_danmaku_commands: 8,
     prefix: 9,
     welcome_message: 10,
-    allow_genshin_commands: 11
+    allow_genshin_commands: 11,
+    allow_anime_commands: 12,
+    allow_nsfw_commands: 13,
 };
 
 const banned_keys = {
