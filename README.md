@@ -57,7 +57,7 @@ para qué será usado.
 - **Hablar**: Le permite a Kotohime hablar por canales de voz. Necesario para los comandos de música.
 - **Usar Actividad de voz**: No es _necesario_, pero es incluido como precaución extra para los comandos de voz.
 
-####NOTA
+#### NOTA
 * `<parámetro>` parámetro obligatorio.
 * `[parámetro]` Parámetro opcional.
 
@@ -143,7 +143,7 @@ corresponden a temas más específicos.
 * **lenny:** ( ͡~ ͜ʖ ͡°)
 * **lmgtfy:** Déjame googlear eso por ti.
 * **roll:** Lanza un dado.
-* **shrug:** ¯\_(ツ)_/¯
+* **shrug:** ¯\\_(ツ)_/¯
 
 ### Comun
 
