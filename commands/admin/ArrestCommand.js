@@ -51,13 +51,6 @@ class ArrestCommand extends commando.Command {
         });
     }
 
-    hasPermission(msg, ownerOverride) {
-        let guild_data = syncGuild(msg.guild.id);
-        let ban_role = msg.guild.roles.cache.find(x => x.id === guild_data[keys.ban_role_id]);
-
-        return !!ban_role;
-    }
-
     async run(message, args) {
         let guild_data = await guild(message.guild.id);
         if (!guild_data) return;
