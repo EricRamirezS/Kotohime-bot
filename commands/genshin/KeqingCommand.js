@@ -20,7 +20,7 @@ class KeqingCommand extends commando.Command {
     }
 
     async run(message, args) {
-        safebooru(message, "keqing");
+        safebooru(message, "keqing_(genshin_impact)");
     }
 }
 
