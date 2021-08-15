@@ -19,7 +19,7 @@ async function checkBan(bot) {
             let guild = bot.guilds.cache.find(x => x.id === values[i][banned_keys.guild_id]);
             let member = guild.members.cache.find(x => x.id === values[i][banned_keys.user_id]);
             let banRole = guild.roles.cache.find(x => x.id === values[i][banned_keys.ban_role_id]);
-            await member.roles.remove(banRole);
+            if(member) await member.roles.remove(banRole);
             let query = {
                 text: 'UPDATE "USUARIO_BANEADO" set "CURRENTLY_BANNED" = false WHERE "USER_ID" = $1 AND "GUILD_ID" = $2;',
                 values: [values[i][banned_keys.user_id], values[i][banned_keys.guild_id]]
