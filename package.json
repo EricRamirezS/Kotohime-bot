@@ -18,7 +18,7 @@
     "hashlib": "^1.0.1",
     "jsdom": "^11.12.0",
     "moment": "^2.27.0",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^3.1.1",
     "node-opus": "^0.3.3",
     "opusscript": "0.0.7",
     "pg": "^8.3.0",
