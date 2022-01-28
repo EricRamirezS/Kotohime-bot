@@ -15,12 +15,6 @@ class RadioCommand extends commando.Command {
         });
     }
 
-    hasPermission(msg) {
-        let guild_data = syncGuild(msg.guild.id);
-        if (guild_data) return guild_data[keys.allow_touhou_commands];
-        return false;
-    }
-
     async run(message, args) {
         request.post('https://gensokyoradio.net/xml/')
             .send({usingGoodRequestLibrary: true})
