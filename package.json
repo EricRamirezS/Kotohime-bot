@@ -1,30 +1,38 @@
 {
-  "name": "KotohimeBot",
-  "description": "Discord bot para Danmaku ESP",
-  "version": "1.0.0",
+  "name": "kotohime-bot",
+  "description": "Discord bot.",
+  "version": "2.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node src/bot.js"
   },
-  "author": "EricRamirezS",
+  "author": {
+    "name": "Eric Ramírez Santis",
+    "email": "contacto@EricRamirezS.com",
+    "url": "http://linkedin.ericramirezs.com"
+  },
   "license": "ISC",
   "dependencies": {
-    "@discordjs/opus": "^0.3.2",
-    "common-tags": "latest",
-    "discord.js": "^12.2.0",
-    "discord.js-commando": "github:discordjs/Commando",
-    "ffmpeg": "0.0.4",
+    "@discordjs/opus": "^0.8.0",
+    "@discordjs/rest": "^1.0.1",
+    "@discordjs/voice": "^0.14.0",
+    "@distube/soundcloud": "^1.3.0",
+    "@distube/spotify": "^1.4.5",
+    "@distube/yt-dlp": "^1.1.3",
+    "common-tags": "^1.8.2",
+    "discord-api-types": "^0.37.1",
+    "discord.js": "^14.7.1",
+    "distube": "^4.0.4",
+    "ffmpeg": "^0.0.4",
+    "ffmpeg-static": "^5.1.0",
     "fluent-ffmpeg": "^2.1.2",
-    "hashlib": "^1.0.1",
-    "jsdom": "^11.12.0",
-    "moment": "^2.27.0",
-    "node-fetch": "^2.6.1",
-    "node-opus": "^0.3.3",
-    "opusscript": "0.0.7",
-    "pg": "^8.3.0",
-    "snekfetch": "^3.6.4",
-    "xmldoc": "^1.1.2",
-    "xmlhttprequest": "^1.8.0",
-    "ytdl-core": "^4.5.0"
+    "libsodium-wrappers": "^0.7.10",
+    "linguini": "^1.3.1",
+    "node-libcurl": "^3.0.0",
+    "pg": "^8.7.3",
+    "sequelize": "^6.21.3",
+    "sequelize-cli": "^6.4.1",
+    "snekfetch": "^4.0.4",
+    "xmldoc": "^1.2.0"
   }
 }

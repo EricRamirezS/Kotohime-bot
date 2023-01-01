@@ -1,0 +1,10 @@
+# fly.toml file generated for kotohime-bot on 2022-11-30T12:48:56-03:00
+
+app = "kotohime-bot"
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
+
+[env]
+  PORT = "8080"
+

@@ -1,3 +1,4 @@
+<!--suppress ALL -->
 <img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="Kotohime" src="https://cdn.discordapp.com/app-icons/386007907113762816/c5cbfcc5c98879b98710e4abdd8007d8.png">  
 
 # Kotohime
@@ -9,8 +10,7 @@
 <hr>
 
 Kotohime es un bot escrito en Javascript usando
-[discord.js](https://discord.js.org/) junto con el framework
-[Commando](https://github.com/discordjs/Commando). Está orientada especialmente a servidores dedicados a Touhou Project,
+[discord.js](https://discord.js.org/) 14. Está orientada especialmente a servidores dedicados a Touhou Project,
 pero es lo suficientemente versátil para encajar en cualquier tipo de servidor.
 
 # [Server Principal](https://discord.gg/paD7W5F) | [Invitar](https://discord.com/oauth2/authorize?client_id=386007907113762816&scope=bot&permissions=372296705)
