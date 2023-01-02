@@ -1,10 +1,12 @@
-# fly.toml file generated for kotohime-bot on 2022-11-30T12:48:56-03:00
+# fly.toml file generated for kotohime-bot on 2023-01-01T20:58:42-03:00
 
 app = "kotohime-bot"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
 
+[build]
+builder = "heroku/buildpacks:20"
+
 [env]
   PORT = "8080"
-
