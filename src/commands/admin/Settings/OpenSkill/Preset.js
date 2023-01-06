@@ -21,10 +21,10 @@ module.exports = {
         let mu = interaction.options.getNumber('mu');
         let sigma = interaction.options.getNumber('sigma');
 
-        // await interaction.deferReply({
-        //     fetchReply: true,
-        //     ephemeral: true
-        // });
+        await interaction.deferReply({
+            fetchReply: true,
+            ephemeral: true
+        });
 
         let guildData = await service.getGuildData(interaction.guildId);
         let data = JSON.parse(guildData.open_skill);
