@@ -262,7 +262,7 @@ module.exports = {
 
         try {
             await data.update({
-                open_skill_role: JSON.stringify(openSkillData)
+                open_skill: JSON.stringify(openSkillData)
             });
             this.refreshGuildData();
             return true;
