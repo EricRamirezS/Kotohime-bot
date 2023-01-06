@@ -9,7 +9,7 @@ const {rating} = require('openskill');
 module.exports = {
     build(builder) {
         builder.setName('preset');
-        builder.setDescription('Presets and User stats to an specific value');
+        builder.setDescription('Presets and User stats to an specific value. (Use ","(comma) for decimals)');
         builder.addUserOption(o => o.setName('user').setDescription('User to edit').setRequired(true));
         builder.addNumberOption(o => o.setName('mu').setDescription('\u03BC, the expected value of a distribution.').setRequired(true));
         builder.addNumberOption(o => o.setName('sigma').setDescription('\u03C3, the standard deviation of a probability distribution').setRequired(true));
