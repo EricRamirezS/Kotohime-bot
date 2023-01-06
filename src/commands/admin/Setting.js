@@ -5,6 +5,7 @@ const role = require('./Settings/Role');
 const goodbye = require('./Settings/Goodbye');
 const welcome = require('./Settings/Welcome');
 const voiceLog = require('./Settings/VoiceLog');
+const openskill = require('./Settings/OpenSkill');
 
 // Subcommand
 const language = require('./Settings/Language');
@@ -23,6 +24,7 @@ function build(builder) {
     builder.addSubcommandGroup(o => welcome.build(o));
     builder.addSubcommandGroup(o => goodbye.build(o));
     builder.addSubcommandGroup(o => voiceLog.build(o));
+    builder.addSubcommandGroup(o => openskill.build(o));
     builder.addSubcommand(o => see.build(o));
     builder.addSubcommand(o => language.build(o));
     builder.addSubcommand(o => nsfw.build(o));
@@ -56,6 +58,8 @@ module.exports = {
                 return welcome.execute(interaction, client);
             case 'voice_log':
                 return voiceLog.execute(interaction, client);
+            case 'openskill':
+                return openskill.execute(interaction, client);
         }
         switch (interaction.options.getSubcommand()) {
             case 'see':

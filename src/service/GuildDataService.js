@@ -241,4 +241,34 @@ module.exports = {
             return false;
         }
     },
+
+    async addOpenSkillRole(roleId, guildId) {
+        let data = await this.getGuildData(guildId);
+
+        try {
+            await data.update({
+                open_skill_role: roleId
+            });
+            this.refreshGuildData();
+            return true;
+        } catch (e) {
+            console.error(e);
+            return false;
+        }
+    },
+
+    async updateOpenSkillInfo(openSkillData, guildId) {
+        let data = await this.getGuildData(guildId);
+
+        try {
+            await data.update({
+                open_skill_role: JSON.stringify(openSkillData)
+            });
+            this.refreshGuildData();
+            return true;
+        } catch (e) {
+            console.error(e);
+            return false;
+        }
+    },
 };

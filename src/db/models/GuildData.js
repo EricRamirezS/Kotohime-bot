@@ -18,14 +18,14 @@ module.exports = sequelize.define('guild_data',
         },
         welcome_message: {
             type: DataTypes.STRING("1900"),
-            defaultValue: "**{USERNAME}** se ha unido al servidor.",
+            defaultValue: "**{USERNAME}** has joined the server.",
         },
         goodbye_channel: {
             type: DataTypes.STRING("32"),
         },
         goodbye_message: {
             type: DataTypes.STRING("1900"),
-            defaultValue: "**{USERNAME}** ha abandonado al servidor.",
+            defaultValue: "**{USERNAME}** has left the server.",
         },
         voice_log_channel: {
             type: DataTypes.STRING("32"),
@@ -65,6 +65,13 @@ module.exports = sequelize.define('guild_data',
         language: {
             type: DataTypes.JSON,
             defaultValue: "[]"
+        },
+        open_skill: {
+            type: DataTypes.JSON,
+            defaultValue: "{}"
+        },
+        open_skill_role: {
+            type: DataTypes.STRING("32")
         },
     }, {
         timestamps: true
