@@ -45,8 +45,15 @@ module.exports = {
             } else {
                 offset = 0;
             }
+            let member = await interaction.guild.members.cache.get(userData.id);
+            let username;
+            if (member){
+                username = member.displayName
+            } else {
+                username = `Unknown (${userData.id})`
+            }
             embed.setFields({
-                name: `${position[i + offset]} <@${userData.id}>`,
+                name: `${position[i + offset]} ${username}`,
                 value: `${Math.round(userData.skill)}`,
                 inline: false
             });
