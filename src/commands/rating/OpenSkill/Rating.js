@@ -26,9 +26,13 @@ module.exports = {
         let data = JSON.parse(guildData.open_skill);
 
         if (userId in data) {
-            return interaction.editReply(ordinal(data[userId]));
+            let extra = '';
+            if (data[userId].sigma > 8) {
+                extra = '?';
+            }
+            return interaction.editReply(`${Math.round(ordinal(data[userId]))}${extra}`);
         }
-        return ordinal(rating());
+        return interaction.editReply(`${Math.round(ordinal(rating()))}??`);
 
     }
 };
