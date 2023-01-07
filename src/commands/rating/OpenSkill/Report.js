@@ -63,7 +63,8 @@ module.exports = {
             } else {
                 return await interaction.editReply({content: ':thumbsdown:'});
             }
-        } catch {
+        } catch (e) {
+            console.error(e);
             return interaction.editReply('Some users are missing their rank');
         }
     },
