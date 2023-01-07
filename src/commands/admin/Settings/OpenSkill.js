@@ -10,7 +10,7 @@ const preset = require('./OpenSkill/Preset');
 module.exports = {
     build(builder) {
         builder.setName('openskill');
-        builder.setDescription('OpenSKill management options');
+        builder.setDescription('OpenSkill management options');
         builder.addSubcommand(o => reset.build(o));
         builder.addSubcommand(o => role.build(o));
         builder.addSubcommand(o => preset.build(o));
