@@ -10,7 +10,7 @@ module.exports = {
     build(builder) {
         builder.setName('reset');
         builder.setDescription('Reset a single/all users skill level to default value');
-        builder.addUserOption(o => o.setName('user').setDescription('Role to add'));
+        builder.addUserOption(o => o.setName('user').setDescription('User to reset'));
         return builder;
     },
 
@@ -26,7 +26,7 @@ module.exports = {
         if (user) {
             let guildData = await service.getGuildData(interaction.guildId);
             newData = JSON.parse(guildData.open_skill);
-            newData[user.id] = rating();
+            newData[user.id] = rating({mu: 1500, sigma: 500});
         }
 
         if (await service.updateOpenSkillInfo(newData, interaction.guildId)) {
