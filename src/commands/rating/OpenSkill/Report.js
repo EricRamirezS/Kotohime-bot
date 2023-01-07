@@ -44,7 +44,7 @@ module.exports = {
             let rankData = [];
             for (let i = 0; i < gameData.length; i++) {
                 let userData = gameData[i];
-                rateData.push(userData.rating);
+                rateData.push([userData.rating]);
                 rankData.push(userData.rank);
             }
 
