@@ -8,7 +8,7 @@ const {rating, rate} = require('openskill');
  */
 module.exports = {
     build(builder) {
-        builder.setName('reset');
+        builder.setName('report');
         builder.setDescription('Report results of a game');
         builder.addUserOption(o => o.setName(`player1`).setDescription(`Player 1`).setRequired(true));
         builder.addIntegerOption(o => o.setName(`rank_p1`).setDescription(`ranking of Player 1`).setRequired(true));
