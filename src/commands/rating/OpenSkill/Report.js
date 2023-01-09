@@ -67,22 +67,6 @@ module.exports = {
             console.error(e);
             return interaction.editReply('Some users are missing their rank');
         }
-    },
-
-    /**
-     *
-     * @param interaction {ChatInputCommandInteraction}
-     * @param client {Client}
-     * @returns {string|void}
-     */
-    hasPermission: function (interaction, client) {
-        let guildData = service.getQuickGuildData(interaction.guildId);
-        console.log(guildData);
-        console.log(interaction.member.roles.cache)
-        console.log(interaction.member.roles.cache.get(guildData.open_skill_role))
-        if (interaction.member.roles.cache.get(guildData.open_skill_role) == null) {
-            return 'You do not have permissions to report scores.';
-        }
     }
 };
 

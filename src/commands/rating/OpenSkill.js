@@ -6,6 +6,7 @@ const {
 const report = require('./OpenSkill/Report');
 const rating = require('./OpenSkill/Rating');
 const ranking = require('./OpenSkill/Ranking');
+const service = require('../../service/GuildDataService');
 
 module.exports = {
     /**
@@ -34,5 +35,20 @@ module.exports = {
                 return ranking.execute(interaction, client);
         }
     },
+
+    /**
+     *
+     * @param interaction {ChatInputCommandInteraction}
+     * @param client {Client}
+     * @returns {string|void}
+     */
+    hasPermission: function (interaction, client) {
+        if (interaction.options.getSubcommand() !== 'report') return;
+
+        let guildData = service.getQuickGuildData(interaction.guildId);
+
+        if (interaction.member.roles.cache.get(guildData.open_skill_role))
+            return 'You do not have permissions to report scores.';
+    }
 };
 
