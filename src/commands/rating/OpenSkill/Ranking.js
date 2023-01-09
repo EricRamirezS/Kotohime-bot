@@ -12,12 +12,15 @@ module.exports = {
     build(builder) {
         builder.setName('ranking');
         builder.setDescription('See the top 10 players of the server');
+        builder.addBooleanOption(o => o.setName("public").setDescription("Display ranking to everyone"))
         return builder;
     },
 
     async execute(interaction, client) {
+        let ephemeral = interaction.options.getBoolean("public");
+        ephemeral = !!ephemeral;
         await interaction.deferReply({
-            ephemeral: true
+            ephemeral: ephemeral
         });
 
         let guildData = await service.getGuildData(interaction.guildId);
@@ -63,7 +66,6 @@ module.exports = {
 
         return await interaction.editReply({
             embeds: [embed],
-            ephemeral: true
         });
     }
 };
