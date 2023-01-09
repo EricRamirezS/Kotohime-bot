@@ -17,8 +17,8 @@ module.exports = {
     },
 
     async execute(interaction, client) {
-        let ephemeral = interaction.options.getBoolean("public");
-        ephemeral = !!ephemeral;
+        let publicDisplay = interaction.options.getBoolean("public");
+        let ephemeral = !!!publicDisplay;
         await interaction.deferReply({
             ephemeral: ephemeral
         });
