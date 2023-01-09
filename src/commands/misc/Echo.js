@@ -9,11 +9,11 @@ module.exports = {
 
     async execute(interaction, client) {
         let anonymous = interaction.options.getBoolean('anonymous');
-        let message = interaction.options.getString('message');
-
+        let message = interaction.options.getString('message').toString();
+        message = message.replaceAll('\\n', '\n');
         if (anonymous) {
             interaction.reply({content: ':thumbsup:', ephemeral: true});
-            interaction.channel.send({content: message.replace("\\n", "\n")});
+            interaction.channel.send({content: message});
         } else {
             interaction.reply({content: message, ephemeral: false});
         }
