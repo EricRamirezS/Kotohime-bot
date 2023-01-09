@@ -13,7 +13,7 @@ module.exports = {
 
         if (anonymous) {
             interaction.reply({content: ':thumbsup:', ephemeral: true});
-            interaction.channel.send(message.replace("\\n", "\n"));
+            interaction.channel.send({content: message.replace("\\n", "\n")});
         } else {
             interaction.reply({content: message, ephemeral: false});
         }
