@@ -77,8 +77,10 @@ module.exports = {
      */
     hasPermission: function (interaction, client) {
         let guildData = service.getQuickGuildData(interaction.guildId);
-
-        if (!interaction.member.roles.cache.get(guildData.open_skill_role)) {
+        console.log(guildData);
+        console.log(interaction.member.roles.cache)
+        console.log(interaction.member.roles.cache.get(guildData.open_skill_role))
+        if (interaction.member.roles.cache.get(guildData.open_skill_role) == null) {
             return 'You do not have permissions to report scores.';
         }
     }
