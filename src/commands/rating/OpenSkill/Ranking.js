@@ -52,7 +52,7 @@ module.exports = {
             } else {
                 username = `Unknown (${userData.id})`
             }
-            embed.setFields({
+            embed.addFields({
                 name: `${position[i + offset]} ${username}`,
                 value: `${Math.round(userData.skill)}`,
                 inline: false
