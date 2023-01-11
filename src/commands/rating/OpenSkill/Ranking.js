@@ -36,7 +36,8 @@ module.exports = {
             rankingData.push(userData);
         }
         rankingData.sort((p1, p2) => {
-            if (p1.data.sigma >= 7.999999) return 100;
+            if (p1.data.sigma >= 7.999999) return 1;
+            if (p2.data.sigma >= 7.999999) return -1;
             return p2.skill - p1.skill;
         });
         let embed = new EmbedBuilder();
