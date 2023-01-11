@@ -12,12 +12,12 @@ module.exports = {
     build(builder) {
         builder.setName('ranking');
         builder.setDescription('See the top 10 players of the server');
-        builder.addBooleanOption(o => o.setName("public").setDescription("Display ranking to everyone"))
+        builder.addBooleanOption(o => o.setName('public').setDescription('Display ranking to everyone'));
         return builder;
     },
 
     async execute(interaction, client) {
-        let publicDisplay = interaction.options.getBoolean("public");
+        let publicDisplay = interaction.options.getBoolean('public');
         let ephemeral = !!!publicDisplay;
         await interaction.deferReply({
             ephemeral: ephemeral
@@ -32,9 +32,13 @@ module.exports = {
             let userData = {};
             userData.id = key;
             userData.skill = ordinal(value);
+            userData.data = value;
             rankingData.push(userData);
         }
-        rankingData.sort((p1, p2) => p2.skill - p1.skill);
+        rankingData.sort((p1, p2) => {
+            if (p1.data.sigma >= 8) return -1;
+            return p2.skill - p1.skill;
+        });
         let embed = new EmbedBuilder();
 
         embed.setTitle('Ranking');
@@ -50,14 +54,22 @@ module.exports = {
             }
             let member = await interaction.guild.members.cache.get(userData.id);
             let username;
-            if (member){
-                username = member.displayName
+            if (member) {
+                username = member.displayName;
             } else {
-                username = `Unknown (${userData.id})`
+                username = `Unknown (${userData.id})`;
             }
+
+            let extra = '';
+            if (userData.data.sigma >= 8) {
+                extra = '??';
+            } else if (userData.data.sigma >= 4) {
+                extra = '?';
+            }
+
             embed.addFields({
                 name: `${position[i + offset]} ${username}`,
-                value: `${Math.round(userData.skill)}`,
+                value: `${Math.round(userData.skill)}${extra}`,
                 inline: false
             });
 

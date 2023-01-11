@@ -27,7 +27,9 @@ module.exports = {
 
         if (userId in data) {
             let extra = '';
-            if (data[userId].sigma > 8) {
+            if (data[userId].sigma >= 8) {
+                extra = '??';
+            } else if  (data[userId].sigma >= 4) {
                 extra = '?';
             }
             return interaction.editReply(`${Math.round(ordinal(data[userId]))}${extra}`);
