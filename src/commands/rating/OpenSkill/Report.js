@@ -36,7 +36,7 @@ module.exports = {
                 if (userData in data) {
                     userData.rating = data[userData.id];
                 } else {
-                    userData.rating = rating({mu: 1200, sigma: 8});
+                    userData.rating = rating();
                 }
             }
 
