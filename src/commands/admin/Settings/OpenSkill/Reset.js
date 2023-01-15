@@ -26,7 +26,7 @@ module.exports = {
         if (user) {
             let guildData = await service.getGuildData(interaction.guildId);
             newData = JSON.parse(guildData.open_skill);
-            newData[user.id] = rating();
+            newData[user.id] = {rating: rating(), games: 0};
         }
 
         if (await service.updateOpenSkillInfo(newData, interaction.guildId)) {

@@ -34,9 +34,11 @@ module.exports = {
 
             for (let userData of gameData) {
                 if (userData in data) {
-                    userData.rating = data[userData.id];
+                    userData.rating = data[userData.id].rating;
+                    userData.games = data[userData.id].games;
                 } else {
                     userData.rating = rating();
+                    userData.games = 0;
                 }
             }
 
@@ -46,6 +48,7 @@ module.exports = {
                 let userData = gameData[i];
                 rateData.push([userData.rating]);
                 rankData.push(userData.rank);
+                userData.games++;
             }
 
             let newData = rate(rateData, {rank: rankData});
@@ -55,7 +58,7 @@ module.exports = {
             }
 
             for (let userData of gameData) {
-                data[userData.id] = userData.rating;
+                data[userData.id] = {rating: userData.rating, games: userData.games};
             }
 
             if (await service.updateOpenSkillInfo(data, interaction.guildId)) {

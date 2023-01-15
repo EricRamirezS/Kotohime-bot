@@ -31,14 +31,17 @@ module.exports = {
         for (const [key, value] of Object.entries(data)) {
             let userData = {};
             userData.id = key;
-            userData.skill = ordinal(value);
-            userData.data = value;
+            userData.skill = ordinal(value.rating);
+            userData.data = value.rating;
+            userData.totalGames = value.games;
             rankingData.push(userData);
         }
         rankingData.sort((p1, p2) => {
-            if (p1.data.sigma >= 7.999999) return 1;
-            if (p2.data.sigma >= 7.999999) return -1;
-            return p2.skill - p1.skill;
+            let p1mod = 0;
+            let p2mod = 0;
+            if (p1.totalGames <= 10) p1mod = 9999;
+            if (p2.totalGames <= 10) p2mod = 9999;
+            return p2.skill + p2mod - p1.skill - p1mod;
         });
         let embed = new EmbedBuilder();
 
@@ -62,9 +65,9 @@ module.exports = {
             }
 
             let extra = '';
-            if (userData.data.sigma >= 8) {
+            if (userData.totalGames <= 10) {
                 extra = '??';
-            } else if (userData.data.sigma >= 4) {
+            } else if (userData.totalGames <= 20) {
                 extra = '?';
             }
 
