@@ -24,7 +24,7 @@ module.exports = {
 
     async execute(interaction, client) {
         await interaction.deferReply({
-            ephemeral: true
+            ephemeral: false
         });
         try {
             let guildData = await service.getGuildData(interaction.guildId);
@@ -33,7 +33,7 @@ module.exports = {
             let gameData = getParams(interaction);
 
             for (let userData of gameData) {
-                if (userData in data) {
+                if (userData.id in data) {
                     userData.rating = data[userData.id].rating;
                     userData.games = data[userData.id].games;
                 } else {
