@@ -27,12 +27,12 @@ module.exports = {
 
         if (userId in data) {
             let extra = '';
-            if (data[userId].sigma >= 8) {
+            if (data[userId].games <= 10) {
                 extra = '??';
-            } else if  (data[userId].sigma >= 4) {
+            } else if  (data[userId].sigma <= 20) {
                 extra = '?';
             }
-            return interaction.editReply(`${Math.round(ordinal(data[userId]))}${extra}`);
+            return interaction.editReply(`${Math.round(ordinal(data[userId].rating))}${extra}`);
         }
         return interaction.editReply(`${Math.round(ordinal(rating()))}??`);
 
