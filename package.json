@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node src/bot.js"
+    "start": "node src/index.js"
   },
   "author": {
     "name": "Eric Ramírez Santis",

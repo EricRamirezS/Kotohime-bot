@@ -1,6 +1,4 @@
 const {Client, Collection, IntentsBitField} = require('discord.js');
-const sequelize = require('./db/database');
-require('./db/models/_modelInitializer');
 const {DisTube} = require('distube');
 const {SpotifyPlugin} = require('@distube/spotify');
 const {YtDlpPlugin} = require('@distube/yt-dlp');
@@ -62,13 +60,9 @@ for (let folder of functionFolders) {
         require(`./functions/${folder}/${file}`)(client);
 }
 
-sequelize.sync()
-    .then(() => {
-        console.log('Database connection successfully established');
-        client.handleEvents();
-        client.handleCommands();
-        client.handleComponents();
+console.log('Database connection successfully established');
+client.handleEvents();
+client.handleCommands();
+client.handleComponents();
 
-        client.login(token);
-    })
-    .catch((err) => console.error('Failed to establish connection to database: ', err));
+client.login(token);
