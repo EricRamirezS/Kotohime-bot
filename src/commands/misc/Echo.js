@@ -1,4 +1,4 @@
-const {SlashCommandBuilder} = require('discord.js');
+const {SlashCommandBuilder,ChatInputCommandInteraction, Client} = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -7,6 +7,12 @@ module.exports = {
         .addStringOption(o => o.setName('message').setDescription('What should I say?').setRequired(true))
         .addBooleanOption(o => o.setName('anonymous').setDescription('Should the one making the command be anonymous?')),
 
+    /**
+     *
+     * @param interaction {ChatInputCommandInteraction}
+     * @param client {Client}
+     * @returns {Promise<void>}
+     */
     async execute(interaction, client) {
         let anonymous = interaction.options.getBoolean('anonymous');
         let message = interaction.options.getString('message').toString();
