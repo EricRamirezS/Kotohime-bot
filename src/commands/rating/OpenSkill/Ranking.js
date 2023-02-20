@@ -39,9 +39,11 @@ module.exports = {
         rankingData.sort((p1, p2) => {
             let p1mod = 0;
             let p2mod = 0;
-            if (p1.totalGames <= 10) p1mod = 9999;
-            if (p2.totalGames <= 10) p2mod = 9999;
-            return p2.skill + p2mod - p1.skill - p1mod;
+            if (p1.totalGames <= 10) p1mod = -9999;
+            else if (p1.totalGames <= 20) p1mod = -999; 
+            if (p2.totalGames <= 10) p2mod = -9999;
+            else if (p2.totalGames <= 20) p2mod = -999;
+            return (p2.skill + p2mod) - (p1.skill + p1mod);
         });
         let embed = new EmbedBuilder();
 
