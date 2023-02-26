@@ -4,7 +4,8 @@ const {
     Client,
     PermissionFlagsBits,
     Webhook,
-    WebhookClient
+    WebhookClient,
+    ThreadChannel
 } = require('discord.js');
 
 module.exports = {
@@ -39,20 +40,32 @@ module.exports = {
 
         message = message.replaceAll('\\n', '\n');
 
-        let webhook = await interaction.channel.createWebhook({
-            name: name,
-            avatar: profile,
-        });
+        console.log(interaction.channel);
 
+        let webhook;
+        let threadId = null;
+        if (interaction.channel instanceof ThreadChannel) {
+            webhook = await interaction.guild.channels.cache.get(interaction.channel.parentId).createWebhook({
+                name: name,
+                avatar: profile,
+            });
+            threadId = interaction.channel.id;
+        } else {
+            webhook = await interaction.channel.createWebhook({
+                name: name,
+                avatar: profile,
+            });
+        }
         const webhookClient = new WebhookClient({id: webhook.id, token: webhook.token});
 
         await webhookClient.send({
             content: message,
             username: name,
-            avatarURL: profile
+            avatarURL: profile,
+            threadId: threadId
         });
 
-        await webhook.delete("used");
+        await webhook.delete('used');
 
         return await interaction.editReply({content: ':thumbsup:'});
     }
