@@ -34,9 +34,10 @@ function sendWelcome(channelId, message, member, client) {
         };
 
         channel.send(message
-            .replace('{USERNAME}', data['username'])
-            .replace('{NOW}', data['now'])
-            .replace('{USER_MENTION}', data['mention'])
+			.replaceAll('\\n', '\n')
+            .replaceAll('{USERNAME}', data['username'])
+            .replaceAll('{NOW}', data['now'])
+            .replaceAll('{USER_MENTION}', data['mention'])
         );
     } catch (e) {
         console.error(e);
