@@ -16,9 +16,8 @@ module.exports = {
     async execute(message, client) {
         if (!message.guildId) return;
 
-        console.log(message);
-
         let data = await service.getGuildData(message.guild.id);
+        console.log(data.character_ai_channel)
         if (data.character_ai_channel){
             replyMessage(message, client)
         }
@@ -32,14 +31,22 @@ module.exports = {
  * @return {Promise<void>}
  */
 async function replyMessage(message, client) {
-    await characterAI.authenticateAsGuest();
+    try {
+        console.log("A")
+        await characterAI.authenticateAsGuest();
+        console.log("B")
 
-    const characterId = process.env.CHARACTERAI_ID // Discord moderator
+        const characterId = process.env.CHARACTERAI_ID // Discord moderator
+        console.log("C")
 
-    const chat = await characterAI.createOrContinueChat(characterId);
-    const response = await chat.sendAndAwaitResponse(message.content, false)
+        const chat = await characterAI.createOrContinueChat(characterId);
+        console.log("D")
 
-    await message.reply(response.toString())
-    console.log(response);
-
+        const response = await chat.sendAndAwaitResponse(message.content, false)
+        console.log("E")
+        await message.reply(response.toString())
+        console.log(response);
+    } catch (e) {
+        console.log(e)
+    }
 }
