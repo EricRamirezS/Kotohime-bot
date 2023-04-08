@@ -73,6 +73,9 @@ module.exports = sequelize.define('guild_data',
         open_skill_role: {
             type: DataTypes.STRING("32")
         },
+        character_ai_channel: {
+            type: DataTypes.STRING("32"),
+        },
     }, {
         timestamps: true
     }
