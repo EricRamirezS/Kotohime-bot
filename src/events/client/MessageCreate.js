@@ -19,7 +19,7 @@ module.exports = {
         let data = await service.getGuildData(message.guild.id);
         console.log(data.character_ai_channel)
         if (data.character_ai_channel){
-            replyMessage(message, client)
+            //replyMessage(message, client)
         }
     }
 };
