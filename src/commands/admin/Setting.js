@@ -1,16 +1,21 @@
 const {SlashCommandBuilder, PermissionFlagsBits, Client, ChatInputCommandInteraction} = require('discord.js');
 
 // Subcommand Groups
-const role = require('./Settings/Role');
-const goodbye = require('./Settings/Goodbye');
-const welcome = require('./Settings/Welcome');
-const voiceLog = require('./Settings/VoiceLog');
-const openskill = require('./Settings/OpenSkill');
 
+const commandGroups = {
+    category: require('./Settings/Category'),
+    role: require('./Settings/Role'),
+    goodbye: require('./Settings/Goodbye'),
+    welcome: require('./Settings/Welcome'),
+    voiceLog: require('./Settings/VoiceLog'),
+    openskill: require('./Settings/OpenSkill'),
+};
 // Subcommand
-const language = require('./Settings/Language');
-const see = require('./Settings/See');
-const nsfw = require('./Settings/Nsfw');
+const commands = {
+    language: require('./Settings/Language'),
+    see: require('./Settings/See'),
+    nsfw: require('./Settings/Nsfw'),
+};
 
 /**
  *
@@ -20,15 +25,13 @@ const nsfw = require('./Settings/Nsfw');
 function build(builder) {
     builder.setName('setting');
     builder.setDescription('Change my behavior in your server');
-    builder.addSubcommandGroup(o => role.build(o));
-    builder.addSubcommandGroup(o => welcome.build(o));
-    builder.addSubcommandGroup(o => goodbye.build(o));
-    builder.addSubcommandGroup(o => voiceLog.build(o));
-    builder.addSubcommandGroup(o => openskill.build(o));
-    builder.addSubcommand(o => see.build(o));
-    builder.addSubcommand(o => language.build(o));
-    builder.addSubcommand(o => nsfw.build(o));
+    for (let [k, v] of Object.entries(commandGroups))
+        builder.addSubcommandGroup(o => v.build(o));
+    for (let [k, v] of Object.entries(commands))
+        builder.addSubcommand(o => v.build(o));
+
     builder.setDefaultMemberPermissions(PermissionFlagsBits.Administrator);
+
     return builder;
 }
 
@@ -42,6 +45,17 @@ module.exports = {
      */
     data: build(new SlashCommandBuilder()),
 
+
+    async autocomplete(interaction) {
+        try {
+            if (interaction.options.getSubcommandGroup()) {
+                return commands[interaction.options.getSubcommandGroup()].autocomplete(interaction);
+            }
+            return commands[interaction.options.getSubcommand()].autocomplete(interaction);
+        } catch {
+        }
+    },
+
     /**
      *
      * @param interaction {ChatInputCommandInteraction}
@@ -49,23 +63,9 @@ module.exports = {
      * @returns {Promise<*>}
      */
     async execute(interaction, client) {
-        switch (interaction.options.getSubcommandGroup()) {
-            case 'role':
-                return role.execute(interaction, client);
-            case 'goodbye':
-                return goodbye.execute(interaction, client);
-            case 'welcome':
-                return welcome.execute(interaction, client);
-            case 'voice_log':
-                return voiceLog.execute(interaction, client);
-            case 'openskill':
-                return openskill.execute(interaction, client);
+        if (interaction.options.getSubcommandGroup()) {
+            return commandGroups[interaction.options.getSubcommandGroup()].execute(interaction, client);
         }
-        switch (interaction.options.getSubcommand()) {
-            case 'see':
-                return see.execute(interaction, client);
-            case 'nsfw':
-                return nsfw.execute(interaction, client);
-        }
+        return commands[interaction.options.getSubcommand()].execute(interaction, client);
     }
 };

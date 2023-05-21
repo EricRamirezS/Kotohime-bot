@@ -13,26 +13,26 @@ module.exports = (client) => {
                 switch (folder) {
                     case 'buttons':
                         for (const file of componentsFiles) {
-                            const button = require(`./src/components/${folder}/${file}`);
+                            const button = require(`../../components/${folder}/${file}`);
                             buttons.set(button.data.name, button);
                         }
                         break;
                     case 'context_menu':
                         for (const file of componentsFiles) {
-                            const cm = require(`./src/components/${folder}/${file}`);
+                            const cm = require(`../../components/${folder}/${file}`);
                             contextMenus.set(cm.data.name, cm);
                         }
                         break;
                     case 'modals':
                         for (const file of componentsFiles) {
-                            const button = require(`./src/components/${folder}/${file}`);
+                            const button = require(`../../components/${folder}/${file}`);
                             modals.set(button.data.name, button);
                         }
                         break;
                     case 'select_menu':
                         for (const file of componentsFiles) {
-                            const button = require(`./src/components/${folder}/${file}`);
-                            selectMenus.set(button.data.name, button);
+                            const sm = require(`../../components/${folder}/${file}`);
+                            selectMenus.set(sm.data.name, sm);
                         }
                         break;
                     default:

@@ -32,18 +32,13 @@ module.exports = {
  */
 async function replyMessage(message, client) {
     try {
-        console.log("A")
         await characterAI.authenticateAsGuest();
-        console.log("B")
 
         const characterId = process.env.CHARACTERAI_ID // Discord moderator
-        console.log("C")
 
         const chat = await characterAI.createOrContinueChat(characterId);
-        console.log("D")
 
         const response = await chat.sendAndAwaitResponse(message.content, false)
-        console.log("E")
         await message.reply(response.toString())
         console.log(response);
     } catch (e) {

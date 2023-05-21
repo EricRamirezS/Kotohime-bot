@@ -1,7 +1,9 @@
 const {SlashCommandSubcommandGroupBuilder, ChatInputCommandInteraction,} = require('discord.js');
-const add = require('./Role/Add');
-const remove = require('./Role/Remove');
-
+const commands = {
+    add: require('./Role/Add'),
+    remove: require('./Role/Remove'),
+    reaction: require('./Role/Reaction')
+};
 /**
  *
  * @type {{build(  SlashCommandSubcommandGroupBuilder):   SlashCommandSubcommandGroupBuilder, execute(ChatInputCommandInteraction, Client): Promise<*>}}
@@ -10,17 +12,19 @@ module.exports = {
     build(builder) {
         builder.setName('role');
         builder.setDescription('Role management options');
-        builder.addSubcommand(o => add.build(o));
-        builder.addSubcommand(o => remove.build(o));
+        for (let [k, v] of Object.entries(commands))
+            builder.addSubcommand(o => v.build(o));
         return builder;
     },
 
-    execute(interaction, client) {
-        switch (interaction.options.getSubcommand()) {
-            case 'add':
-                return add.execute(interaction, client);
-            case 'remove':
-                return remove.execute(interaction, client);
+    async autocomplete(interaction) {
+        try {
+            commands[interaction.options.getSubcommand()].autocomplete(interaction);
+        } catch {
         }
+    },
+
+    execute(interaction, client) {
+        commands[interaction.options.getSubcommand()].execute(interaction, client);
     }
 };

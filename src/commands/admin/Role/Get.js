@@ -27,7 +27,7 @@ module.exports = {
         try {
             if (data) {
                 let availableRoles = JSON.parse(data.self_assignable_roles);
-                if (availableRoles.includes(role.id)) {
+                if (availableRoles.map(e => e.id).includes(role.id)) {
                     await interaction.member.roles.add(role, 'User request');
                     return await interaction.editReply({content: ':thumbsup:'});
                 }

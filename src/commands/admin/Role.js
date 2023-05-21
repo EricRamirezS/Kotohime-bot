@@ -1,21 +1,33 @@
 const {
     SlashCommandBuilder,
-    ChatInputCommandInteraction,
+    ChatInputCommandInteraction, PermissionFlagsBits,
 } = require('discord.js');
-const get = require('./Role/Get');
-const drop = require('./Role/Drop');
-const list = require('./Role/List');
+
+const commands = {
+    get: require('./Role/Get'),
+    drop: require('./Role/Drop'),
+    list: require('./Role/List'),
+};
+
+
+/**
+ *
+ * @param builder {SlashCommandBuilder}
+ * @returns {SlashCommandBuilder}
+ */
+function build(builder) {
+    builder.setName('role');
+    builder.setDescription('Modify your roles in this server');
+    for (let [k, v] of Object.entries(commands))
+        builder.addSubcommand(o => v.build(o));
+    return builder;
+}
 
 module.exports = {
     /**
      * @type {SlashCommandBuilder}
      */
-    data: new SlashCommandBuilder()
-        .setName('role')
-        .setDescription('Modify your roles in this server')
-        .addSubcommand(o => get.build(o))
-        .addSubcommand(o => drop.build(o))
-        .addSubcommand(o => list.build(o)),
+    data: build(new SlashCommandBuilder()),
 
     /**
      *
@@ -24,14 +36,7 @@ module.exports = {
      * @returns {Promise<void>}
      */
     execute: async function (interaction, client) {
-        switch (interaction.options.getSubcommand()) {
-            case 'get':
-                return get.execute(interaction, client);
-            case 'drop':
-                return drop.execute(interaction, client);
-            case 'list':
-                return list.execute(interaction, client);
-        }
+        return commands[interaction.options.getSubcommand()].autocomplete(interaction);
     },
 };
 

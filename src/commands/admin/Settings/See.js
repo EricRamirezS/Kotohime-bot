@@ -71,7 +71,7 @@ module.exports = {
 function sortRoles(guild, roles) {
     let rolesObjects = [];
     for (let role of roles) {
-        rolesObjects.push(guild.roles.cache.get(role));
+        rolesObjects.push(guild.roles.cache.get(role.id));
     }
     rolesObjects.sort((a, b) => (a.position < b.position) ? 1 : -1);
     return rolesObjects.map(x => x.id);

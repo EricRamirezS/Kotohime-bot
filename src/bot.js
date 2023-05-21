@@ -1,4 +1,4 @@
-const {Client, Collection, IntentsBitField} = require('discord.js');
+const {Client, Collection, IntentsBitField, Partials} = require('discord.js');
 const {DisTube} = require('distube');
 const {SpotifyPlugin} = require('@distube/spotify');
 const {YtDlpPlugin} = require('@distube/yt-dlp');
@@ -20,11 +20,20 @@ myIntents.add(
     IntentsBitField.Flags.GuildPresences,
     IntentsBitField.Flags.GuildMessages,
     IntentsBitField.Flags.GuildMessageReactions,
+    IntentsBitField.Flags.GuildEmojisAndStickers,
     IntentsBitField.Flags.GuildVoiceStates
 );
+const myPartials = [
+    Partials.Message,
+    Partials.Channel,
+    Partials.Reaction,
+    Partials.GuildMember,
+    Partials.User
+];
 
 const client = new Client({
-    intents: myIntents
+    intents: myIntents,
+    partials: myPartials,
 });
 
 client.distube = new DisTube(client, {

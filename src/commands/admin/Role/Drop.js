@@ -9,9 +9,11 @@ module.exports = {
     build(builder) {
         builder.setName('drop');
         builder.setDescription('Drop a role form this server');
-        builder.addRoleOption(o => o.setName('role').setDescription('Role to drop').setRequired(true));
+        builder.addRoleOption(o =>
+            o.setName('role').setDescription('Role to drop').setRequired(true));
         return builder;
     },
+
     /**
      *
      * @param interaction {ChatInputCommandInteraction}
@@ -26,7 +28,7 @@ module.exports = {
         try {
             if (data) {
                 let availableRoles = JSON.parse(data.self_assignable_roles);
-                if (availableRoles.includes(role.id)) {
+                if (availableRoles.map(e => e.id).includes(role.id)) {
                     await interaction.member.roles.remove(role, 'User request');
                     return await interaction.editReply({content: ':thumbsup:'});
                 }

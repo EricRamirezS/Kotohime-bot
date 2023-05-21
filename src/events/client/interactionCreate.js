@@ -1,61 +1,23 @@
-const {Events} = require('discord.js');
+const {Events, Client, ChatInputCommandInteraction} = require('discord.js');
 const {stripIndents} = require('common-tags');
+const autocomplete = require('../../interaction/Autocomplete');
+const button = require('../../interaction/Button');
+const chatInputCommand = require('../../interaction/ChatInputCommand');
+const stringSelectMenu = require('../../interaction/StringSelectMenu');
 
 module.exports = {
     name: Events.InteractionCreate,
 
+    /**
+     *
+     * @param interaction {ChatInputCommandInteraction}
+     * @param client {Client}
+     * @returns {Promise<*>}
+     */
     async execute(interaction, client) {
-        if (interaction.isChatInputCommand()) {
-            const {commands} = client;
-            const {commandName} = interaction;
-            const command = commands.get(commandName);
-            if (!command) return;
-
-            try {
-                try {
-                    if (command.hasPermission) {
-                        let response = command.hasPermission(interaction, client);
-                        if (response) {
-                            return interaction.reply({
-                                content: response,
-                                ephemeral: true
-                            });
-                        }
-                    }
-                } catch (error) {
-                    console.error(error);
-                }
-                await command.execute(interaction, client);
-            } catch (error) {
-                console.error(error);
-                if (await interaction.fetchReply()) {
-                    await interaction.editReply({
-                        content: stripIndents`Unexpected error.`,
-                        ephemeral: true
-                    });
-                } else {
-                    await interaction.reply({
-                        content: stripIndents`Unexpected error.`,
-                        ephemeral: true
-                    });
-                }
-            }
-        } else if (interaction.isButton()) {
-            const {buttons} = client;
-            const {customId} = interaction;
-            const button = buttons.get(customId.split('|')[0]);
-            if (button) {
-                try {
-                    button.execute(interaction, client);
-                } catch (error) {
-                    console.error(error);
-                    await interaction.reply({
-                        content: `Ha ocurrido un error inesperado.\n
-                    Revise la consola para más información`,
-                        ephemeral: true
-                    });
-                }
-            }
-        }
+        if (interaction.isChatInputCommand()) return await chatInputCommand(interaction, client);
+        else if (interaction.isButton()) return await button(interaction, client);
+        else if (interaction.isAutocomplete()) return await autocomplete(interaction, client);
+        else if (interaction.isStringSelectMenu()) return await stringSelectMenu(interaction, client);
     }
 };

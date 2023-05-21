@@ -40,8 +40,6 @@ module.exports = {
 
         message = message.replaceAll('\\n', '\n');
 
-        console.log(interaction.channel);
-
         let webhook;
         let threadId = null;
         if (interaction.channel instanceof ThreadChannel) {
