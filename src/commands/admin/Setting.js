@@ -7,7 +7,7 @@ const commandGroups = {
     role: require('./Settings/Role'),
     goodbye: require('./Settings/Goodbye'),
     welcome: require('./Settings/Welcome'),
-    voiceLog: require('./Settings/VoiceLog'),
+    voice_log: require('./Settings/VoiceLog'),
     openskill: require('./Settings/OpenSkill'),
 };
 // Subcommand
