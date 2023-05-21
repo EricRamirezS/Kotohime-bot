@@ -36,7 +36,7 @@ module.exports = {
      * @returns {Promise<void>}
      */
     execute: async function (interaction, client) {
-        return commands[interaction.options.getSubcommand()].autocomplete(interaction);
+        return commands[interaction.options.getSubcommand()].execute(interaction, client);
     },
 };
 
