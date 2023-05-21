@@ -68,13 +68,14 @@ module.exports = {
             embed.setDescription(description);
             let options = v.map(r => {
                 let role = interaction.guild.roles.cache.get(r.id);
-                role = role.slice(0, 25);
                 return {
                     label: role.name,
                     value: role.id,
                     emoji: r.emoji || undefined
                 };
             });
+
+            options.slice(0, 25);
 
             let menu = [
                 new ActionRowBuilder().addComponents(
