@@ -52,7 +52,6 @@ module.exports = {
     async addOrUpdateSelfAssignableRoles(role, guildId) {
         let data = await this.getGuildData(guildId);
         let roles = JSON.parse(data.self_assignable_roles);
-
         let flag = true;
         for (let roleData of roles) {
             if (roleData.id !== role.id) continue;
@@ -141,10 +140,10 @@ module.exports = {
                 });
                 this.refreshGuildData();
                 let roles = JSON.parse(data.self_assignable_roles);
-                for (let role of roles){
-                    if (role.category === category){
-                        role.category = null
-                        await this.addOrUpdateSelfAssignableRoles(role, guildId)
+                for (let role of roles) {
+                    if (role.category === category) {
+                        role.category = null;
+                        await this.addOrUpdateSelfAssignableRoles(role, guildId);
                     }
                 }
                 return true;

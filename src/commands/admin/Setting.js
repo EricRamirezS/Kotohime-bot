@@ -49,7 +49,7 @@ module.exports = {
     async autocomplete(interaction) {
         try {
             if (interaction.options.getSubcommandGroup()) {
-                return commands[interaction.options.getSubcommandGroup()].autocomplete(interaction);
+                return commandGroups[interaction.options.getSubcommandGroup()].autocomplete(interaction);
             }
             return commands[interaction.options.getSubcommand()].autocomplete(interaction);
         } catch {

@@ -15,7 +15,8 @@ const autocompleteCategories = require('../../../../autocomplete/Categories');
 module.exports = {
     build(builder) {
         builder.setName('reaction');
-        builder.setDescription('Creates a reaction message to get roles');
+        builder.setDescription('Creates a reaction message to get roles. \n' +
+            'Up to 25 roles can be displayed per Category.');
         builder.addChannelOption(o => o.setName('channel').setDescription('Channel to send the messages')
             .setRequired(true)
             .addChannelTypes(ChannelType.GuildText));
@@ -60,14 +61,14 @@ module.exports = {
             }
             let description = '';
             if (cat && cat.description) {
-                description += cat.description;
+                description += cat.description.replaceAll('\\n', '\n');
             } else {
                 description += 'Select any role you want.';
             }
             embed.setDescription(description);
             let options = v.map(r => {
-                const role = interaction.guild.roles.cache.get(r.id);
-
+                let role = interaction.guild.roles.cache.get(r.id);
+                role = role.slice(0, 25);
                 return {
                     label: role.name,
                     value: role.id,
