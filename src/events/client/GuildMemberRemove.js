@@ -35,9 +35,9 @@ function sendGoodbye(channelId, message, member, client) {
 
         channel.send(message
             .replaceAll('\\n', '\n')
-            .replace('{USERNAME}', data['username'])
-            .replace('{NOW}', data['now'])
-            .replace('{USER_MENTION}', data['mention'])
+            .replaceAll('{USERNAME}', data['username'])
+            .replaceAll('{NOW}', data['now'])
+            .replaceAll('{USER_MENTION}', data['mention'])
         );
     } catch (e) {
         console.error(e);
