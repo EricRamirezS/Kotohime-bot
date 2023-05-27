@@ -2,7 +2,8 @@ const {SlashCommandSubcommandGroupBuilder, ChatInputCommandInteraction,} = requi
 const commands = {
     add: require('./Role/Add'),
     remove: require('./Role/Remove'),
-    reaction: require('./Role/Reaction')
+    reaction: require('./Role/Reaction'),
+    default: require('./Role/Default')
 };
 /**
  *

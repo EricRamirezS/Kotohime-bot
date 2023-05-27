@@ -9,7 +9,7 @@ const autocompleteCategory = require('../../../../autocomplete/Categories');
 module.exports = {
     build(builder) {
         builder.setName('add');
-        builder.setDescription('Add role for user to add to themselves');
+        builder.setDescription('Add a manual role for user to add to themselves');
         builder.addRoleOption(o => o.setName('role').setDescription('Role to add').setRequired(true));
         builder.addStringOption(o => o.setName('category').setDescription('Role\'s Category').setRequired(false)
             .setAutocomplete(true));

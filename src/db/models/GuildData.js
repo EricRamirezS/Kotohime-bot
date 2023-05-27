@@ -38,6 +38,10 @@ module.exports = sequelize.define('guild_data',
             type: DataTypes.JSON,
             defaultValue: "[]"
         },
+        default_roles: {
+            type: DataTypes.JSON,
+            defaultValue: "[]"
+        },
         roles_categories: {
             type: DataTypes.JSON,
             defaultValue: "[]"

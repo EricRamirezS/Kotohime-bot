@@ -18,7 +18,7 @@ module.exports = (client) => {
                     command.group = folder;
                     commandArray.push(command.data.toJSON());
                     commands.set(command.data.name, command);
-                    console.log(`Command: ${command.data.name} has been passed through the handler.`);
+                    console.log(`Command: ${command.data.name.padEnd(16)} has been passed through the handler.`);
                 }
             }
 

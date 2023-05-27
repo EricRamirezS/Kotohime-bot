@@ -1,5 +1,6 @@
 const {Events, GuildMember, Client} = require('discord.js');
-const service = require('../../service/GuildDataService');
+const {getGuildData} = require('../../service/GuildDataService');
+const templateMessage = require('../../utils/TemplateMessage');
 
 module.exports = {
     name: Events.GuildMemberAdd,
@@ -11,35 +12,19 @@ module.exports = {
      * @returns {Promise<void>}
      */
     async execute(member, client) {
-        let data = await service.getGuildData(member.guild.id);
+        let data = await getGuildData(member.guild.id);
+        defaultRoles(member, data.default_roles);
         if (data.welcome_channel && data.welcome_message)
-            sendWelcome(data.welcome_channel, data.welcome_message, member, client);
+            templateMessage(data.welcome_channel, data.welcome_message, member, client);
     }
 };
 
-/**
- *
- * @param channelId {string}
- * @param message {string}
- * @param member {GuildMember}
- * @param client {Client}
- */
-function sendWelcome(channelId, message, member, client) {
-    try {
-        let channel = client.channels.cache.get(channelId);
-        const data = {
-            'now': Date.now(),
-            'username': member.user.username,
-            'mention': `<@${member.id}>`
-        };
-
-        channel.send(message
-			.replaceAll('\\n', '\n')
-            .replaceAll('{USERNAME}', data['username'])
-            .replaceAll('{NOW}', data['now'])
-            .replaceAll('{USER_MENTION}', data['mention'])
-        );
-    } catch (e) {
-        console.error(e);
+async function defaultRoles(member, roles) {
+    roles = JSON.parse(roles);
+    for (let roleId of roles) {
+        let role = await member.guild.roles.cache.get(roleId);
+        if (role) {
+            await member.roles.add(role);
+        }
     }
 }
