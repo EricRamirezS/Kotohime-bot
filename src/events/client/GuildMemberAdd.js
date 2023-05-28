@@ -13,9 +13,12 @@ module.exports = {
      */
     async execute(member, client) {
         let data = await getGuildData(member.guild.id);
-        defaultRoles(member, data.default_roles);
-        if (data.welcome_channel && data.welcome_message)
-            templateMessage(data.welcome_channel, data.welcome_message, member, client);
+        await defaultRoles(member, data.default_roles);
+        if (data.welcome_channel && data.welcome_message) {
+            const channel = member.guild.channels.cache.get(data.welcome_channel)
+            if (channel)
+                channel.send(templateMessage(member, data.welcome_message));
+        }
     }
 };
 
