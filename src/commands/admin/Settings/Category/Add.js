@@ -12,7 +12,7 @@ module.exports = {
         builder.setDescription('Add or update category for roles');
         builder.addStringOption(o => o.setName('category').setDescription('Category\'s name').setRequired(true));
         builder.addStringOption(o => o.setName('description').setDescription('Descripción de la categoría')
-            .setRequired(false).setMaxLength(500));
+            .setRequired(false).setMaxLength(1500));
         return builder;
     },
 
