@@ -22,6 +22,10 @@ module.exports = {
             .addChannelTypes(ChannelType.GuildText));
         builder.addStringOption(o => o.setName('category').setDescription('Specify the role category.')
             .setAutocomplete(true));
+        builder.addIntegerOption(o => o.setName('min').setDescription('Minimum of roles required (Default: 0)')
+            .setMinValue(0).setMaxValue(25));
+        builder.addIntegerOption(o => o.setName('max').setDescription('Maximum of roles allowed (Default: 25)')
+            .setMinValue(1).setMaxValue(25));
         return builder;
     },
 
@@ -33,6 +37,13 @@ module.exports = {
         await interaction.deferReply({ephemeral: true});
         let channel = interaction.options.getChannel('channel');
         let category = interaction.options.getString('category');
+        let min = interaction.options.getInteger('min');
+        let max = interaction.options.getInteger('max');
+        if (!min) min = 0;
+        if (!max) max = 25;
+        min = Math.min(min, max);
+        max = Math.max(min, max);
+
         let data = await service.getGuildData(interaction.guild.id);
         let availableRoles = JSON.parse(data.self_assignable_roles);
         let availableCategories = JSON.parse(data.roles_categories);
@@ -81,8 +92,8 @@ module.exports = {
                 new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('ReactionRoles')
-                        .setMinValues(0)
-                        .setMaxValues(options.length)
+                        .setMinValues(Math.min(min, options.length))
+                        .setMaxValues(Math.min(max, options.length))
                         .addOptions(options)
                 )
             ];
