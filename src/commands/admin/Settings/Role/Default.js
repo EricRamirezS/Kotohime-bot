@@ -36,9 +36,9 @@ module.exports = {
                         let member = interaction.guild.members.cache.get(memberData[0]);
                         if (!member.roles.cache.has(role.id)) member.roles.add(role);
                     }
-                    return await interaction.editReply({content: ':thumbsup:'});
                 });
             }
+            return await interaction.editReply({content: ':thumbsup:'});
         } else {
             return await interaction.editReply({content: ':thumbsdown:'});
         }
