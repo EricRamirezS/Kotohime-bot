@@ -32,7 +32,8 @@ module.exports = {
             ephemeral: true
         });
 
-        if (role.position >= interaction.member.roles.highest.position){
+        let botMember = interaction.guild.members.cache.get(client.user.id);
+        if (role.position >= botMember.roles.highest.position) {
             return await interaction.editReply({content: 'I don\'t have permission to give that role to users.'});
         }
 

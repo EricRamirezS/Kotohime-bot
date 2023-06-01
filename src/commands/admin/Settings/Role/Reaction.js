@@ -57,7 +57,7 @@ module.exports = {
         if (category) {
             let categoryData = groups[category];
             groups = {};
-            groups[category] = categoryData;
+            groups[category] = categoryData || [];
         }
 
         for (let [k, v] of Object.entries(groups)) {
@@ -77,17 +77,21 @@ module.exports = {
                 description += 'Select any role you want.';
             }
             embed.setDescription(description);
+
             let options = v.map(r => {
                 let role = interaction.guild.roles.cache.get(r.id);
-                return {
-                    label: role.name,
-                    value: role.id,
-                    emoji: r.emoji || undefined
-                };
+                if (role)
+                    return {
+                        label: role.name,
+                        value: role.id,
+                        emoji: r.emoji || undefined
+                    };
+                return null;
             });
 
+            options = options.filter(e => e != null);
             options.slice(0, 25);
-
+            if (options.length === 0) continue;
             let menu = [
                 new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
